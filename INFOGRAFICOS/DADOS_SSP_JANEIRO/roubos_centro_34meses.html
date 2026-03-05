@@ -30,7 +30,7 @@
     }
 
     .chart-title {
-      font-size: 22px;
+      font-size: 28px;
       font-weight: 700;
       line-height: 1.3;
       margin-bottom: 8px;
@@ -42,7 +42,7 @@
     }
 
     .chart-subtitle {
-      font-size: 14px;
+      font-size: 17px;
       font-weight: 400;
       color: #666;
       line-height: 1.4;
@@ -61,7 +61,7 @@
     }
 
     .chart-source {
-      font-size: 12px;
+      font-size: 14px;
       color: #808080;
       margin-top: 12px;
     }
@@ -81,7 +81,7 @@
       background: #1D1D1B;
       color: #fff;
       font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
+      font-size: 14px;
       padding: 8px 12px;
       border-radius: 4px;
       line-height: 1.5;
@@ -117,8 +117,8 @@
     }
 
     @media (max-width: 600px) {
-      .chart-title { font-size: 17px; }
-      .chart-subtitle { font-size: 12px; }
+      .chart-title { font-size: 22px; }
+      .chart-subtitle { font-size: 14px; }
     }
   </style>
 </head>
@@ -206,8 +206,8 @@ const CONFIG = {
   var dados = CONFIG.dados;
   var n = dados.length;
   var svgWidth = 960;
-  var svgHeight = 440;
-  var marginTop = 30;
+  var svgHeight = 480;
+  var marginTop = 20;
   var marginRight = 20;
   var marginBottom = 70;
   var marginLeft = 50;
@@ -254,7 +254,7 @@ const CONFIG = {
     text.setAttribute("y", y + 4);
     text.setAttribute("text-anchor", "end");
     text.setAttribute("font-family", "Montserrat, sans-serif");
-    text.setAttribute("font-size", "11");
+    text.setAttribute("font-size", "14");
     text.setAttribute("fill", "#808080");
     text.textContent = tick === 0 ? "0" : tick.toLocaleString("pt-BR");
     svg.appendChild(text);
@@ -309,20 +309,6 @@ const CONFIG = {
     svg.appendChild(rect);
     bars.push({ el: rect, targetY: y, targetH: barH });
 
-    // Value label on top of bar
-    var valText = document.createElementNS(NS, "text");
-    valText.setAttribute("x", x + barWidth / 2);
-    valText.setAttribute("y", y - 6);
-    valText.setAttribute("text-anchor", "middle");
-    valText.setAttribute("font-family", "Montserrat, sans-serif");
-    valText.setAttribute("font-size", "9");
-    valText.setAttribute("font-weight", "600");
-    valText.setAttribute("fill", d.reducao ? CONFIG.cor_destaque : "#808080");
-    valText.setAttribute("opacity", "0");
-    valText.textContent = formatNumber(d.valor);
-    svg.appendChild(valText);
-    bars[bars.length - 1].valEl = valText;
-
     // X-axis label
     var text = document.createElementNS(NS, "text");
     var labelX = x + barWidth / 2;
@@ -331,7 +317,7 @@ const CONFIG = {
     text.setAttribute("y", labelY);
     text.setAttribute("text-anchor", "end");
     text.setAttribute("font-family", "Montserrat, sans-serif");
-    text.setAttribute("font-size", "8.5");
+    text.setAttribute("font-size", "11");
     text.setAttribute("fill", d.reducao ? "#808080" : "#FF161F");
     text.setAttribute("font-weight", d.reducao ? "400" : "700");
     text.setAttribute("transform", "rotate(-55 " + labelX + " " + labelY + ")");
@@ -349,12 +335,6 @@ const CONFIG = {
           b.el.style.transition = "y 0.5s ease, height 0.5s ease";
           b.el.setAttribute("y", b.targetY);
           b.el.setAttribute("height", b.targetH);
-          if (b.valEl) {
-            setTimeout(function () {
-              b.valEl.setAttribute("opacity", "1");
-              b.valEl.style.transition = "opacity 0.3s ease";
-            }, 400);
-          }
         }, i * 40);
       });
     }, 100);
