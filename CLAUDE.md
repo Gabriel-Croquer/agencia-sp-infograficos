@@ -1,3 +1,37 @@
+# Workflow de Infograficos
+
+
+## Pasta padrao: `INFOGRAFICOS/`
+
+Quando o usuario pedir um infografico sem especificar pasta, criar uma nova subpasta dentro de `INFOGRAFICOS/` com nome descritivo em MAIUSCULAS (ex: `INFOGRAFICOS/DADOS SSP CENTRO/`). Cada subpasta contem:
+- O CSV original dos dados (copiar para la)
+- O HTML final do infografico
+
+## Fluxo
+
+1. Usuario envia CSV (pode ser path de arquivo ou dados colados) + titulo, linha fina, fonte, instrucoes
+2. Criar subpasta em `INFOGRAFICOS/` com nome descritivo
+3. Copiar CSV para a subpasta
+4. Gerar HTML do infografico na subpasta
+5. Usuario revisa, sugere ajustes
+6. Quando aprovado: commit + push → GitHub Pages atualiza automaticamente
+7. Fornecer codigo embed (iframe) para WordPress
+
+## URL base do GitHub Pages
+
+`https://gabriel-croquer.github.io/agencia-sp-infograficos/`
+
+Infograficos ficam acessiveis em:
+`https://gabriel-croquer.github.io/agencia-sp-infograficos/INFOGRAFICOS/[nome-da-pasta]/[arquivo].html`
+
+## gh CLI
+
+O executavel do gh esta em: `/c/Users/gabriel.croquer/.local/bin/gh.exe`
+
+
+---
+
+
 # Instrucoes Gerais
 
 
