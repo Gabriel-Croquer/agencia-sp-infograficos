@@ -10,13 +10,18 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    html, body {
+      height: auto;
+      overflow: hidden;
+    }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background: #FFFFFF;
       color: #1D1D1B;
       display: flex;
       justify-content: center;
-      padding: 20px;
+      padding: 20px 20px 10px;
     }
 
     .chart-container {
@@ -359,6 +364,16 @@ anos.forEach(function(ano) {
     }, 100);
   });
 })();
+</script>
+
+<script>
+function notifyHeight() {
+  var h = document.documentElement.scrollHeight;
+  window.parent.postMessage({ sentinel: 'agencia-sp', type: 'resize', height: h }, '*');
+}
+window.addEventListener('load', notifyHeight);
+window.addEventListener('resize', notifyHeight);
+setTimeout(notifyHeight, 2500);
 </script>
 
 </body>
