@@ -1,0 +1,40 @@
+{
+  "templates": [
+    {
+      "id": "bar-vertical",
+      "arquivo": "template-bar-vertical.html",
+      "nome": "Barras Verticais - Serie Historica",
+      "descricao": "Grafico de barras verticais para exibir serie historica com destaque em um ano especifico. Ideal para mostrar evolucao de indicadores ao longo de muitos anos (ex: roubos, investimentos, populacao)."
+    },
+    {
+      "id": "bar-horizontal",
+      "arquivo": "template-bar-horizontal.html",
+      "nome": "Barras Horizontais - Comparativo por Categoria",
+      "descricao": "Grafico de barras horizontais agrupadas por categoria e ano. Ideal para comparar participacao ou desempenho entre categorias com legenda de cores por ano."
+    },
+    {
+      "id": "bar-stacked",
+      "arquivo": "template-bar-stacked.html",
+      "nome": "Barras Empilhadas 100% - Composicao por Nivel",
+      "descricao": "Grafico de barras empilhadas 100% em grid, mostrando composicao percentual por niveis (ex: basico, adequado, avancado) cruzando disciplinas, series e anos."
+    },
+    {
+      "id": "tabela-comparativa",
+      "arquivo": "template-tabela-comparativa.html",
+      "nome": "Tabela Comparativa - Indicadores com Variacao",
+      "descricao": "Tabela interativa com ordenacao por coluna, destaque de periodo recente e formatacao automatica de variacoes positivas/negativas. Ideal para comparar indicadores entre dois periodos."
+    },
+    {
+      "id": "linha-temporal",
+      "arquivo": "template-linha-temporal.html",
+      "nome": "Grafico de Linhas - Evolucao Temporal",
+      "descricao": "Grafico de linhas com multiplas series, animacao de desenho, tooltip interativo e legenda clicavel com destaque de serie. Ideal para mostrar evolucao de indicadores ao longo do tempo."
+    },
+    {
+      "id": "card-kpi",
+      "arquivo": "template-card-kpi.html",
+      "nome": "Cards KPI - Indicadores com Variacao",
+      "descricao": "Grid de cards com animacao de contagem, setas de variacao coloridas (verde para positivo, vermelho para negativo) e suporte a logica invertida para indicadores de seguranca."
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "gerado_por": "estrategista-formatos",
+    "data": "2026-03-05",
+    "baseado_em": "analise-repertorio.json"
+  },
+  "identidade_visual": {
+    "cor_destaque": "#0B9247",
+    "cor_neutra": "#808080",
+    "cor_negativo": "#FF161F",
+    "cor_azul": "#034EA2",
+    "cor_amarelo": "#FBB900",
+    "cor_fundo": "#FFFFFF",
+    "cor_texto": "#1D1D1B",
+    "cor_cinza_claro": "#BFBFBF",
+    "fonte_principal": "Montserrat",
+    "fonte_sistema": "Verdana"
+  },
+  "padroes_visuais": {
+    "fundo": "branco limpo",
+    "titulo": "negrito, keyword em cor verde",
+    "subtitulo": "cinza, fonte menor, descritivo",
+    "fonte_dados": "canto inferior esquerdo, cinza pequeno",
+    "barras": "cantos levemente arredondados (3-4px)",
+    "destaque_atual": "verde para dado atual/positivo",
+    "dados_historicos": "cinza para contexto",
+    "dados_negativos": "vermelho para variacao negativa",
+    "espacamento": "muito espaco em branco, minimalista"
+  },
+  "templates": [
+    {
+      "id": "bar-vertical",
+      "nome": "Barras Verticais - Serie Historica",
+      "descricao": "Grafico de barras verticais mostrando evolucao ao longo dos anos, com destaque verde no ano atual. Ideal para series temporais longas.",
+      "prioridade": 1,
+      "baseado_em": "info_barras.jpeg e info_barras_2.jpeg",
+      "dados_exemplo": "Serie historica de roubos 2001-2026, ou proficiencias Saresp",
+      "config_editavel": ["titulo", "subtitulo", "dados", "fonte", "cor_destaque", "unidade", "ano_destaque"],
+      "interatividade": ["tooltip_hover", "animacao_crescimento", "hover_highlight"],
+      "specs": {
+        "largura": "100%",
+        "max_width": "800px",
+        "altura_min": "450px",
+        "responsivo": true,
+        "acessibilidade": true
+      }
+    },
+    {
+      "id": "bar-horizontal",
+      "nome": "Barras Horizontais - Comparativo por Ano",
+      "descricao": "Barras horizontais agrupadas por categoria, comparando multiplos anos lado a lado. Ideal para comparar participacao/porcentagens entre periodos.",
+      "prioridade": 2,
+      "baseado_em": "bar_horizontal.jpeg",
+      "dados_exemplo": "Participacao Ensino Medio no Saresp 2023-2025",
+      "config_editavel": ["titulo", "subtitulo", "dados", "fonte", "anos", "categorias", "cor_destaque"],
+      "interatividade": ["tooltip_hover", "animacao_crescimento_horizontal", "hover_highlight"],
+      "specs": {
+        "largura": "100%",
+        "max_width": "900px",
+        "altura_min": "400px",
+        "responsivo": true,
+        "acessibilidade": true
+      }
+    },
+    {
+      "id": "bar-stacked",
+      "nome": "Barras Empilhadas - Composicao Percentual",
+      "descricao": "Barras empilhadas 100% mostrando distribuicao em categorias (ex: niveis de proficiencia). Layout em grid para multiplas series.",
+      "prioridade": 3,
+      "baseado_em": "bar_stacked.jpeg",
+      "dados_exemplo": "Niveis de proficiencia Saresp (Abaixo do Basico, Basico, Adequado, Avancado)",
+      "config_editavel": ["titulo", "subtitulo", "dados", "fonte", "categorias", "cores_categorias", "series"],
+      "interatividade": ["tooltip_hover_segmento", "animacao_empilhamento", "hover_highlight_segmento"],
+      "specs": {
+        "largura": "100%",
+        "max_width": "1000px",
+        "altura_min": "600px",
+        "responsivo": true,
+        "acessibilidade": true,
+        "layout": "grid 2 colunas"
+      }
+    },
+    {
+      "id": "tabela-comparativa",
+      "nome": "Tabela Interativa - Comparativo com Variacao",
+      "descricao": "Tabela comparando dois periodos com colunas de variacao absoluta e percentual. Celulas coloridas para destaque.",
+      "prioridade": 4,
+      "baseado_em": "tabela.jpeg",
+      "dados_exemplo": "Indicadores criminais Jan 2025 vs Jan 2026",
+      "config_editavel": ["titulo", "subtitulo", "dados", "fonte", "colunas", "cor_positivo", "cor_negativo"],
+      "interatividade": ["hover_linha", "sort_coluna", "animacao_entrada_linhas"],
+      "specs": {
+        "largura": "100%",
+        "max_width": "900px",
+        "altura_min": "auto",
+        "responsivo": true,
+        "acessibilidade": true
+      }
+    },
+    {
+      "id": "linha-temporal",
+      "nome": "Grafico de Linhas - Evolucao Temporal",
+      "descricao": "Grafico de linhas mostrando evolucao de multiplas series ao longo do tempo. Ideal para comparar disciplinas/categorias.",
+      "prioridade": 5,
+      "baseado_em": "dados CSV proficiencias Saresp",
+      "dados_exemplo": "Proficiencias LP e Mat 2015-2025 por serie",
+      "config_editavel": ["titulo", "subtitulo", "dados", "fonte", "series", "cores_series", "eixo_x", "eixo_y"],
+      "interatividade": ["tooltip_ponto", "hover_linha_destaque", "animacao_desenho_linha"],
+      "specs": {
+        "largura": "100%",
+        "max_width": "900px",
+        "altura_min": "450px",
+        "responsivo": true,
+        "acessibilidade": true
+      }
+    },
+    {
+      "id": "card-kpi",
+      "nome": "Cards de Destaque Numerico (KPI)",
+      "descricao": "Cards grandes com numeros de destaque, variacao e contexto. Ideal para dashboards e destaques de indicadores.",
+      "prioridade": 6,
+      "baseado_em": "padrao comum em reportagens de dados",
+      "dados_exemplo": "Indicadores de seguranca publica",
+      "config_editavel": ["titulo", "cards", "fonte", "colunas"],
+      "interatividade": ["animacao_contagem", "hover_card_elevacao"],
+      "specs": {
+        "largura": "100%",
+        "max_width": "1000px",
+        "altura_min": "auto",
+        "responsivo": true,
+        "acessibilidade": true,
+        "layout": "grid responsivo 2-4 colunas"
+      }
+    }
+  ],
+  "ordem_execucao": ["bar-vertical", "bar-horizontal", "bar-stacked", "tabela-comparativa", "linha-temporal", "card-kpi"]
+}

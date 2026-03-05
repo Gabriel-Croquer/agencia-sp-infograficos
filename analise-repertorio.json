@@ -1,0 +1,236 @@
+{
+  "meta": {
+    "versao": "1.0",
+    "data_analise": "2026-03-05",
+    "descricao": "Analise completa do repertorio visual da Agencia SP para geracao de templates de infograficos"
+  },
+  "identidade_visual": {
+    "manual": {
+      "versao": "1.7",
+      "data": "Outubro 2025"
+    },
+    "logo": {
+      "nome": "AGENCIA SP",
+      "formato": "Pilula arredondada com texto AGENCIA e icone SP",
+      "versoes": ["positiva (preta)", "negativa (branca)"],
+      "arquivo": "inputs/manual-iv/Agencia_logo.png"
+    },
+    "paleta_principal": {
+      "vermelho": {
+        "hex": "#FF161F",
+        "rgb": "R237 G28 B36",
+        "pantone": "485 C"
+      },
+      "preto": {
+        "hex": "#000000",
+        "pantone": "BLACK"
+      },
+      "branco": {
+        "hex": "#FFFFFF"
+      },
+      "cinza_escuro": {
+        "hex": "#808080",
+        "nota": "K50"
+      },
+      "cinza_claro": {
+        "hex": "#BFBFBF",
+        "nota": "K25"
+      }
+    },
+    "paleta_secundaria": {
+      "amarelo": {
+        "hex": "#FBB900",
+        "rgb": "R251 G186 B0",
+        "pantone": "123 C"
+      },
+      "azul_institucional": {
+        "hex": "#034EA2",
+        "rgb": "R3 G78 B162",
+        "pantone": "2955 C"
+      },
+      "verde": {
+        "hex": "#0B9247",
+        "rgb": "R11 G146 B71",
+        "pantone": "347 C"
+      },
+      "azul_claro_1": {
+        "hex": "#A1DDF7",
+        "rgb": "R161 G221 B247"
+      },
+      "azul_claro_2": {
+        "hex": "#62C9E0",
+        "rgb": "R98 G201 B224"
+      },
+      "azul_medio": {
+        "hex": "#4297D3",
+        "rgb": "R66 G151 B211"
+      },
+      "azul_escuro": {
+        "hex": "#005992",
+        "rgb": "R0 G89 B146"
+      },
+      "azul_marinho": {
+        "hex": "#233254",
+        "rgb": "R35 G50 B84"
+      },
+      "verde_oliva": {
+        "hex": "#94AA5A",
+        "rgb": "R148 G170 B90"
+      },
+      "vermelho_escuro": {
+        "hex": "#842519",
+        "rgb": "R132 G37 B25"
+      }
+    },
+    "tipografia": {
+      "principal": {
+        "familia": "Futura PT",
+        "pesos": ["Medium", "Bold"]
+      },
+      "secundaria": {
+        "familia": "Montserrat",
+        "pesos": ["Medium", "Bold"]
+      },
+      "sistema": {
+        "familia": "Verdana",
+        "estilos": ["Regular", "Italic", "Bold"]
+      }
+    }
+  },
+  "infograficos_analisados": [
+    {
+      "id": "bar_horizontal",
+      "arquivo": "inputs/infograficos/bar_horizontal.jpeg",
+      "tipo": "Barras horizontais comparativas por ano",
+      "conteudo": "Participacao do Ensino Medio dispara no Saresp 2025",
+      "layout": {
+        "descricao": "3 colunas (2023, 2024, 2025), 3 categorias (1a, 2a, 3a Serie)",
+        "colunas": ["2023", "2024", "2025"],
+        "categorias": ["1a Serie", "2a Serie", "3a Serie"]
+      },
+      "cores": {
+        "anos_anteriores": "cinza",
+        "ano_destaque": "#4CAF50 (verde aproximado)"
+      },
+      "estilo_titulo": {
+        "formato": "Negrito com keyword em cor verde",
+        "keyword_destaque": "Ensino Medio"
+      },
+      "fonte_dados": "Fonte: Saresp 2025",
+      "rodape": "Made with Flourish"
+    },
+    {
+      "id": "bar_stacked",
+      "arquivo": "inputs/infograficos/bar_stacked.jpeg",
+      "tipo": "Barras empilhadas (100% stacked)",
+      "conteudo": "Aumenta quantidade de alunos no nivel avancado em matematica e portugues em SP",
+      "layout": {
+        "descricao": "Grid 2x3 (LP e Mat x 2o, 5o, 9o ano), 3 anos cada (2023-2025)",
+        "grid": "2x3",
+        "linhas": ["Lingua Portuguesa", "Matematica"],
+        "colunas_serie": ["2o Ano", "5o Ano", "9o Ano"],
+        "anos": ["2023", "2024", "2025"]
+      },
+      "categorias": [
+        {"nome": "Abaixo do Basico", "cor": "cinza escuro"},
+        {"nome": "Basico", "cor": "cinza medio"},
+        {"nome": "Adequado", "cor": "verde claro"},
+        {"nome": "Avancado", "cor": "verde escuro"}
+      ],
+      "fonte_dados": "Fonte: Saresp 2025"
+    },
+    {
+      "id": "info_barras",
+      "arquivo": "inputs/infograficos/info_barras.jpeg",
+      "tipo": "Barras verticais serie historica",
+      "conteudo": "Estado de SP registra em janeiro de 2026 o menor numero de roubos da serie historica",
+      "layout": {
+        "descricao": "Barras de 2001 a 2026, eixo Y com valores ate 25.000",
+        "periodo": "2001-2026",
+        "eixo_y_max": 25000
+      },
+      "cores": {
+        "anos_passados": "#C0C0C0 (cinza)",
+        "ano_atual": "verde"
+      },
+      "estilo_titulo": {
+        "formato": "Negrito com keyword em cor verde",
+        "keyword_destaque": "janeiro de 2026"
+      },
+      "fonte_dados": "Fonte: SSP"
+    },
+    {
+      "id": "info_barras_2",
+      "arquivo": "inputs/infograficos/info_barras_2.jpeg",
+      "tipo": "Barras verticais serie historica",
+      "conteudo": "Cidade de SP registra em janeiro de 2026 o menor numero de roubos da serie historica",
+      "layout": {
+        "descricao": "Mesmo padrao visual que info_barras.jpeg"
+      },
+      "cores": {
+        "anos_passados": "#C0C0C0 (cinza)",
+        "ano_atual": "verde"
+      },
+      "estilo_titulo": {
+        "formato": "Negrito com keyword em cor verde",
+        "keyword_destaque": "janeiro de 2026"
+      },
+      "fonte_dados": "Fonte: SSP"
+    },
+    {
+      "id": "tabela",
+      "arquivo": "inputs/infograficos/tabela.jpeg",
+      "tipo": "Tabela comparativa com variacao",
+      "conteudo": "Principais indicadores criminais recuam no estado de SP no primeiro mes de 2026",
+      "layout": {
+        "descricao": "Tabela com colunas de comparacao e variacao",
+        "colunas": ["Natureza", "Jan-2025", "Jan-2026", "Variacao absoluta", "Variacao %"]
+      },
+      "cores": {
+        "fundo_destaque": "verde nas celulas de Jan-2026",
+        "texto_variacao_negativa": "vermelho"
+      },
+      "estilo_titulo": {
+        "formato": "Negrito com keyword em cor verde",
+        "keyword_destaque": "indicadores criminais recuam"
+      },
+      "fonte_dados": "Fonte: SSP"
+    }
+  ],
+  "padroes_visuais_recorrentes": {
+    "fundo": "Branco limpo",
+    "titulo": {
+      "estilo": "Negrito com keyword destacada em verde",
+      "posicao": "Topo"
+    },
+    "subtitulo": {
+      "estilo": "Descritivo em cinza/preto, fonte menor",
+      "posicao": "Abaixo do titulo"
+    },
+    "fonte_dados": {
+      "estilo": "Texto em cinza, fonte pequena",
+      "posicao": "Canto inferior esquerdo"
+    },
+    "design": {
+      "minimalista": true,
+      "espaco_branco": "abundante",
+      "cantos_barras": "levemente arredondados"
+    },
+    "semantica_cores": {
+      "verde": "Destaque positivo / dado atual / crescimento",
+      "cinza": "Dados historicos / contexto / baseline",
+      "vermelho": "Dados negativos / queda / alerta"
+    }
+  },
+  "dados_exemplo": {
+    "arquivo": "inputs/dados-exemplo/slide3-serie-historica-proficiencias.csv",
+    "estrutura": {
+      "colunas": ["Edicao", "Disciplina", "2o_Ano", "5o_Ano", "9o_Ano"],
+      "disciplinas": ["Lingua Portuguesa", "Matematica"],
+      "periodo": "2015-2025",
+      "fonte": "Saresp",
+      "tipo_valores": "Proficiencias medias (escala numerica)",
+      "observacao": "2o_Ano so possui dados a partir de 2021"
+    }
+  }
+}

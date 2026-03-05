@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp /tmp/gh_extracted/bin/gh.exe /c/Users/gabriel.croquer/.local/bin/gh.exe)",
+      "Bash(/c/Users/gabriel.croquer/.local/bin/gh.exe --version)"
+    ]
+  }
+}

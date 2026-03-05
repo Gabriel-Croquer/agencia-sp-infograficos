@@ -1,0 +1,175 @@
+{
+  "data_revisao": "2026-03-05",
+  "templates_revisados": [
+    {
+      "arquivo": "template-bar-vertical.html",
+      "status": "corrigido",
+      "problemas_encontrados": [
+        "CONFIG.ano_destaque estava 2026 mas os dados so vao ate 2025 - barra de destaque nao funcionava"
+      ],
+      "correcoes_aplicadas": [
+        "Alterado ano_destaque de 2026 para 2025 para corresponder aos dados"
+      ],
+      "verificacoes": {
+        "html_valido": true,
+        "css_valido": true,
+        "js_sem_erros": true,
+        "config_editavel": true,
+        "dados_exemplo": true,
+        "verde_destaque_0B9247": true,
+        "fonte_montserrat": true,
+        "titulo_bold_destaque": true,
+        "subtitulo_cinza": true,
+        "fonte_dados_rodape": true,
+        "fundo_branco": true,
+        "tooltip": true,
+        "animacao": true,
+        "hover": true,
+        "responsividade": true,
+        "acessibilidade": true
+      }
+    },
+    {
+      "arquivo": "template-bar-horizontal.html",
+      "status": "aprovado",
+      "problemas_encontrados": [],
+      "correcoes_aplicadas": [],
+      "verificacoes": {
+        "html_valido": true,
+        "css_valido": true,
+        "js_sem_erros": true,
+        "config_editavel": true,
+        "dados_exemplo": true,
+        "verde_destaque_0B9247": true,
+        "fonte_montserrat": true,
+        "titulo_bold_destaque": true,
+        "subtitulo_cinza": true,
+        "fonte_dados_rodape": true,
+        "fundo_branco": true,
+        "tooltip": true,
+        "animacao": true,
+        "hover": true,
+        "responsividade": true,
+        "acessibilidade": true
+      }
+    },
+    {
+      "arquivo": "template-bar-stacked.html",
+      "status": "corrigido",
+      "problemas_encontrados": [
+        "Cor da classe .destaque era #2E7D32 em vez de #0B9247",
+        "Cor da classe .disciplina era #2E7D32 em vez de #0B9247",
+        "cores_nivel usava #2E7D32 no nivel Avancado em vez de #0B9247",
+        "Faltavam links preconnect para Google Fonts (performance)"
+      ],
+      "correcoes_aplicadas": [
+        "Alterada cor .destaque para #0B9247",
+        "Alterada cor .disciplina para #0B9247",
+        "Alterada cor Avancado em cores_nivel para #0B9247",
+        "Adicionados links preconnect para fonts.googleapis.com e fonts.gstatic.com"
+      ],
+      "verificacoes": {
+        "html_valido": true,
+        "css_valido": true,
+        "js_sem_erros": true,
+        "config_editavel": true,
+        "dados_exemplo": true,
+        "verde_destaque_0B9247": true,
+        "fonte_montserrat": true,
+        "titulo_bold_destaque": true,
+        "subtitulo_cinza": true,
+        "fonte_dados_rodape": true,
+        "fundo_branco": true,
+        "tooltip": true,
+        "animacao": true,
+        "hover": true,
+        "responsividade": true,
+        "acessibilidade": true
+      }
+    },
+    {
+      "arquivo": "template-tabela-comparativa.html",
+      "status": "aprovado",
+      "problemas_encontrados": [],
+      "correcoes_aplicadas": [],
+      "verificacoes": {
+        "html_valido": true,
+        "css_valido": true,
+        "js_sem_erros": true,
+        "config_editavel": true,
+        "dados_exemplo": true,
+        "verde_destaque_0B9247": true,
+        "fonte_montserrat": true,
+        "titulo_bold_destaque": true,
+        "subtitulo_cinza": true,
+        "fonte_dados_rodape": true,
+        "fundo_branco": true,
+        "tooltip": false,
+        "animacao": true,
+        "hover": true,
+        "responsividade": true,
+        "acessibilidade": true
+      },
+      "notas": "Tabela nao usa tooltip pois a interatividade e feita via ordenacao de colunas e hover nas linhas"
+    },
+    {
+      "arquivo": "template-linha-temporal.html",
+      "status": "aprovado",
+      "problemas_encontrados": [],
+      "correcoes_aplicadas": [],
+      "verificacoes": {
+        "html_valido": true,
+        "css_valido": true,
+        "js_sem_erros": true,
+        "config_editavel": true,
+        "dados_exemplo": true,
+        "verde_destaque_0B9247": true,
+        "fonte_montserrat": true,
+        "titulo_bold_destaque": true,
+        "subtitulo_cinza": true,
+        "fonte_dados_rodape": true,
+        "fundo_branco": true,
+        "tooltip": true,
+        "animacao": true,
+        "hover": true,
+        "responsividade": true,
+        "acessibilidade": true
+      }
+    },
+    {
+      "arquivo": "template-card-kpi.html",
+      "status": "corrigido",
+      "problemas_encontrados": [
+        "Fundo do body era #F5F5F5 em vez de #FFFFFF (branco da identidade visual)"
+      ],
+      "correcoes_aplicadas": [
+        "Alterado background-color do body para #FFFFFF"
+      ],
+      "verificacoes": {
+        "html_valido": true,
+        "css_valido": true,
+        "js_sem_erros": true,
+        "config_editavel": true,
+        "dados_exemplo": true,
+        "verde_destaque_0B9247": true,
+        "fonte_montserrat": true,
+        "titulo_bold_destaque": true,
+        "subtitulo_cinza": true,
+        "fonte_dados_rodape": true,
+        "fundo_branco": true,
+        "tooltip": false,
+        "animacao": true,
+        "hover": true,
+        "responsividade": true,
+        "acessibilidade": true
+      },
+      "notas": "Cards usam animacao de contagem e hover com elevacao em vez de tooltip"
+    }
+  ],
+  "resumo": {
+    "total": 6,
+    "aprovados": 3,
+    "corrigidos": 3,
+    "reprovados": 0
+  }
+}
