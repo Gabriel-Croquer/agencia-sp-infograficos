@@ -30,7 +30,7 @@
     }
 
     .chart-title {
-      font-size: 22px;
+      font-size: 28px;
       font-weight: 700;
       line-height: 1.3;
       margin-bottom: 8px;
@@ -42,7 +42,7 @@
     }
 
     .chart-subtitle {
-      font-size: 14px;
+      font-size: 17px;
       font-weight: 400;
       color: #666;
       line-height: 1.4;
@@ -61,7 +61,7 @@
     }
 
     .chart-source {
-      font-size: 12px;
+      font-size: 14px;
       color: #808080;
       margin-top: 12px;
     }
@@ -81,7 +81,7 @@
       background: #1D1D1B;
       color: #fff;
       font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
+      font-size: 14px;
       padding: 8px 12px;
       border-radius: 4px;
       line-height: 1.5;
@@ -117,8 +117,8 @@
     }
 
     @media (max-width: 600px) {
-      .chart-title { font-size: 17px; }
-      .chart-subtitle { font-size: 12px; }
+      .chart-title { font-size: 22px; }
+      .chart-subtitle { font-size: 14px; }
     }
   </style>
 </head>
@@ -263,7 +263,7 @@ anos.forEach(function(ano) {
     text.setAttribute("y", y + 4);
     text.setAttribute("text-anchor", "end");
     text.setAttribute("font-family", "Montserrat, sans-serif");
-    text.setAttribute("font-size", "10");
+    text.setAttribute("font-size", "14");
     text.setAttribute("fill", "#808080");
     text.textContent = tick === 0 ? "0" : tick.toLocaleString("pt-BR");
     svg.appendChild(text);
@@ -290,7 +290,7 @@ anos.forEach(function(ano) {
       text.setAttribute("y", yScale(0) + 20);
       text.setAttribute("text-anchor", "middle");
       text.setAttribute("font-family", "Montserrat, sans-serif");
-      text.setAttribute("font-size", "9");
+      text.setAttribute("font-size", "11");
       text.setAttribute("fill", d.ano === 2025 ? CONFIG.cor_destaque : "#808080");
       text.setAttribute("font-weight", d.ano === 2025 ? "700" : "400");
       // Show only odd years to avoid crowding, plus 2024 and 2025
