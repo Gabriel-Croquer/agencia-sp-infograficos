@@ -35,6 +35,12 @@
       "arquivo": "template-card-kpi.html",
       "nome": "Cards KPI - Indicadores com Variacao",
       "descricao": "Grid de cards com animacao de contagem, setas de variacao coloridas (verde para positivo, vermelho para negativo) e suporte a logica invertida para indicadores de seguranca."
+    },
+    {
+      "id": "mapa-coropletico",
+      "arquivo": "template-mapa-coropletico.html",
+      "nome": "Mapa Coropletico - Municipios de SP",
+      "descricao": "Mapa interativo do estado de SP colorido por municipio com D3.js. Suporta escalas threshold (faixas discretas), sequential (gradiente) e categorical. Ideal para dados geograficos como homicidios por cidade, cobertura de servicos, indicadores por municipio. Requer TopoJSON dos municipios embutido no CONFIG."
     }
   ]
 }

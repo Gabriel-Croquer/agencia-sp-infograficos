@@ -17,6 +17,63 @@ Quando o usuario pedir um infografico sem especificar pasta, criar uma nova subp
 6. Quando aprovado: commit + push → GitHub Pages atualiza automaticamente
 7. Fornecer codigo embed (iframe) para WordPress
 
+## Barras sem labels
+
+Por padrao, barras NAO devem ter labels (numeros em cima). O valor so aparece no tooltip ao passar o mouse. Se o usuario pedir explicitamente labels nas barras, adicionar — mas nunca por padrao.
+
+
+## Embed sem scrollbar
+
+Todo HTML de infografico DEVE incluir, para que o iframe no WordPress se ajuste automaticamente ao conteudo (sem scrollbar, sem espaco branco):
+
+1. No CSS:
+```css
+html, body { height: auto; overflow: hidden; }
+body { padding: 20px 20px 10px; }
+```
+
+2. Antes de `</body>`, o script de auto-resize:
+```html
+<script>
+function notifyHeight() {
+  var h = document.documentElement.scrollHeight;
+  window.parent.postMessage({ sentinel: 'agencia-sp', type: 'resize', height: h }, '*');
+}
+window.addEventListener('load', notifyHeight);
+window.addEventListener('resize', notifyHeight);
+setTimeout(notifyHeight, 2500);
+</script>
+```
+
+3. O embed no WordPress usa `scrolling="no"` e o listener:
+```html
+<div style="max-width:960px;width:100%">
+  <iframe src="URL_DO_INFO" width="100%" height="600" style="border:none;" scrolling="no" loading="lazy"></iframe>
+</div>
+<script>
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.sentinel === 'agencia-sp' && e.data.type === 'resize') {
+    e.source && document.querySelectorAll('iframe').forEach(function(f) {
+      if (f.contentWindow === e.source) f.style.height = e.data.height + 'px';
+    });
+  }
+});
+</script>
+```
+
+**IMPORTANTE:** O WordPress pode bloquear o `<script>` do listener. Nesse caso, o embed deve usar apenas o iframe com altura fixa ajustada ao conteudo, sem script:
+```html
+<div style="max-width:960px;width:100%">
+  <iframe src="URL_DO_INFO" width="100%" height="680" style="border:none;overflow:hidden;" scrolling="no" loading="lazy"></iframe>
+</div>
+```
+
+Alturas de referencia por tipo de infografico (testar e ajustar conforme necessario):
+- Barras verticais (serie mensal, ~34 barras): `height="680"`
+- Mapa coropletico (municipios de SP): `height="750"`
+- Outros formatos: testar no WordPress e ajustar
+
+
 ## URL base do GitHub Pages
 
 `https://gabriel-croquer.github.io/agencia-sp-infograficos/`
