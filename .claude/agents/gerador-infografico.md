@@ -76,34 +76,49 @@ Se o arquivo ainda nao estiver publicado online, instrua o usuario a:
 Quando o usuario pedir um mapa do estado de SP por municipio, use o template `mapa-coropletico`.
 
 ### Dados necessarios
-1. **GeoJSON/TopoJSON** dos municipios de SP (o usuario fornece o arquivo)
-2. **CSV** com dados por municipio (deve ter coluna de codigo IBGE para join)
+1. **GeoJSON base** dos municipios de SP — ja salvo em `templates/sp_municipios_2024.geojson` (644 municipios, winding order corrigido para D3, 667KB)
+2. **CSV** com dados por municipio — deve ter coluna de codigo IBGE (7 digitos, ex: `3550308`) para join
+
+### IMPORTANTE: Winding Order
+O D3.js usa convencao de winding order OPOSTA ao GeoJSON padrao (RFC 7946). O arquivo `sp_municipios_2024.geojson` ja tem o winding order corrigido. Se o usuario fornecer um GeoJSON novo, DEVE inverter os aneis dos poligonos antes de usar:
+```python
+def reverse_rings(geometry):
+    if geometry is None or geometry.get('type') is None:
+        return geometry
+    if geometry['type'] == 'Polygon':
+        geometry['coordinates'] = [ring[::-1] for ring in geometry['coordinates']]
+    elif geometry['type'] == 'MultiPolygon':
+        geometry['coordinates'] = [[ring[::-1] for ring in poly] for poly in geometry['coordinates']]
+    return geometry
+```
 
 ### Processamento Python
 ```python
-import json
+import json, pandas as pd
 
-# 1. Ler GeoJSON do usuario
-with open('caminho/do/geojson.json', 'r', encoding='utf-8') as f:
+# 1. Ler GeoJSON base (winding order ja corrigido)
+with open('templates/sp_municipios_2024.geojson', encoding='utf-8') as f:
     geo = json.load(f)
 
-# 2. Tentar converter para TopoJSON (reduz 80% do tamanho)
-try:
-    import topojson
-    topo = topojson.Topology(geo, toposimplify=0.001)
-    topo_dict = topo.to_dict()
-except ImportError:
-    # Fallback: usar GeoJSON direto (maior, mas funciona)
-    # Nesse caso, adaptar o CONFIG para usar GeoJSON
-    pass
-
-# 3. Ler CSV com pandas, fazer join por codigo IBGE
-import pandas as pd
+# 2. Ler CSV com pandas
 df = pd.read_csv('dados.csv')
-dados = df.to_dict('records')
-# Garantir que codigo_ibge e string
-for d in dados:
-    d['codigo_ibge'] = str(d['codigo_ibge'])
+
+# 3. Montar array de dados para o CONFIG
+# Adaptar nomes de colunas conforme o CSV do usuario
+dados = []
+for _, row in df.iterrows():
+    dados.append({
+        'codigo_ibge': str(row['codigo_ibge']),  # DEVE ser string
+        'nome': row['municipio'],
+        'valor': row['valor']
+        # Adicionar mais campos conforme necessario para tooltip
+    })
+
+# 4. Gerar o GeoJSON como string para embutir no HTML
+geo_str = json.dumps(geo, ensure_ascii=False, separators=(',', ':'))
+
+# 5. Injetar no template: substituir "geojson: null" por "geojson: <geo_str>"
+#    e substituir "dados: [...]" pelo array real
 ```
 
 ### Escolha da escala de cores
@@ -112,14 +127,15 @@ for d in dados:
 - **Dados continuos** (populacao, renda): usar `tipo_escala: "sequential"`
 
 ### CONFIG do mapa
-- `topojson`: o TopoJSON inteiro como objeto JS (injetar no HTML)
-- `topojson_objeto`: nome do objeto dentro do TopoJSON (ex: "municipios")
-- `topojson_campo_id`: campo nas properties do TopoJSON que corresponde ao codigo IBGE (ex: "CD_MUN")
-- `dados`: array de objetos com `codigo_ibge`, `nome`, e campos de valor
+- `geojson`: o GeoJSON inteiro como objeto JS (injetar no HTML, ~667KB)
+- `geojson_campo_id`: campo nas properties do GeoJSON que corresponde ao codigo IBGE (padrao: `"CD_MUN"`)
+- `dados`: array de objetos com `codigo_ibge` (string!), `nome`, e campos de valor
+- `mapa.campo_valor`: nome do campo em dados[] que define a cor
+- `mapa.faixas`: para threshold, array de { limite, cor, rotulo }
 - `mapa.tooltip_campos`: configurar quais campos aparecem no tooltip
 
 ### Tamanho do arquivo
-O HTML final com TopoJSON embutido tera 600KB-2MB. Isso e normal para mapas.
+O HTML final com GeoJSON embutido tera ~750KB-1.5MB. Isso e normal para mapas.
 
 ### Embed WordPress
 Usar altura de iframe maior para mapas:
