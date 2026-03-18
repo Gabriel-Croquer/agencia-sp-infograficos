@@ -201,14 +201,15 @@ geo_str = json.dumps(geo, ensure_ascii=False, separators=(',', ':'))
 # Substituir capitulos[] pelos capitulos reais
 ```
 
-### Embed WordPress
-Scrollytelling e mais alto que infograficos estaticos. Usar altura maior:
+### Embed WordPress (DIFERENTE dos infograficos estaticos!)
+Scrollytelling precisa de scroll interno para funcionar. O embed usa `scrolling="auto"` (NAO "no") e full-width para ocupar toda a tela:
 ```html
-<div style="max-width:960px;width:100%">
-  <iframe src="URL_DO_SCROLLY" width="100%" height="3000" style="border:none;" scrolling="no" loading="lazy"></iframe>
+<div style="width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;">
+  <iframe src="URL_DO_SCROLLY" width="100%" height="700" style="border:none;" scrolling="auto" loading="lazy"></iframe>
 </div>
 ```
-Calcular altura aproximada: ~80vh * numero_capitulos. Minimo `height="2500"`.
+**NUNCA** usar `scrolling="no"` em scrollytelling — se usar, o scrollama nao funciona.
+O truque CSS `width:100vw; left:50%; margin-left:-50vw` faz o iframe escapar da coluna central do WordPress.
 
 ## Regras
 - NUNCA peca ao usuario para editar o CONFIG manualmente

@@ -140,11 +140,75 @@ O Read tool nao consegue ler PDFs no Windows porque depende de `pdftoppm`. Soluc
 ### Fonte: Montserrat precisa ser explicita em TUDO
 Mesmo definindo `font-family` no `body`, alguns elementos (tooltips, SVG text) podem herdar fontes do sistema. Verificamos que todos os 6 templates tem `'Montserrat', sans-serif` como unica font-family declarada.
 
+### Mapa Coropletico: D3 e o winding order invertido
+
+Essa foi a licao mais dolorosa do projeto. Gastamos varias tentativas ate o mapa renderizar corretamente — em vez de mostrar os 645 municipios de SP, aparecia um retangulo solido de uma cor so cobrindo todo o SVG.
+
+**O problema:** O D3.js usa uma convencao de winding order (ordem dos vertices dos poligonos) **oposta** ao padrao GeoJSON RFC 7946. No RFC 7946, aneis exteriores sao counter-clockwise. No D3, sao clockwise. Quando o D3 recebe um poligono com winding order "errado" (do ponto de vista dele), ele interpreta como "todo o planeta MENOS esse poligono". Resultado: 645 poligonos invertidos empilhados = um retangulo solido.
+
+**A solucao:** Inverter todos os aneis de coordenadas antes de usar no D3:
+```python
+def reverse_rings(geometry):
+    if geometry['type'] == 'Polygon':
+        geometry['coordinates'] = [ring[::-1] for ring in geometry['coordinates']]
+    elif geometry['type'] == 'MultiPolygon':
+        geometry['coordinates'] = [[ring[::-1] for ring in poly] for poly in geometry['coordinates']]
+```
+
+O arquivo `templates/sp_municipios_2024.geojson` ja vem com o winding order corrigido. Se alguem trocar o GeoJSON, TEM que inverter de novo.
+
+### TopoJSON do Python != TopoJSON do D3
+
+Tentamos usar a lib Python `topojson` para converter GeoJSON → TopoJSON (arquivo menor). O TopoJSON gerado pelo Python e estruturalmente diferente do que a lib `topojson-client` do D3 espera. Os nomes dos objetos internos, a estrutura dos arcos, tudo incompativel. Solucao: abandonamos TopoJSON e usamos GeoJSON direto. O arquivo fica maior (~670KB vs ~200KB), mas funciona sem dor de cabeca.
+
+### GeoJSON do IBGE pode vir com geometrias faltando
+
+O GeoJSON simplificado de municipios de SP veio com 644 geometrias em vez de 645. Aguas de Sao Pedro (menor municipio de SP, ~3.6 km²) tinha geometria nula — provavelmente perdida na simplificacao. Solucao: pegamos a geometria do GeoJSON original (nao simplificado) e injetamos no simplificado. Moral: sempre conferir se o numero de features bate com o esperado.
+
+### Workflow final do mapa coropletico
+
+O que funciona de verdade, sem surpresas:
+1. GeoJSON base ja salvo no projeto com winding order corrigido (`templates/sp_municipios_2024.geojson`)
+2. Ler CSV com pandas, montar array de dados com `codigo_ibge` (string, 7 digitos)
+3. Embutir o GeoJSON inteiro como JS literal no HTML (sim, ~670KB inline — funciona)
+4. D3 renderiza com `geoMercator().fitSize()` — sem tiles, sem Leaflet, SVG puro
+5. Escala de cores: categorical para sim/nao, threshold para faixas, sequential para valores continuos
+
+---
+
+### Scrollytelling: mapa narrativo com scroll
+
+O 8o template do projeto. Combina um mapa SVG sticky do estado de SP com capitulos de texto que rolam ao lado. Conforme o leitor rola, o mapa reage: da zoom em regioes, destaca municipios, mostra pontos de interesse, e troca a coloracao coropletica. Tudo controlado por um array `CONFIG.capitulos[]` onde cada capitulo define um `mapState`.
+
+**Stack:** scrollama.js (deteccao de scroll via IntersectionObserver, 5.9k stars no GitHub, lib padrao da industria usada por NYT, Pudding, WaPo, Vox) + D3 v7 (renderizacao SVG do mapa) + nosso GeoJSON de municipios de SP.
+
+**A pesquisa que antecedeu:** Antes de codar, pesquisamos repos do The Pudding (svelte-starter, climate-zones, gayborhood), Mapbox storytelling template, Jim Vallandingham (scroll_demo, a referencia canonica), D3 zoom-to-bounding-box do Mike Bostock, e IHME ScrollyTeller. O template final combina o melhor de cada:
+- Layout sticky-side do jsoma/simplified-scrollama-scrollytelling
+- d3.zoom transform do Observable (performatico — nao redesenha paths, so aplica CSS transform no `<g>`)
+- Config de chapters inspirado no Mapbox storytelling
+- Pattern de activateFunctions[] do Vallandingham
+
+**Como funciona o zoom:** Em vez de re-calcular a projecao (caro — redesenha 645 paths), usamos `d3.zoom` que aplica um transform CSS no grupo `<g>` do SVG. Isso e instantaneo. O truque e counter-scale os stroke-widths e raios dos pontos dividindo por `transform.k` (o fator de escala), senao as bordas ficam grossas demais no zoom.
+
+**Licao crucial sobre iframe + scrollytelling:**
+Scrollytelling **precisa** de scroll para funcionar — o scrollama detecta quais capitulos estao visiveis conforme o usuario rola. Nosso padrao de embed para infograficos estaticos usa `scrolling="no"` + `overflow:hidden`, o que **mata o scrollytelling completamente** (nada se move). A solucao:
+1. CSS do template: `overflow-y: auto` (nao `hidden`) + scrollbar invisivel via `scrollbar-width: none` e `::-webkit-scrollbar { display: none }`
+2. Embed WordPress: `scrolling="auto"` (nao `"no"`) + `height="700"` (altura de janela, nao do conteudo todo)
+3. Full-width: o truque `width:100vw; left:50%; margin-left:-50vw` faz o iframe escapar da coluna central do WordPress e ocupar a tela inteira
+
+**Embed WordPress para scrollytelling:**
+```html
+<div style="width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;">
+  <iframe src="URL" width="100%" height="700" style="border:none;" scrolling="auto" loading="lazy"></iframe>
+</div>
+```
+
 ---
 
 ## Proximos Passos
 
-1. **Subir repo no GitHub e ativar GitHub Pages** — para ter URLs publicas dos infograficos
-2. **Testar o workflow completo** — enviar um CSV real, gerar infografico, publicar, embedar no WordPress
+1. ~~Subir repo no GitHub e ativar GitHub Pages~~ ✓ Feito
+2. ~~Testar o workflow completo~~ ✓ Feito (infograficos de roubos no centro de SP)
 3. **Iterar nos templates** — ajustar detalhes visuais conforme feedback do time de arte
-4. **Novos tipos de template** — se surgirem necessidades (mapa, donut chart, treemap, etc.)
+4. ~~Novos tipos de template~~ ✓ Mapa coropletico (7o) e scrollytelling-mapa (8o) adicionados
+5. **Novos formatos** — donut chart, treemap, scatter plot se surgirem necessidades

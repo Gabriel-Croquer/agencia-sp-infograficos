@@ -74,6 +74,39 @@ Alturas de referencia por tipo de infografico (testar e ajustar conforme necessa
 - Outros formatos: testar no WordPress e ajustar
 
 
+## Embed de Scrollytelling (DIFERENTE dos infograficos estaticos)
+
+Scrollytelling funciona por scroll — o leitor PRECISA rolar o conteudo para acionar os capitulos. Por isso o embed e fundamentalmente diferente dos infograficos estaticos:
+
+### CSS obrigatorio no template scrollytelling
+```css
+html, body { height: 100%; overflow-y: auto; overflow-x: hidden; }
+/* Esconde scrollbar mantendo scroll funcional */
+html { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar { display: none; }
+```
+
+### Embed WordPress — full-width, sem scrollbar visivel
+```html
+<div style="width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;">
+  <iframe src="URL_DO_SCROLLY" width="100%" height="700" style="border:none;" scrolling="auto" loading="lazy"></iframe>
+</div>
+```
+
+**Diferencas vs embed de infografico estatico:**
+| | Infografico estatico | Scrollytelling |
+|---|---|---|
+| `scrolling` | `"no"` | `"auto"` |
+| `height` | Altura total do conteudo (ex: 680) | Altura de "janela" (ex: 700) |
+| Container | `max-width:960px` | `width:100vw` (full-width) |
+| Scrollbar | Nenhuma (overflow:hidden) | Invisivel (CSS scrollbar-width:none) |
+| CSS body | `overflow: hidden` | `overflow-y: auto` |
+
+**IMPORTANTE:** Scrollytelling NUNCA usa `scrolling="no"` nem `overflow:hidden`. Se usar, o scrollama nao funciona e nada acontece ao rolar.
+
+O truque `width:100vw; left:50%; margin-left:-50vw` faz o iframe "escapar" da coluna central do WordPress e ocupar toda a largura da tela.
+
+
 ## URL base do GitHub Pages
 
 `https://gabriel-croquer.github.io/agencia-sp-infograficos/`
