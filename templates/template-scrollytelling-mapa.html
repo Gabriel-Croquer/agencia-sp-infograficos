@@ -18,6 +18,10 @@
       overflow-x: hidden;
     }
 
+    /* Esconde scrollbar mantendo scroll funcional */
+    html { scrollbar-width: none; -ms-overflow-style: none; }
+    html::-webkit-scrollbar { display: none; }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background: #FFFFFF;
