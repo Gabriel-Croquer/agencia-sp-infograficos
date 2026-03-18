@@ -41,6 +41,12 @@
       "arquivo": "template-mapa-coropletico.html",
       "nome": "Mapa Coropletico - Municipios de SP",
       "descricao": "Mapa interativo do estado de SP colorido por municipio com D3.js. Suporta escalas threshold (faixas discretas), sequential (gradiente) e categorical. Ideal para dados geograficos como homicidios por cidade, cobertura de servicos, indicadores por municipio. Requer TopoJSON dos municipios embutido no CONFIG."
+    },
+    {
+      "id": "scrollytelling-mapa",
+      "arquivo": "template-scrollytelling-mapa.html",
+      "nome": "Scrollytelling - Mapa Narrativo de SP",
+      "descricao": "Mapa interativo com narrativa scrollytelling. Capitulos de texto ao lado de um mapa sticky que reage ao scroll: zoom em regioes, destaque de municipios, marcadores de pontos, e troca de coloracao coropletica. Ideal para reportagens longas com componente geografico. Usa scrollama.js + D3.js."
     }
   ]
 }

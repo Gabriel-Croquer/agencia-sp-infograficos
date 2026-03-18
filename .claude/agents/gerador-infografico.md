@@ -145,6 +145,71 @@ Usar altura de iframe maior para mapas:
 </div>
 ```
 
+## Workflow especifico: Scrollytelling Mapa
+
+Quando o usuario pedir uma reportagem narrativa com mapa (scrollytelling, storytelling geografico, "mapa que muda conforme rola"), use o template `scrollytelling-mapa`.
+
+### Quando usar
+- Reportagens longas com componente geografico
+- Historias que precisam guiar o leitor por regioes do estado
+- Dados que variam por regiao e precisam de contexto narrativo
+- Quando o usuario quer zoom, destaque de municipios, ou pontos no mapa reagindo ao scroll
+
+### Como estruturar os capitulos
+1. Leia o texto/briefing do usuario e divida em 3-6 capitulos
+2. Cada capitulo deve ter um `titulo` (curto, impactante) e `texto` (1-3 paragrafos)
+3. Defina o `mapState` de cada capitulo:
+   - **zoom**: `"full"` para visao geral ou `{ tipo: "municipios", codigos: ["3550308", ...] }` para zoom em municipios especificos
+   - **highlight**: `{ codigos: [...], cor: "#0B9247" }` para destacar municipios
+   - **pontos**: `true/false` para mostrar/esconder marcadores
+   - **cores**: `null` (cor padrao) ou objeto com `tipo_escala`/`faixas` para coloracao coropletica
+
+### Como determinar codigos IBGE
+- Use o GeoJSON base (`templates/sp_municipios_2024.geojson`) — campo `CD_MUN` tem os codigos
+- Codigos comuns: Sao Paulo=3550308, Guarulhos=3518800, Campinas=3509502, Osasco=3534401, Santo Andre=3547809, Sao Bernardo=3548708, Diadema=3513801, Sorocaba=3552205, Ribeirao Preto=3543402, Santos=3548500
+
+### Processamento Python
+```python
+import json, pandas as pd
+
+# 1. Ler GeoJSON base
+with open('templates/sp_municipios_2024.geojson', encoding='utf-8') as f:
+    geo = json.load(f)
+
+# 2. Ler CSV com pandas
+df = pd.read_csv('dados.csv')
+
+# 3. Montar array de dados
+dados = []
+for _, row in df.iterrows():
+    dados.append({
+        'codigo_ibge': str(row['codigo_ibge']),
+        'nome': row['municipio'],
+        'valor': row['valor']
+    })
+
+# 4. Montar pontos (se necessario)
+pontos = [
+    { 'lat': -23.55, 'lng': -46.63, 'label': 'Sao Paulo', 'cor': '#FF161F', 'raio': 6 },
+]
+
+# 5. Injetar no template
+geo_str = json.dumps(geo, ensure_ascii=False, separators=(',', ':'))
+# Substituir "geojson: null" por "geojson: <geo_str>"
+# Substituir "dados: []" pelo array real
+# Substituir "pontos: []" pelo array real
+# Substituir capitulos[] pelos capitulos reais
+```
+
+### Embed WordPress
+Scrollytelling e mais alto que infograficos estaticos. Usar altura maior:
+```html
+<div style="max-width:960px;width:100%">
+  <iframe src="URL_DO_SCROLLY" width="100%" height="3000" style="border:none;" scrolling="no" loading="lazy"></iframe>
+</div>
+```
+Calcular altura aproximada: ~80vh * numero_capitulos. Minimo `height="2500"`.
+
 ## Regras
 - NUNCA peca ao usuario para editar o CONFIG manualmente
 - Voce processa os dados e gera o HTML final pronto
