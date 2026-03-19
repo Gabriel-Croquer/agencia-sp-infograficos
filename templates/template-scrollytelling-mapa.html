@@ -238,6 +238,52 @@
       transform: scale(1.5);
     }
 
+    /* === INDICADOR DE SCROLL === */
+    .scroll-cue {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    .scroll-cue.hidden { opacity: 0; pointer-events: none; }
+    .scroll-cue-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: #0B9247;
+      letter-spacing: 0.5px;
+    }
+    .scroll-cue-arrows {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .scroll-cue-arrows span {
+      display: block;
+      width: 14px;
+      height: 14px;
+      border-right: 2px solid #0B9247;
+      border-bottom: 2px solid #0B9247;
+      transform: rotate(45deg);
+    }
+    .scroll-cue-arrows span:nth-child(1) { animation: scrollFlow 1.8s infinite; }
+    .scroll-cue-arrows span:nth-child(2) { animation: scrollFlow 1.8s infinite 0.25s; }
+    .scroll-cue-arrows span:nth-child(3) { animation: scrollFlow 1.8s infinite 0.5s; }
+    @keyframes scrollFlow {
+      0% { opacity: 0; transform: rotate(45deg) translateY(-6px); }
+      30% { opacity: 1; }
+      70% { opacity: 1; }
+      100% { opacity: 0; transform: rotate(45deg) translateY(6px); }
+    }
+
     /* === RESPONSIVE === */
     @media (max-width: 768px) {
       body { padding: 0; }
@@ -323,7 +369,7 @@
         -webkit-backdrop-filter: blur(4px);
       }
 
-      .step:first-child { margin-top: 75vh; }
+      .step:first-child { margin-top: 40vh; }
       .step:last-child  { margin-bottom: 80vh; }
 
       .step h3 { font-size: 16px; }
@@ -331,6 +377,7 @@
 
       .step-indicator { display: none; }
       .scrolly-footer { padding: 0 16px; }
+
     }
   </style>
 </head>
@@ -348,6 +395,16 @@
       </div>
       <div class="scrolly__text" id="scrollyText">
         <!-- Capitulos gerados por JS -->
+      </div>
+    </div>
+
+    <!-- Indicador de scroll -->
+    <div class="scroll-cue" id="scrollCue">
+      <span class="scroll-cue-text">Role para explorar</span>
+      <div class="scroll-cue-arrows">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
 
@@ -810,6 +867,18 @@ var CONFIG = {
   applyMapState(0);
   var firstStep = document.querySelector(".step");
   if (firstStep) firstStep.classList.add("is-active");
+
+  // --- 16. Indicador de scroll ---
+  var scrollCue = document.getElementById("scrollCue");
+  if (scrollCue) {
+    var cueHidden = false;
+    window.addEventListener("scroll", function () {
+      if (!cueHidden && window.scrollY > 80) {
+        scrollCue.classList.add("hidden");
+        cueHidden = true;
+      }
+    });
+  }
 
 })();
 </script>
