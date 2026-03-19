@@ -839,10 +839,21 @@ var CONFIG = {
   }).onStepEnter(function (response) {
     applyMapState(response.index);
     // Marca step ativo
-    document.querySelectorAll(".step").forEach(function (s) {
+    var allSteps = document.querySelectorAll(".step");
+    allSteps.forEach(function (s) {
       s.classList.remove("is-active");
     });
     response.element.classList.add("is-active");
+
+    // Esconde indicador de scroll no ultimo step
+    var scrollCue = document.getElementById("scrollCue");
+    if (scrollCue) {
+      if (response.index >= allSteps.length - 1) {
+        scrollCue.style.display = "none";
+      } else {
+        scrollCue.style.display = "";
+      }
+    }
   });
 
   // Resize handler
@@ -869,21 +880,7 @@ var CONFIG = {
   if (firstStep) firstStep.classList.add("is-active");
 
   // --- 16. Indicador de scroll ---
-  var scrollCue = document.getElementById("scrollCue");
-  if (scrollCue) {
-    var allSteps = document.querySelectorAll(".step");
-    var lastStep = allSteps.length ? allSteps[allSteps.length - 1] : null;
-    window.addEventListener("scroll", function () {
-      // Esconde quando o ultimo step entra na tela OU perto do final da pagina
-      var nearBottom = (window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 200);
-      var lastVisible = lastStep && lastStep.getBoundingClientRect().top < window.innerHeight;
-      if (nearBottom || lastVisible) {
-        scrollCue.style.display = "none";
-      } else {
-        scrollCue.style.display = "";
-      }
-    });
-  }
+  // Controlado via scrollama onStepEnter (window.scrollY nao funciona com html overflow-y:auto)
 
 })();
 </script>
