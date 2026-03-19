@@ -240,6 +240,7 @@
 
     /* === RESPONSIVE === */
     @media (max-width: 768px) {
+      body { padding: 0; }
       .scrolly-container { padding: 0; }
 
       .scrolly-header {
@@ -250,68 +251,85 @@
       .chart-title { font-size: 18px; }
       .chart-subtitle { font-size: 12px; }
 
-      .scrolly {
-        flex-direction: column;
-      }
+      .scrolly { flex-direction: column; }
 
+      /* MAPA: fullscreen sticky background */
       .scrolly__map {
         flex: none;
         width: 100%;
-        height: 40vh;
+        height: 85vh;
         position: sticky;
         top: 0;
         z-index: 1;
         background: #FFFFFF;
-        padding: 8px 4px 4px;
-        justify-content: flex-start;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        padding: 16px 8px 8px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none;
       }
 
       .scrolly__map .map-area {
-        height: calc(40vh - 40px);
+        height: calc(85vh - 60px);
         display: flex;
         align-items: center;
+        justify-content: center;
       }
 
       .scrolly__map .map-area svg {
         max-height: 100%;
+        max-width: 100%;
         width: auto;
         margin: 0 auto;
       }
 
+      /* LEGENDA: absoluta no rodape do mapa */
       .scrolly__map .map-legend {
-        margin-top: 4px;
+        position: absolute;
+        bottom: 8px;
+        left: 0;
+        right: 0;
+        margin-top: 0;
         gap: 6px;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 4px 8px;
+        border-radius: 4px;
       }
 
       .scrolly__map .map-legend .legend-item { font-size: 10px; }
       .scrolly__map .map-legend .legend-swatch { width: 10px; height: 10px; }
 
+      /* TEXTO: overlay sobre o mapa */
       .scrolly__text {
         flex: none;
         width: 100%;
         position: relative;
         z-index: 2;
-        padding: 0 12px;
+        padding: 0 20px;
+        pointer-events: none;
       }
 
+      /* CARDS: semi-transparentes, centralizados, com backdrop blur */
       .step {
         min-height: auto;
-        padding: 20px 16px;
-        margin: 8px 0;
-        background: rgba(255,255,255,0.97);
-        border-radius: 8px;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+        padding: 20px 20px;
+        margin: 0 auto;
+        max-width: 320px;
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        pointer-events: auto;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
       }
 
-      .step:first-child { margin-top: 50vh; }
-      .step:last-child { margin-bottom: 50vh; }
+      .step:first-child { margin-top: 75vh; }
+      .step:last-child  { margin-bottom: 80vh; }
 
       .step h3 { font-size: 16px; }
       .step p { font-size: 14px; }
 
       .step-indicator { display: none; }
-
       .scrolly-footer { padding: 0 16px; }
     }
   </style>
@@ -759,7 +777,7 @@ var CONFIG = {
 
   scroller.setup({
     step: ".step",
-    offset: isMobile ? 0.7 : 0.5,
+    offset: isMobile ? 0.65 : 0.5,
     debug: false
   }).onStepEnter(function (response) {
     applyMapState(response.index);
@@ -772,6 +790,21 @@ var CONFIG = {
 
   // Resize handler
   window.addEventListener("resize", scroller.resize);
+
+  // Mobile: spacing entre cards em px para garantir 1 card visivel por vez
+  if (isMobile) {
+    function setMobileStepSpacing() {
+      var spacing = Math.round(window.innerHeight * 0.85);
+      document.querySelectorAll('.step').forEach(function(step, i, arr) {
+        if (i < arr.length - 1) {
+          step.style.marginBottom = spacing + 'px';
+        }
+      });
+      scroller.resize();
+    }
+    setMobileStepSpacing();
+    window.addEventListener('resize', setMobileStepSpacing);
+  }
 
   // --- 15. Estado inicial ---
   applyMapState(0);
