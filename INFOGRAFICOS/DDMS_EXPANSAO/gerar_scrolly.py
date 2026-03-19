@@ -124,6 +124,24 @@ for src in [os.path.join(BASE, 'salas-ddm-online-geo.csv')]:
                 regioes_campinas.add(code)
 
 # ============================================================
+# 3b. LER GEOJSON DE REGIOES ADMINISTRATIVAS
+# ============================================================
+
+ra_path = os.path.join(BASE, 'Regiao Administrativa.json')
+with open(ra_path, encoding='utf-8') as f:
+    ra_geojson = json.load(f)
+
+# Reverter winding order para D3 (mesmo fix do mapa de municipios)
+def reverse_rings(geometry):
+    if geometry['type'] == 'Polygon':
+        geometry['coordinates'] = [ring[::-1] for ring in geometry['coordinates']]
+    elif geometry['type'] == 'MultiPolygon':
+        geometry['coordinates'] = [[ring[::-1] for ring in poly] for poly in geometry['coordinates']]
+
+for feat in ra_geojson['features']:
+    reverse_rings(feat['geometry'])
+
+# ============================================================
 # 4. EXTRAIR LOGO BASE64
 # ============================================================
 
@@ -184,10 +202,10 @@ capitulos = [
         "texto": "As novas salas tornaram mais fácil para mulheres denunciarem agressores na Região Metropolitana de São Paulo, que passou de <strong>6 para 39 salas</strong> neste período.",
         "mapState": {
             "shapes": "neutro",
-            "layers": ["sala_pre", "sala_pos", "ddm"],
+            "layers": ["sala_pre", "sala_pos"],
             "zoom": {"codigos": list(regioes_rmsp)},
+            "ra": 10,
             "legenda": [
-                {"cor": "#9B59B6", "texto": "DDM presencial"},
                 {"cor": "#5DADE2", "texto": "Sala DDM Online (pré-2023)"},
                 {"cor": "#E74C3C", "texto": "Sala inaugurada 2023+"}
             ]
@@ -198,10 +216,10 @@ capitulos = [
         "texto": "Outra região com crescimento destaque: Campinas, onde o número de espaços de atendimento <strong>mais que dobrou</strong>, de 14 para 35 salas.",
         "mapState": {
             "shapes": "neutro",
-            "layers": ["sala_pre", "sala_pos", "ddm"],
+            "layers": ["sala_pre", "sala_pos"],
             "zoom": {"codigos": list(regioes_campinas)},
+            "ra": 4,
             "legenda": [
-                {"cor": "#9B59B6", "texto": "DDM presencial"},
                 {"cor": "#5DADE2", "texto": "Sala DDM Online (pré-2023)"},
                 {"cor": "#E74C3C", "texto": "Sala inaugurada 2023+"}
             ]
@@ -212,10 +230,10 @@ capitulos = [
         "texto": "A expansão também chegou ao interior do estado, especialmente no <strong>extremo oeste</strong> (Presidente Prudente) e <strong>extremo sul</strong> (Registro), regiões que antes tinham pouca ou nenhuma cobertura de salas DDM Online.",
         "mapState": {
             "shapes": "neutro",
-            "layers": ["sala_pre", "sala_pos", "ddm"],
+            "layers": ["sala_pre", "sala_pos"],
             "zoom": {"codigos": list(regioes_pp | regioes_reg)},
+            "ra": [9, 16],
             "legenda": [
-                {"cor": "#9B59B6", "texto": "DDM presencial"},
                 {"cor": "#5DADE2", "texto": "Sala DDM Online (pré-2023)"},
                 {"cor": "#E74C3C", "texto": "Sala inaugurada 2023+"}
             ]
@@ -225,12 +243,13 @@ capitulos = [
         "titulo": "O futuro da rede",
         "texto": "Para os próximos meses, a previsão é inaugurar mais <strong>60 salas DDM Online</strong>. Com a expansão, delegacias de 48 novas cidades passarão a ter acesso à rede de proteção. Ao todo, serão <strong>244 municípios</strong> com cobertura — quase 40% do total do estado.",
         "mapState": {
-            "shapes": "futuro",
+            "shapes": "futuro_completo",
             "layers": [],
             "zoom": "full",
             "legenda": [
-                {"cor": "#7B68AE", "texto": "Cobertura atual"},
-                {"cor": "#2ECC71", "texto": "Municípios com cobertura futura", "borda": True}
+                {"cor": "#7B68AE", "texto": "Cobertura anterior a 2023"},
+                {"cor": "#E74C3C", "texto": "Expansão da gestão atual"},
+                {"cor": "#2ECC71", "texto": "Próximas 60 salas", "borda": True}
             ]
         }
     }
@@ -241,6 +260,7 @@ capitulos = [
 # ============================================================
 
 geojson_str = json.dumps(geojson, ensure_ascii=False, separators=(',', ':'))
+ra_geojson_str = json.dumps(ra_geojson, ensure_ascii=False, separators=(',', ':'))
 ddm_str = json.dumps(ddms, ensure_ascii=False, separators=(',', ':'))
 sala_pre_str = json.dumps(salas_pre, ensure_ascii=False, separators=(',', ':'))
 sala_pos_str = json.dumps(salas_pos, ensure_ascii=False, separators=(',', ':'))
@@ -612,6 +632,7 @@ html = f'''<!DOCTYPE html>
   // === CONFIG ===
   var CONFIG = {{
     geojson: {geojson_str},
+    ra_geojson: {ra_geojson_str},
     cobertura: {cob_str},
     pontos: {{
       ddm: {ddm_str},
@@ -700,26 +721,93 @@ html = f'''<!DOCTYPE html>
     futuras: {{ data: CONFIG.pontos.futuras, cor: "#2ECC71", r: 3.5, opacity: 0.6 }}
   }};
 
+  // Spike/cone path generator: triangulo apontando para cima
+  function spikePath(cx, cy, baseW, h) {{
+    // Triangulo: ponta no topo (cx, cy-h), base em (cx-baseW/2, cy) e (cx+baseW/2, cy)
+    return "M" + cx + "," + (cy - h) + "L" + (cx - baseW/2) + "," + cy + "L" + (cx + baseW/2) + "," + cy + "Z";
+  }}
+
   Object.keys(layerConfig).forEach(function(key) {{
     var cfg = layerConfig[key];
     var lg = g.append("g").attr("class", "layer-" + key).style("display", "none");
+    var spikeH = cfg.r * 3;   // altura do spike
+    var spikeW = cfg.r * 1.5; // largura da base
     cfg.data.forEach(function(p) {{
       var coords = projection([p.lng, p.lat]);
       if (coords) {{
-        lg.append("circle")
-          .attr("cx", coords[0])
-          .attr("cy", coords[1])
-          .attr("r", cfg.r)
-          .attr("data-r", cfg.r)
+        lg.append("path")
+          .attr("d", spikePath(coords[0], coords[1], spikeW, spikeH))
+          .attr("data-cx", coords[0])
+          .attr("data-cy", coords[1])
+          .attr("data-bw", spikeW)
+          .attr("data-h", spikeH)
           .attr("fill", cfg.cor)
           .attr("fill-opacity", cfg.opacity || 0.85)
           .attr("stroke", "#fff")
-          .attr("stroke-width", 0.5)
-          .attr("stroke-opacity", 0.4);
+          .attr("stroke-width", 0.3)
+          .attr("stroke-opacity", 0.5);
       }}
     }});
     layers[key] = lg;
   }});
+
+  // === CAMADA DE REGIOES ADMINISTRATIVAS ===
+  var raLayer = g.append("g").attr("class", "layer-ra").style("display", "none");
+  var raPath = d3.geoPath().projection(projection);
+
+  CONFIG.ra_geojson.features.forEach(function(feat) {{
+    raLayer.append("path")
+      .attr("d", raPath(feat))
+      .attr("fill", "none")
+      .attr("stroke", "#E74C3C")
+      .attr("stroke-width", 2)
+      .attr("stroke-dasharray", "6,3")
+      .attr("opacity", 0.8)
+      .attr("data-ra-id", feat.properties.GID_RA)
+      .style("display", "none");
+  }});
+
+  // Mini-legenda da RA (nome da regiao no mapa)
+  var raLabel = g.append("text")
+    .attr("class", "ra-label")
+    .attr("text-anchor", "middle")
+    .attr("font-family", "Montserrat, sans-serif")
+    .attr("font-size", 12)
+    .attr("font-weight", 700)
+    .attr("fill", "#E74C3C")
+    .attr("stroke", "#fff")
+    .attr("stroke-width", 3)
+    .attr("paint-order", "stroke")
+    .style("display", "none");
+
+  function showRA(raIds) {{
+    if (!raIds) {{
+      raLayer.style("display", "none");
+      raLabel.style("display", "none");
+      return;
+    }}
+    var ids = Array.isArray(raIds) ? raIds : [raIds];
+    raLayer.style("display", "block");
+    raLayer.selectAll("path").each(function() {{
+      var el = d3.select(this);
+      var id = +el.attr("data-ra-id");
+      el.style("display", ids.indexOf(id) >= 0 ? "block" : "none");
+    }});
+    // Mostrar label da primeira RA visivel
+    var visibleRA = CONFIG.ra_geojson.features.find(function(f) {{
+      return ids.indexOf(f.properties.GID_RA) >= 0;
+    }});
+    if (visibleRA && ids.length === 1) {{
+      var centroid = raPath.centroid(visibleRA);
+      raLabel
+        .attr("x", centroid[0])
+        .attr("y", centroid[1] - 10)
+        .text(visibleRA.properties.RA)
+        .style("display", "block");
+    }} else {{
+      raLabel.style("display", "none");
+    }}
+  }}
 
   // === ZOOM ===
   var currentScale = 1;
@@ -752,12 +840,20 @@ html = f'''<!DOCTYPE html>
     g.transition().duration(800)
       .attr("transform", "translate(" + tx + "," + ty + ") scale(" + scale + ")");
 
-    // Counter-scale
+    // Counter-scale spikes + strokes
     setTimeout(function() {{
+      var invSqrt = 1 / Math.sqrt(scale);
       g.selectAll("path.muni").attr("stroke-width", 0.5 / scale);
-      g.selectAll("circle")
-        .attr("r", function() {{ return parseFloat(d3.select(this).attr("data-r")) / Math.sqrt(scale); }})
-        .attr("stroke-width", 0.5 / scale);
+      // Recalcular spikes com escala inversa
+      g.selectAll(".layer-ddm path, .layer-sala_pre path, .layer-sala_pos path, .layer-futuras path").each(function() {{
+        var el = d3.select(this);
+        var cx = +el.attr("data-cx"), cy = +el.attr("data-cy");
+        var bw = +el.attr("data-bw") * invSqrt, h = +el.attr("data-h") * invSqrt;
+        el.attr("d", spikePath(cx, cy, bw, h)).attr("stroke-width", 0.3 / scale);
+      }});
+      // Counter-scale RA boundary
+      raLayer.selectAll("path").attr("stroke-width", 2 / scale);
+      raLabel.attr("font-size", 12 / Math.sqrt(scale)).attr("stroke-width", 3 / Math.sqrt(scale));
     }}, 850);
   }}
 
@@ -768,9 +864,15 @@ html = f'''<!DOCTYPE html>
       .attr("transform", "translate(0,0) scale(1)");
     setTimeout(function() {{
       g.selectAll("path.muni").attr("stroke-width", 0.5);
-      g.selectAll("circle")
-        .attr("r", function() {{ return parseFloat(d3.select(this).attr("data-r")); }})
-        .attr("stroke-width", 0.5);
+      // Restaurar spikes ao tamanho original
+      g.selectAll(".layer-ddm path, .layer-sala_pre path, .layer-sala_pos path, .layer-futuras path").each(function() {{
+        var el = d3.select(this);
+        var cx = +el.attr("data-cx"), cy = +el.attr("data-cy");
+        var bw = +el.attr("data-bw"), h = +el.attr("data-h");
+        el.attr("d", spikePath(cx, cy, bw, h)).attr("stroke-width", 0.3);
+      }});
+      raLayer.selectAll("path").attr("stroke-width", 2);
+      raLabel.attr("font-size", 12).attr("stroke-width", 3);
     }}, 850);
   }}
 
@@ -795,6 +897,11 @@ html = f'''<!DOCTYPE html>
           case "futuro":
             if (c.fut && !c.ddm && !c.sp && !c.sn) return "rgba(46,204,113,0.5)";
             if (c.ddm || c.sp || c.sn) return "#7B68AE";
+            return "#E8E8E8";
+          case "futuro_completo":
+            if (c.fut && !c.ddm && !c.sp && !c.sn) return "rgba(46,204,113,0.5)";
+            if (c.sn && !c.ddm && !c.sp) return "#E74C3C";
+            if (c.ddm || c.sp) return "#7B68AE";
             return "#E8E8E8";
           case "neutro":
           default:
@@ -855,6 +962,9 @@ html = f'''<!DOCTYPE html>
     }} else if (state.zoom && state.zoom.codigos) {{
       zoomToCodigos(state.zoom.codigos);
     }}
+
+    // RA highlight
+    showRA(state.ra || null);
 
     // Legenda
     updateLegend(state.legenda);
