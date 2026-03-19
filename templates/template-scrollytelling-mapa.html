@@ -871,11 +871,15 @@ var CONFIG = {
   // --- 16. Indicador de scroll ---
   var scrollCue = document.getElementById("scrollCue");
   if (scrollCue) {
-    var cueHidden = false;
+    var lastStep = document.querySelector(".step:last-child");
     window.addEventListener("scroll", function () {
-      if (!cueHidden && window.scrollY > 80) {
+      if (!lastStep) return;
+      var lastStepRect = lastStep.getBoundingClientRect();
+      // Esconde quando o ultimo step esta visivel na tela
+      if (lastStepRect.top < window.innerHeight) {
         scrollCue.classList.add("hidden");
-        cueHidden = true;
+      } else {
+        scrollCue.classList.remove("hidden");
       }
     });
   }
