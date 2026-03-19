@@ -167,7 +167,7 @@ capitulos = [
             "layers": [],
             "zoom": "full",
             "legenda": [
-                {"cor": "#7B68AE", "texto": "Municípios com DDM ou Sala DDM Online (2022)"}
+                {"cor": "#C0C0C0", "texto": "Municípios com DDM ou Sala DDM Online (2022)"}
             ]
         }
     },
@@ -179,8 +179,8 @@ capitulos = [
             "layers": [],
             "zoom": "full",
             "legenda": [
-                {"cor": "#7B68AE", "texto": "Cobertura anterior a 2023"},
-                {"cor": "#E74C3C", "texto": "Municípios que ganharam cobertura"}
+                {"cor": "#C0C0C0", "texto": "Cobertura anterior a 2023"},
+                {"cor": "#0B9247", "texto": "Municípios que ganharam cobertura"}
             ]
         }
     },
@@ -192,8 +192,8 @@ capitulos = [
             "layers": ["sala_pre", "sala_pos"],
             "zoom": "full",
             "legenda": [
-                {"cor": "#5DADE2", "texto": "Salas DDM Online (antes de 2023)"},
-                {"cor": "#E74C3C", "texto": "Salas inauguradas na gestão atual"}
+                {"cor": "#C0C0C0", "texto": "Salas DDM Online (antes de 2023)"},
+                {"cor": "#0B9247", "texto": "Salas inauguradas na gestão atual"}
             ]
         }
     },
@@ -206,8 +206,8 @@ capitulos = [
             "zoom": {"codigos": list(regioes_rmsp)},
             "ra": 10,
             "legenda": [
-                {"cor": "#5DADE2", "texto": "Sala DDM Online (pré-2023)"},
-                {"cor": "#E74C3C", "texto": "Sala inaugurada 2023+"}
+                {"cor": "#C0C0C0", "texto": "Sala DDM Online (pré-2023)"},
+                {"cor": "#0B9247", "texto": "Sala inaugurada 2023+"}
             ]
         }
     },
@@ -220,8 +220,8 @@ capitulos = [
             "zoom": {"codigos": list(regioes_campinas)},
             "ra": 4,
             "legenda": [
-                {"cor": "#5DADE2", "texto": "Sala DDM Online (pré-2023)"},
-                {"cor": "#E74C3C", "texto": "Sala inaugurada 2023+"}
+                {"cor": "#C0C0C0", "texto": "Sala DDM Online (pré-2023)"},
+                {"cor": "#0B9247", "texto": "Sala inaugurada 2023+"}
             ]
         }
     },
@@ -234,8 +234,8 @@ capitulos = [
             "zoom": {"codigos": list(regioes_pp | regioes_reg)},
             "ra": [9, 16],
             "legenda": [
-                {"cor": "#5DADE2", "texto": "Sala DDM Online (pré-2023)"},
-                {"cor": "#E74C3C", "texto": "Sala inaugurada 2023+"}
+                {"cor": "#C0C0C0", "texto": "Sala DDM Online (pré-2023)"},
+                {"cor": "#0B9247", "texto": "Sala inaugurada 2023+"}
             ]
         }
     },
@@ -247,9 +247,9 @@ capitulos = [
             "layers": [],
             "zoom": "full",
             "legenda": [
-                {"cor": "#7B68AE", "texto": "Cobertura anterior a 2023"},
-                {"cor": "#E74C3C", "texto": "Expansão da gestão atual"},
-                {"cor": "#2ECC71", "texto": "Próximas 60 salas", "borda": True}
+                {"cor": "#C0C0C0", "texto": "Cobertura anterior a 2023"},
+                {"cor": "#0B9247", "texto": "Expansão da gestão atual"},
+                {"cor": "#034EA2", "texto": "Próximas 60 salas", "borda": True}
             ]
         }
     }
@@ -319,7 +319,7 @@ html = f'''<!DOCTYPE html>
       margin-bottom: 8px;
       color: #1D1D1B;
     }}
-    .chart-title .destaque {{ color: #E74C3C; }}
+    .chart-title .destaque {{ color: #0B9247; }}
 
     .chart-subtitle {{
       font-size: 14px;
@@ -400,7 +400,7 @@ html = f'''<!DOCTYPE html>
       font-weight: 700;
       margin-bottom: 12px;
       color: #1D1D1B;
-      border-left: 4px solid #E74C3C;
+      border-left: 4px solid #0B9247;
       padding-left: 12px;
     }}
     .step p {{
@@ -409,7 +409,7 @@ html = f'''<!DOCTYPE html>
       color: #444;
     }}
     .step p strong {{
-      color: #E74C3C;
+      color: #0B9247;
       font-weight: 700;
     }}
 
@@ -458,7 +458,7 @@ html = f'''<!DOCTYPE html>
       transition: all 0.3s ease;
     }}
     .step-dot.is-active {{
-      background: #E74C3C;
+      background: #0B9247;
       transform: scale(1.5);
     }}
 
@@ -480,7 +480,7 @@ html = f'''<!DOCTYPE html>
       font-family: 'Montserrat', sans-serif;
       font-size: 11px;
       font-weight: 600;
-      color: #E74C3C;
+      color: #0B9247;
       letter-spacing: 0.5px;
     }}
     .scroll-cue-arrows {{
@@ -493,8 +493,8 @@ html = f'''<!DOCTYPE html>
       display: block;
       width: 14px;
       height: 14px;
-      border-right: 2px solid #E74C3C;
-      border-bottom: 2px solid #E74C3C;
+      border-right: 2px solid #0B9247;
+      border-bottom: 2px solid #0B9247;
       transform: rotate(45deg);
     }}
     .scroll-cue-arrows span:nth-child(1) {{ animation: scrollFlow 1.8s infinite; }}
@@ -581,9 +581,9 @@ html = f'''<!DOCTYPE html>
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
       }}
-      .step h3 {{ font-size: 16px; color: #1D1D1B; border-left-color: #E74C3C; }}
+      .step h3 {{ font-size: 16px; color: #1D1D1B; border-left-color: #0B9247; }}
       .step p {{ font-size: 14px; color: #444; }}
-      .step p strong {{ color: #E74C3C; }}
+      .step p strong {{ color: #0B9247; }}
       .step:first-child {{ margin-top: 40vh; }}
       .step:last-child {{ margin-bottom: 80vh; }}
 
@@ -715,10 +715,10 @@ html = f'''<!DOCTYPE html>
   // === CAMADAS DE CENTROIDES ===
   var layers = {{}};
   var layerConfig = {{
-    ddm: {{ data: CONFIG.pontos.ddm, cor: "#9B59B6", r: 3.5 }},
-    sala_pre: {{ data: CONFIG.pontos.sala_pre, cor: "#5DADE2", r: 3.5 }},
-    sala_pos: {{ data: CONFIG.pontos.sala_pos, cor: "#E74C3C", r: 4 }},
-    futuras: {{ data: CONFIG.pontos.futuras, cor: "#2ECC71", r: 3.5, opacity: 0.6 }}
+    ddm: {{ data: CONFIG.pontos.ddm, cor: "#888", r: 3.5 }},
+    sala_pre: {{ data: CONFIG.pontos.sala_pre, cor: "#C0C0C0", r: 3.5 }},
+    sala_pos: {{ data: CONFIG.pontos.sala_pos, cor: "#0B9247", r: 4 }},
+    futuras: {{ data: CONFIG.pontos.futuras, cor: "#034EA2", r: 3.5, opacity: 0.6 }}
   }};
 
   // Spike/cone path generator: triangulo apontando para cima
@@ -759,10 +759,10 @@ html = f'''<!DOCTYPE html>
     raLayer.append("path")
       .attr("d", raPath(feat))
       .attr("fill", "none")
-      .attr("stroke", "#E74C3C")
+      .attr("stroke", "#1D1D1B")
       .attr("stroke-width", 2)
       .attr("stroke-dasharray", "6,3")
-      .attr("opacity", 0.8)
+      .attr("opacity", 0.6)
       .attr("data-ra-id", feat.properties.GID_RA)
       .style("display", "none");
   }});
@@ -774,7 +774,7 @@ html = f'''<!DOCTYPE html>
     .attr("font-family", "Montserrat, sans-serif")
     .attr("font-size", 12)
     .attr("font-weight", 700)
-    .attr("fill", "#E74C3C")
+    .attr("fill", "#1D1D1B")
     .attr("stroke", "#fff")
     .attr("stroke-width", 3)
     .attr("paint-order", "stroke")
@@ -889,20 +889,20 @@ html = f'''<!DOCTYPE html>
         }}
         switch(mode) {{
           case "pre2023":
-            return (c.ddm || c.sp) ? "#7B68AE" : "#E8E8E8";
+            return (c.ddm || c.sp) ? "#C0C0C0" : "#F0F0F0";
           case "atual":
-            if (c.sn && !c.ddm && !c.sp) return "#E74C3C";
-            if (c.ddm || c.sp) return "#7B68AE";
-            return "#E8E8E8";
+            if (c.sn && !c.ddm && !c.sp) return "#0B9247";
+            if (c.ddm || c.sp) return "#C0C0C0";
+            return "#F0F0F0";
           case "futuro":
-            if (c.fut && !c.ddm && !c.sp && !c.sn) return "rgba(46,204,113,0.5)";
-            if (c.ddm || c.sp || c.sn) return "#7B68AE";
-            return "#E8E8E8";
+            if (c.fut && !c.ddm && !c.sp && !c.sn) return "rgba(3,78,162,0.35)";
+            if (c.ddm || c.sp || c.sn) return "#C0C0C0";
+            return "#F0F0F0";
           case "futuro_completo":
-            if (c.fut && !c.ddm && !c.sp && !c.sn) return "rgba(46,204,113,0.5)";
-            if (c.sn && !c.ddm && !c.sp) return "#E74C3C";
-            if (c.ddm || c.sp) return "#7B68AE";
-            return "#E8E8E8";
+            if (c.fut && !c.ddm && !c.sp && !c.sn) return "rgba(3,78,162,0.35)";
+            if (c.sn && !c.ddm && !c.sp) return "#0B9247";
+            if (c.ddm || c.sp) return "#C0C0C0";
+            return "#F0F0F0";
           case "neutro":
           default:
             return "#F0F0F0";
