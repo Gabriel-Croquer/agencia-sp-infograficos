@@ -884,28 +884,28 @@ html = f'''<!DOCTYPE html>
         var code = d.properties.CD_MUN;
         var c = CONFIG.cobertura[code];
         if (!c) {{
-          if (mode === "neutro") return "#F0F0F0";
+          if (mode === "neutro") return "#E8E8E8";
           return "#E8E8E8";
         }}
         switch(mode) {{
           case "pre2023":
-            return (c.ddm || c.sp) ? "#C0C0C0" : "#F0F0F0";
+            return (c.ddm || c.sp) ? "#C0C0C0" : "#E8E8E8";
           case "atual":
             if (c.sn && !c.ddm && !c.sp) return "#0B9247";
             if (c.ddm || c.sp) return "#C0C0C0";
-            return "#F0F0F0";
+            return "#E8E8E8";
           case "futuro":
             if (c.fut && !c.ddm && !c.sp && !c.sn) return "rgba(3,78,162,0.35)";
             if (c.ddm || c.sp || c.sn) return "#C0C0C0";
-            return "#F0F0F0";
+            return "#E8E8E8";
           case "futuro_completo":
             if (c.fut && !c.ddm && !c.sp && !c.sn) return "rgba(3,78,162,0.35)";
             if (c.sn && !c.ddm && !c.sp) return "#0B9247";
             if (c.ddm || c.sp) return "#C0C0C0";
-            return "#F0F0F0";
+            return "#E8E8E8";
           case "neutro":
           default:
-            return "#F0F0F0";
+            return "#E8E8E8";
         }}
       }});
   }}
