@@ -662,6 +662,8 @@ html = f'''<!DOCTYPE html>
     indicator.appendChild(dot);
   }});
 
+  var currentSceneIndex = 0;
+
   // === D3 MAP SETUP ===
   var mapEl = document.getElementById("mapArea");
   var width = mapEl.clientWidth || 700;
@@ -688,13 +690,18 @@ html = f'''<!DOCTYPE html>
       var code = d.properties.CD_MUN;
       var nome = d.properties.NM_MUN;
       var c = CONFIG.cobertura[code];
+      var mode = CONFIG.capitulos[currentSceneIndex].mapState.shapes;
       var info = nome;
       if (c) {{
         var parts = [];
         if (c.ddm) parts.push(c.ddm + " DDM");
         if (c.sp) parts.push(c.sp + " sala pré-2023");
-        if (c.sn) parts.push(c.sn + " sala 2023+");
-        if (c.fut) parts.push(c.fut + " sala futura");
+        if (mode !== "pre2023") {{
+          if (c.sn) parts.push(c.sn + " sala 2023+");
+        }}
+        if (mode === "futuro" || mode === "futuro_completo") {{
+          if (c.fut) parts.push(c.fut + " sala futura");
+        }}
         if (parts.length) info += " — " + parts.join(", ");
       }}
       var tip = document.getElementById("tooltip");
@@ -948,6 +955,7 @@ html = f'''<!DOCTYPE html>
 
   // === APPLY MAP STATE ===
   function applyMapState(index) {{
+    currentSceneIndex = index;
     var state = CONFIG.capitulos[index].mapState;
 
     // Shapes
