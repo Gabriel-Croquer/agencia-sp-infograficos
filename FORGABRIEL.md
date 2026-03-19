@@ -203,6 +203,58 @@ Scrollytelling **precisa** de scroll para funcionar — o scrollama detecta quai
 </div>
 ```
 
+### Scrollytelling mobile: o overlay pattern
+
+O layout desktop (mapa sticky a esquerda 58%, texto a direita 42%) nao funciona em tela estreita. Quando empilha verticalmente com o mapa pequeno (40vh) no topo e cards abaixo, 3+ cards ficam visiveis ao mesmo tempo — confuso e ilegivel.
+
+**A solucao: overlay pattern** (inspirado na Sky News US Election 2020). No mobile, o mapa vira background sticky de 85vh (quase fullscreen) e os cards flutuam por cima dele, um de cada vez, como cartas de baralho passando sobre a mesa.
+
+**CSS mobile critico:**
+- Mapa: `height: 85vh; justify-content: center; box-shadow: none`
+- Cards: `max-width: 320px; margin: 0 auto; background: rgba(255,255,255,0.92); backdrop-filter: blur(4px); border-radius: 12px`
+- Texto container: `pointer-events: none` (permite tocar no mapa entre cards)
+- Cards: `pointer-events: auto` (reativa interacao nos proprios cards)
+- Legenda: `position: absolute; bottom: 8px` (flutua sobre o mapa)
+
+**Spacing entre cards — NUNCA usar vh no mobile:**
+Browsers mobile mudam a altura do viewport quando a barra de URL aparece/desaparece, fazendo `vh` oscilar. Solucao: calcular o spacing em **pixels** via JavaScript usando `window.innerHeight * 0.85`. Isso garante que so um card esta visivel por vez, independente da barra de URL.
+
+```javascript
+if (isMobile) {
+  function setMobileStepSpacing() {
+    var spacing = Math.round(window.innerHeight * 0.85);
+    document.querySelectorAll('.step').forEach(function(step, i, arr) {
+      if (i < arr.length - 1) step.style.marginBottom = spacing + 'px';
+    });
+    scroller.resize();
+  }
+  setMobileStepSpacing();
+  window.addEventListener('resize', setMobileStepSpacing);
+}
+```
+
+### window.scrollY e a armadilha do overflow-y: auto
+
+Essa custou 3 tentativas ate achar o bug. O scrollytelling usa `html { overflow-y: auto; height: 100% }` para funcionar dentro de iframe com scrollbar invisivel. Isso faz o scroll acontecer no elemento `<html>`, nao no `window`. Consequencia: **`window.scrollY` retorna SEMPRE 0**.
+
+Tentamos usar `window.scrollY` para esconder o indicador "Role para explorar" no final da pagina. Nao funcionava. A solucao: usar o callback `onStepEnter` do scrollama, que funciona independente de onde o scroll acontece:
+
+```javascript
+scroller.onStepEnter(function(response) {
+  var allSteps = document.querySelectorAll(".step");
+  var scrollCue = document.getElementById("scrollCue");
+  if (scrollCue) {
+    scrollCue.style.display = (response.index >= allSteps.length - 1) ? "none" : "";
+  }
+});
+```
+
+**Regra:** Nos templates de scrollytelling, NUNCA usar `window.scrollY` ou `window.pageYOffset`. Usar `document.documentElement.scrollTop` ou, melhor ainda, callbacks do scrollama.
+
+### Indicador "Role para explorar"
+
+Todo scrollytelling tem um indicador fixo no rodape da tela com texto "Role para explorar" e 3 chevrons animados em verde (#0B9247) com animacao staggered (cada seta aparece com delay de 0.25s). O indicador some automaticamente quando o scrollama detecta o ultimo step. CSS puro, sem bibliotecas.
+
 ---
 
 ## Proximos Passos
@@ -211,4 +263,5 @@ Scrollytelling **precisa** de scroll para funcionar — o scrollama detecta quai
 2. ~~Testar o workflow completo~~ ✓ Feito (infograficos de roubos no centro de SP)
 3. **Iterar nos templates** — ajustar detalhes visuais conforme feedback do time de arte
 4. ~~Novos tipos de template~~ ✓ Mapa coropletico (7o) e scrollytelling-mapa (8o) adicionados
-5. **Novos formatos** — donut chart, treemap, scatter plot se surgirem necessidades
+5. ~~Mobile do scrollytelling~~ ✓ Overlay pattern implementado (mapa 85vh + cards flutuantes)
+6. **Novos formatos** — donut chart, treemap, scatter plot se surgirem necessidades

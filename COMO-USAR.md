@@ -18,6 +18,8 @@ Os templates seguem a identidade visual da Agencia SP (verde #0B9247, fonte Mont
 | Tabela Comparativa | `template-tabela-comparativa.html` | Tabela com ordenacao, variacao absoluta e percentual |
 | Grafico de Linhas | `template-linha-temporal.html` | Evolucao temporal com multiplas series |
 | Cards KPI | `template-card-kpi.html` | Cards com numero grande, animacao de contagem e variacao |
+| Mapa Coropletico | `template-mapa-coropletico.html` | Mapa do estado de SP colorido por faixas de valor por municipio |
+| Scrollytelling Mapa | `template-scrollytelling-mapa.html` | Narrativa com mapa interativo que reage ao scroll (zoom, destaque, cores) |
 
 ---
 
@@ -132,6 +134,77 @@ O grafico sera renderizado automaticamente com os dados do CONFIG.
 ### Opcao 2: Pagina completa
 
 Se quiser que o grafico ocupe uma pagina inteira, basta acessar diretamente a URL do arquivo HTML no servidor.
+
+---
+
+## Mapa Coropletico
+
+O template `template-mapa-coropletico.html` mostra o estado de Sao Paulo com os 645 municipios coloridos por faixas de valor. Usa D3.js + GeoJSON embutido no proprio arquivo.
+
+### Como funciona
+
+O mapa e gerado pelo agente Claude Code a partir de um CSV com dados por municipio. Voce NAO precisa editar o HTML manualmente — basta enviar o CSV com uma coluna de codigo IBGE (7 digitos) e uma coluna de valor, e o agente gera tudo.
+
+### Tipos de escala de cores
+
+| Tipo | Quando usar | Exemplo |
+|------|-------------|---------|
+| `threshold` | Valores numericos em faixas | "0-100, 100-500, 500+" |
+| `sequential` | Valores numericos continuos | Gradiente de claro a escuro |
+| `categorical` | Categorias (sim/nao, A/B/C) | Cada categoria com cor fixa |
+
+### Embed no WordPress
+
+```html
+<div style="max-width:960px;width:100%">
+  <iframe src="URL_DO_MAPA" width="100%" height="750" style="border:none;overflow:hidden;" scrolling="no" loading="lazy"></iframe>
+</div>
+```
+
+### Interatividade
+
+- **Tooltip**: passe o mouse (ou toque no celular) sobre um municipio para ver nome e valor
+- **Legenda**: as faixas de cores aparecem acima do mapa
+- **Responsivo**: o mapa se ajusta automaticamente ao tamanho da tela
+
+---
+
+## Scrollytelling Mapa
+
+O template `template-scrollytelling-mapa.html` cria uma narrativa interativa onde o mapa do estado de SP reage ao scroll do leitor: da zoom em regioes, destaca municipios, mostra pontos de interesse e troca a coloracao coropletica.
+
+### Como funciona
+
+O scrollytelling e gerado pelo agente Claude Code. Voce envia os dados (CSV) e descreve os capitulos da historia — o agente monta tudo automaticamente.
+
+Cada capitulo tem:
+- **titulo** e **texto**: o que o leitor le
+- **mapState**: como o mapa deve reagir (zoom, destaque, cores)
+
+### Layout
+
+- **Desktop**: mapa sticky a esquerda (58%), texto rola a direita (42%)
+- **Mobile**: mapa ocupa quase toda a tela (85vh) como background, cards de texto flutuam por cima — um de cada vez, com bastante espaco entre eles
+
+### Indicador "Role para explorar"
+
+O template inclui automaticamente um indicador animado com 3 chevrons verdes e o texto "Role para explorar" fixo no rodape da tela. Ele some sozinho quando o leitor chega ao ultimo capitulo.
+
+### Embed no WordPress (DIFERENTE dos outros templates!)
+
+O scrollytelling precisa de scroll para funcionar, entao o embed e diferente:
+
+```html
+<div style="width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;">
+  <iframe src="URL_DO_SCROLLY" width="100%" height="700" style="border:none;" scrolling="auto" loading="lazy"></iframe>
+</div>
+```
+
+**Diferencas importantes:**
+- Usa `scrolling="auto"` (NAO `"no"` como os outros templates)
+- Usa `height="700"` (altura de janela, nao do conteudo total)
+- O container usa `width:100vw` para ocupar toda a largura da tela (escapa da coluna do WordPress)
+- NUNCA use `overflow:hidden` ou `scrolling="no"` — mata o scrollytelling completamente
 
 ---
 
