@@ -276,8 +276,8 @@ html = f'''<!DOCTYPE html>
 
     body {{
       font-family: 'Montserrat', sans-serif;
-      background: #1a1a2e;
-      color: #ffffff;
+      background: #FFFFFF;
+      color: #1D1D1B;
       padding: 20px 20px 10px;
     }}
 
@@ -297,7 +297,7 @@ html = f'''<!DOCTYPE html>
       font-weight: 700;
       line-height: 1.3;
       margin-bottom: 8px;
-      color: #ffffff;
+      color: #1D1D1B;
     }}
     .chart-title .destaque {{ color: #E74C3C; }}
 
@@ -305,7 +305,7 @@ html = f'''<!DOCTYPE html>
       font-size: 14px;
       font-weight: 400;
       line-height: 1.6;
-      color: rgba(255,255,255,0.7);
+      color: #666;
     }}
 
     .scrolly {{
@@ -347,14 +347,14 @@ html = f'''<!DOCTYPE html>
       align-items: center;
       gap: 5px;
       font-size: 11px;
-      color: rgba(255,255,255,0.8);
+      color: #555;
       font-weight: 600;
     }}
     .legend-swatch {{
       width: 14px;
       height: 14px;
       border-radius: 3px;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(0,0,0,0.15);
     }}
 
     .scrolly__text {{
@@ -379,14 +379,14 @@ html = f'''<!DOCTYPE html>
       font-size: 18px;
       font-weight: 700;
       margin-bottom: 12px;
-      color: #ffffff;
+      color: #1D1D1B;
       border-left: 4px solid #E74C3C;
       padding-left: 12px;
     }}
     .step p {{
       font-size: 15px;
       line-height: 1.7;
-      color: rgba(255,255,255,0.85);
+      color: #444;
     }}
     .step p strong {{
       color: #E74C3C;
@@ -396,7 +396,7 @@ html = f'''<!DOCTYPE html>
     .tooltip {{
       position: fixed;
       pointer-events: none;
-      background: rgba(0,0,0,0.9);
+      background: rgba(0,0,0,0.85);
       color: #fff;
       padding: 8px 12px;
       border-radius: 6px;
@@ -404,12 +404,11 @@ html = f'''<!DOCTYPE html>
       font-family: 'Montserrat', sans-serif;
       display: none;
       z-index: 999;
-      border: 1px solid rgba(255,255,255,0.15);
     }}
 
     .chart-source {{
       font-size: 11px;
-      color: rgba(255,255,255,0.5);
+      color: #999;
       margin-top: 20px;
     }}
     .logo-container {{
@@ -435,7 +434,7 @@ html = f'''<!DOCTYPE html>
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.3);
+      background: #C0C0C0;
       transition: all 0.3s ease;
     }}
     .step-dot.is-active {{
@@ -508,7 +507,7 @@ html = f'''<!DOCTYPE html>
         position: sticky;
         top: 0;
         z-index: 1;
-        background: #1a1a2e;
+        background: #FFFFFF;
         padding: 16px 8px 8px;
         justify-content: center;
         align-items: center;
@@ -534,7 +533,7 @@ html = f'''<!DOCTYPE html>
         margin-top: 0;
         gap: 6px;
         justify-content: center;
-        background: rgba(26, 26, 46, 0.9);
+        background: rgba(255, 255, 255, 0.9);
         padding: 4px 8px;
         border-radius: 4px;
       }}
@@ -562,8 +561,8 @@ html = f'''<!DOCTYPE html>
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
       }}
-      .step h3 {{ font-size: 16px; color: #1D1D1B; }}
-      .step p {{ font-size: 14px; color: #333; }}
+      .step h3 {{ font-size: 16px; color: #1D1D1B; border-left-color: #E74C3C; }}
+      .step p {{ font-size: 14px; color: #444; }}
       .step p strong {{ color: #E74C3C; }}
       .step:first-child {{ margin-top: 40vh; }}
       .step:last-child {{ margin-bottom: 80vh; }}
@@ -661,8 +660,8 @@ html = f'''<!DOCTYPE html>
     .enter().append("path")
     .attr("class", "muni")
     .attr("d", path)
-    .attr("fill", "#2a2a4a")
-    .attr("stroke", "rgba(255,255,255,0.08)")
+    .attr("fill", "#E8E8E8")
+    .attr("stroke", "rgba(0,0,0,0.1)")
     .attr("stroke-width", 0.5)
     .on("mouseover", function(event, d) {{
       var code = d.properties.CD_MUN;
@@ -783,23 +782,23 @@ html = f'''<!DOCTYPE html>
         var code = d.properties.CD_MUN;
         var c = CONFIG.cobertura[code];
         if (!c) {{
-          if (mode === "neutro") return "#1e1e38";
-          return "#2a2a4a";
+          if (mode === "neutro") return "#F0F0F0";
+          return "#E8E8E8";
         }}
         switch(mode) {{
           case "pre2023":
-            return (c.ddm || c.sp) ? "#7B68AE" : "#2a2a4a";
+            return (c.ddm || c.sp) ? "#7B68AE" : "#E8E8E8";
           case "atual":
             if (c.sn && !c.ddm && !c.sp) return "#E74C3C";
             if (c.ddm || c.sp) return "#7B68AE";
-            return "#2a2a4a";
+            return "#E8E8E8";
           case "futuro":
             if (c.fut && !c.ddm && !c.sp && !c.sn) return "rgba(46,204,113,0.5)";
             if (c.ddm || c.sp || c.sn) return "#7B68AE";
-            return "#2a2a4a";
+            return "#E8E8E8";
           case "neutro":
           default:
-            return "#1e1e38";
+            return "#F0F0F0";
         }}
       }});
   }}
