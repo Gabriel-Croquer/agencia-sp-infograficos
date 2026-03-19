@@ -243,12 +243,12 @@
       .scrolly-container { padding: 0; }
 
       .scrolly-header {
-        padding: 0 16px;
+        padding: 12px 16px;
         max-width: 100%;
       }
 
-      .chart-title { font-size: 20px; }
-      .chart-subtitle { font-size: 13px; }
+      .chart-title { font-size: 18px; }
+      .chart-subtitle { font-size: 12px; }
 
       .scrolly {
         flex-direction: column;
@@ -257,34 +257,55 @@
       .scrolly__map {
         flex: none;
         width: 100%;
-        height: 50vh;
+        height: 40vh;
         position: sticky;
         top: 0;
         z-index: 1;
         background: #FFFFFF;
-        padding: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        padding: 8px 4px 4px;
+        justify-content: flex-start;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       }
+
+      .scrolly__map .map-area {
+        height: calc(40vh - 40px);
+        display: flex;
+        align-items: center;
+      }
+
+      .scrolly__map .map-area svg {
+        max-height: 100%;
+        width: auto;
+        margin: 0 auto;
+      }
+
+      .scrolly__map .map-legend {
+        margin-top: 4px;
+        gap: 6px;
+      }
+
+      .scrolly__map .map-legend .legend-item { font-size: 10px; }
+      .scrolly__map .map-legend .legend-swatch { width: 10px; height: 10px; }
 
       .scrolly__text {
         flex: none;
         width: 100%;
         position: relative;
         z-index: 2;
-        padding: 0 16px;
+        padding: 0 12px;
       }
 
       .step {
-        min-height: 60vh;
-        background: rgba(255,255,255,0.95);
+        min-height: auto;
+        padding: 20px 16px;
         margin: 8px 0;
-        padding: 24px 20px;
+        background: rgba(255,255,255,0.97);
         border-radius: 8px;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+        box-shadow: 0 1px 6px rgba(0,0,0,0.1);
       }
 
-      .step:first-child { margin-top: 16px; }
-      .step:last-child { margin-bottom: 30vh; }
+      .step:first-child { margin-top: 50vh; }
+      .step:last-child { margin-bottom: 50vh; }
 
       .step h3 { font-size: 16px; }
       .step p { font-size: 14px; }
@@ -734,10 +755,11 @@ var CONFIG = {
 
   // --- 14. Inicializa scrollama ---
   var scroller = scrollama();
+  var isMobile = window.innerWidth <= 768;
 
   scroller.setup({
     step: ".step",
-    offset: 0.5,
+    offset: isMobile ? 0.7 : 0.5,
     debug: false
   }).onStepEnter(function (response) {
     applyMapState(response.index);
