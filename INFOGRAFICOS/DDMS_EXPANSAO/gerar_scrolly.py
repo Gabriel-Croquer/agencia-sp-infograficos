@@ -241,7 +241,7 @@ capitulos = [
     },
     {
         "titulo": "O futuro da rede",
-        "texto": "Para os próximos meses, a previsão é inaugurar mais <strong>60 salas DDM Online</strong>. Com a expansão, delegacias de 48 novas cidades passarão a ter acesso à rede de proteção. Ao todo, serão <strong>244 municípios</strong> com cobertura — quase 40% do total do estado.",
+        "texto": "Para os próximos meses, a previsão é inaugurar mais <strong>xx salas DDM Online</strong>. Com a expansão, delegacias de 48 novas cidades passarão a ter acesso à rede de proteção. Ao todo, serão <strong>xxx municípios</strong> com cobertura — quase xx% do total do estado.",
         "mapState": {
             "shapes": "futuro_completo",
             "layers": [],
