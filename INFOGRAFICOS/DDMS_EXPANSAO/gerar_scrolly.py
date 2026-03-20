@@ -192,8 +192,8 @@ capitulos = [
             "layers": ["sala_pre", "sala_pos"],
             "zoom": "full",
             "legenda": [
-                {"cor": "#C0C0C0", "texto": "Salas DDM Online (antes de 2023)"},
-                {"cor": "#0B9247", "texto": "Salas inauguradas na gestão atual"}
+                {"cor": "#C0C0C0", "texto": "Salas DDM Online (antes de 2023)", "diamante": True},
+                {"cor": "#0B9247", "texto": "Salas inauguradas na gestão atual", "diamante": True}
             ]
         }
     },
@@ -206,8 +206,8 @@ capitulos = [
             "zoom": {"codigos": list(regioes_rmsp)},
             "ra": 10,
             "legenda": [
-                {"cor": "#C0C0C0", "texto": "Sala DDM Online (pré-2023)"},
-                {"cor": "#0B9247", "texto": "Sala inaugurada 2023+"}
+                {"cor": "#C0C0C0", "texto": "Sala DDM Online (pré-2023)", "diamante": True},
+                {"cor": "#0B9247", "texto": "Sala inaugurada 2023+", "diamante": True}
             ]
         }
     },
@@ -220,8 +220,8 @@ capitulos = [
             "zoom": {"codigos": list(regioes_campinas)},
             "ra": 4,
             "legenda": [
-                {"cor": "#C0C0C0", "texto": "Sala DDM Online (pré-2023)"},
-                {"cor": "#0B9247", "texto": "Sala inaugurada 2023+"}
+                {"cor": "#C0C0C0", "texto": "Sala DDM Online (pré-2023)", "diamante": True},
+                {"cor": "#0B9247", "texto": "Sala inaugurada 2023+", "diamante": True}
             ]
         }
     },
@@ -234,8 +234,8 @@ capitulos = [
             "zoom": {"codigos": list(regioes_pp | regioes_reg)},
             "ra": [9, 16],
             "legenda": [
-                {"cor": "#C0C0C0", "texto": "Sala DDM Online (pré-2023)"},
-                {"cor": "#0B9247", "texto": "Sala inaugurada 2023+"}
+                {"cor": "#C0C0C0", "texto": "Sala DDM Online (pré-2023)", "diamante": True},
+                {"cor": "#0B9247", "texto": "Sala inaugurada 2023+", "diamante": True}
             ]
         }
     },
@@ -728,31 +728,32 @@ html = f'''<!DOCTYPE html>
     futuras: {{ data: CONFIG.pontos.futuras, cor: "#034EA2", r: 3.5, opacity: 0.6 }}
   }};
 
-  // Spike/cone path generator: triangulo apontando para cima
-  function spikePath(cx, cy, baseW, h) {{
-    // Triangulo: ponta no topo (cx, cy-h), base em (cx-baseW/2, cy) e (cx+baseW/2, cy)
-    return "M" + cx + "," + (cy - h) + "L" + (cx - baseW/2) + "," + cy + "L" + (cx + baseW/2) + "," + cy + "Z";
+  // Diamante (losango): quadrado rotacionado 45 graus
+  function diamondPath(cx, cy, size) {{
+    // Losango com vértices em cima, direita, baixo, esquerda
+    return "M" + cx + "," + (cy - size) +
+           "L" + (cx + size) + "," + cy +
+           "L" + cx + "," + (cy + size) +
+           "L" + (cx - size) + "," + cy + "Z";
   }}
 
   Object.keys(layerConfig).forEach(function(key) {{
     var cfg = layerConfig[key];
     var lg = g.append("g").attr("class", "layer-" + key).style("display", "none");
-    var spikeH = cfg.r * 3;   // altura do spike
-    var spikeW = cfg.r * 1.5; // largura da base
+    var dSize = cfg.r;
     cfg.data.forEach(function(p) {{
       var coords = projection([p.lng, p.lat]);
       if (coords) {{
         lg.append("path")
-          .attr("d", spikePath(coords[0], coords[1], spikeW, spikeH))
+          .attr("d", diamondPath(coords[0], coords[1], dSize))
           .attr("data-cx", coords[0])
           .attr("data-cy", coords[1])
-          .attr("data-bw", spikeW)
-          .attr("data-h", spikeH)
+          .attr("data-size", dSize)
           .attr("fill", cfg.cor)
           .attr("fill-opacity", cfg.opacity || 0.85)
           .attr("stroke", "#fff")
-          .attr("stroke-width", 0.3)
-          .attr("stroke-opacity", 0.5);
+          .attr("stroke-width", 0.4)
+          .attr("stroke-opacity", 0.6);
       }}
     }});
     layers[key] = lg;
@@ -847,16 +848,15 @@ html = f'''<!DOCTYPE html>
     g.transition().duration(800)
       .attr("transform", "translate(" + tx + "," + ty + ") scale(" + scale + ")");
 
-    // Counter-scale spikes + strokes
+    // Counter-scale diamonds + strokes
     setTimeout(function() {{
       var invSqrt = 1 / Math.sqrt(scale);
       g.selectAll("path.muni").attr("stroke-width", 0.5 / scale);
-      // Recalcular spikes com escala inversa
       g.selectAll(".layer-ddm path, .layer-sala_pre path, .layer-sala_pos path, .layer-futuras path").each(function() {{
         var el = d3.select(this);
         var cx = +el.attr("data-cx"), cy = +el.attr("data-cy");
-        var bw = +el.attr("data-bw") * invSqrt, h = +el.attr("data-h") * invSqrt;
-        el.attr("d", spikePath(cx, cy, bw, h)).attr("stroke-width", 0.3 / scale);
+        var sz = +el.attr("data-size") * invSqrt;
+        el.attr("d", diamondPath(cx, cy, sz)).attr("stroke-width", 0.4 / scale);
       }});
       // Counter-scale RA boundary
       raLayer.selectAll("path").attr("stroke-width", 2 / scale);
@@ -871,12 +871,11 @@ html = f'''<!DOCTYPE html>
       .attr("transform", "translate(0,0) scale(1)");
     setTimeout(function() {{
       g.selectAll("path.muni").attr("stroke-width", 0.5);
-      // Restaurar spikes ao tamanho original
       g.selectAll(".layer-ddm path, .layer-sala_pre path, .layer-sala_pos path, .layer-futuras path").each(function() {{
         var el = d3.select(this);
         var cx = +el.attr("data-cx"), cy = +el.attr("data-cy");
-        var bw = +el.attr("data-bw"), h = +el.attr("data-h");
-        el.attr("d", spikePath(cx, cy, bw, h)).attr("stroke-width", 0.3);
+        var sz = +el.attr("data-size");
+        el.attr("d", diamondPath(cx, cy, sz)).attr("stroke-width", 0.4);
       }});
       raLayer.selectAll("path").attr("stroke-width", 2);
       raLabel.attr("font-size", 12).attr("stroke-width", 3);
@@ -939,15 +938,31 @@ html = f'''<!DOCTYPE html>
     items.forEach(function(item) {{
       var div = document.createElement("div");
       div.className = "legend-item";
-      var swatch = document.createElement("div");
-      swatch.className = "legend-swatch";
-      swatch.style.background = item.borda ? "transparent" : item.cor;
-      if (item.borda) {{
-        swatch.style.border = "2px solid " + item.cor;
+      if (item.diamante) {{
+        // Swatch como diamante SVG
+        var svgNS = "http://www.w3.org/2000/svg";
+        var svgEl = document.createElementNS(svgNS, "svg");
+        svgEl.setAttribute("width", "14");
+        svgEl.setAttribute("height", "14");
+        svgEl.setAttribute("viewBox", "0 0 14 14");
+        var pathEl = document.createElementNS(svgNS, "path");
+        pathEl.setAttribute("d", "M7,1 L13,7 L7,13 L1,7 Z");
+        pathEl.setAttribute("fill", item.cor);
+        pathEl.setAttribute("stroke", "rgba(0,0,0,0.15)");
+        pathEl.setAttribute("stroke-width", "1");
+        svgEl.appendChild(pathEl);
+        div.appendChild(svgEl);
+      }} else {{
+        var swatch = document.createElement("div");
+        swatch.className = "legend-swatch";
+        swatch.style.background = item.borda ? "transparent" : item.cor;
+        if (item.borda) {{
+          swatch.style.border = "2px solid " + item.cor;
+        }}
+        div.appendChild(swatch);
       }}
       var label = document.createElement("span");
       label.textContent = item.texto;
-      div.appendChild(swatch);
       div.appendChild(label);
       leg.appendChild(div);
     }});
