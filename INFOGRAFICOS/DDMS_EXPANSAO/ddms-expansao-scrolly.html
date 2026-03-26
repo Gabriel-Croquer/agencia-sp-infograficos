@@ -599,17 +599,13 @@
     "titulo": "Cabine Lilás",
     "texto": "Além das DDMs e Salas DDM, a rede de proteção à mulher em São Paulo conta com outros dois equipamentos. Um deles é a <strong>Cabine Lilás</strong>, estrutura especializada nos centros de atendimento da PM (190), que acolhe e orienta vítimas de violência doméstica.",
     "mapState": {
-      "shapes": "futuro_completo",
+      "shapes": "desbotado",
       "layers": ["cabines"],
       "zoom": "full",
       "legenda": [
         {
-          "cor": "#A68BBE",
-          "texto": "Cobertura anterior a 2023"
-        },
-        {
-          "cor": "#673C97",
-          "texto": "Expansão da gestão atual + próximas inaugurações"
+          "cor": "rgba(103,60,151,0.15)",
+          "texto": "Municípios com cobertura"
         },
         {
           "cor": "#673C97",
@@ -623,17 +619,13 @@
     "titulo": "Casa da Mulher Paulista",
     "texto": "Já as <strong>Casas da Mulher Paulista</strong> são 20 centros físicos de acolhimento mantidos pelo governo estadual em parceria com prefeituras, distribuídos por 20 municípios — de grandes como São Bernardo do Campo e Araraquara a pequenos como Ribeirão Corrente e Cristais Paulista. Elas oferecem atendimento psicológico, orientação jurídica, assistência social e cursos de capacitação profissional para mulheres em situação de violência ou vulnerabilidade.",
     "mapState": {
-      "shapes": "futuro_completo",
+      "shapes": "desbotado",
       "layers": ["cabines", "casas"],
       "zoom": "full",
       "legenda": [
         {
-          "cor": "#A68BBE",
-          "texto": "Cobertura anterior a 2023"
-        },
-        {
-          "cor": "#673C97",
-          "texto": "Expansão da gestão atual + próximas inaugurações"
+          "cor": "rgba(103,60,151,0.15)",
+          "texto": "Municípios com cobertura"
         },
         {
           "cor": "#673C97",
@@ -946,8 +938,11 @@
             if (c.ddm || c.sp || c.sn) return "#A68BBE";
             return "#E8E8E8";
           case "futuro_completo":
-            if (c.sn || c.fut) { if (!c.ddm && !c.sp) return "#673C97"; }
-            if (c.ddm || c.sp) return "#A68BBE";
+            if (c.fut && !c.ddm && !c.sp && !c.sn) return "#673C97";
+            if (c.ddm || c.sp || c.sn) return "#A68BBE";
+            return "#E8E8E8";
+          case "desbotado":
+            if (c.ddm || c.sp || c.sn || c.fut) return "rgba(103,60,151,0.15)";
             return "#E8E8E8";
           case "neutro":
           default:
