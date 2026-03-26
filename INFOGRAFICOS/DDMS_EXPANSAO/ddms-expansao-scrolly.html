@@ -578,7 +578,22 @@
   },
   {
     "titulo": "O futuro da rede",
-    "texto": "Para os próximos meses, a previsão é inaugurar mais <strong>xx salas DDM</strong>. Com a expansão, delegacias de 48 novas cidades passarão a ter acesso à rede de proteção. Ao todo, serão <strong>xxx municípios</strong> com cobertura — quase xx% do total do estado.",
+    "texto": "Para os próximos meses, a previsão é inaugurar mais <strong>xx salas DDM</strong>. Com a expansão, delegacias de 48 novas cidades passarão a ter acesso à rede de proteção.",
+    "mapState": {
+      "shapes": "tudo_apagado",
+      "layers": [],
+      "zoom": "full",
+      "legenda": [
+        {
+          "cor": "#A68BBE",
+          "texto": "Cobertura atual + próximas inaugurações"
+        }
+      ]
+    }
+  },
+  {
+    "titulo": "A rede completa",
+    "texto": "Ao todo, serão <strong>xxx municípios</strong> com cobertura — quase xx% do total do estado. Os municípios em destaque são os que ganharão cobertura com as próximas inaugurações.",
     "mapState": {
       "shapes": "futuro_completo",
       "layers": [],
@@ -586,11 +601,11 @@
       "legenda": [
         {
           "cor": "#A68BBE",
-          "texto": "Cobertura anterior a 2023"
+          "texto": "Cobertura atual"
         },
         {
           "cor": "#673C97",
-          "texto": "Expansão da gestão atual + próximas inaugurações"
+          "texto": "Próximas inaugurações"
         }
       ]
     }
@@ -937,12 +952,15 @@
             if (c.fut && !c.ddm && !c.sp && !c.sn) return "#673C97";
             if (c.ddm || c.sp || c.sn) return "#A68BBE";
             return "#E8E8E8";
+          case "tudo_apagado":
+            if (c.ddm || c.sp || c.sn || c.fut) return "#A68BBE";
+            return "#E8E8E8";
           case "futuro_completo":
             if (c.fut && !c.ddm && !c.sp && !c.sn) return "#673C97";
             if (c.ddm || c.sp || c.sn) return "#A68BBE";
             return "#E8E8E8";
           case "desbotado":
-            if (c.ddm || c.sp || c.sn || c.fut) return "rgba(103,60,151,0.15)";
+            if (c.ddm || c.sp || c.sn || c.fut) return "rgba(103,60,151,0.25)";
             return "#E8E8E8";
           case "neutro":
           default:
