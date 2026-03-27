@@ -405,7 +405,7 @@
   },
   {
     "titulo": "Salas DDM puxam a expansão",
-    "texto": "A criação de <strong>111 novas Salas DDM</strong> puxou a expansão. Estes espaços operam em delegacias comuns, onde oferecem ambiente específico para acolher vítimas de violência de gênero.",
+    "texto": "A criação de <strong>111 novas Salas DDM a partir de 2023</strong> puxou a expansão. Estes espaços operam em delegacias comuns, onde oferecem ambiente específico para acolher vítimas de violência de gênero.",
     "mapState": {
       "shapes": "neutro",
       "layers": [
@@ -580,13 +580,13 @@
     "titulo": "O futuro da rede",
     "texto": "Para os próximos meses, a previsão é inaugurar mais <strong>xx salas DDM</strong>. Com a expansão, delegacias de 48 novas cidades passarão a ter acesso à rede de proteção.",
     "mapState": {
-      "shapes": "tudo_apagado",
+      "shapes": "recap_atual",
       "layers": [],
       "zoom": "full",
       "legenda": [
         {
           "cor": "#A68BBE",
-          "texto": "Cobertura atual + próximas inaugurações"
+          "texto": "Cobertura atual"
         }
       ]
     }
@@ -931,7 +931,30 @@
   }
 
   // === COLORIR SHAPES ===
+  var recapTimer = null;
   function colorShapes(mode) {
+    if (recapTimer) { clearTimeout(recapTimer); recapTimer = null; }
+    if (mode === "recap_atual") {
+      // Fase 1: só pré-2023
+      shapes.interrupt();
+      shapes.transition().duration(600)
+        .attr("fill", function(d) {
+          var c = CONFIG.cobertura[d.properties.CD_MUN];
+          if (!c) return "#E8E8E8";
+          return (c.ddm || c.sp) ? "#A68BBE" : "#E8E8E8";
+        });
+      // Fase 2: após 1.5s, expansão pós-2023 acende (mesmo tom apagado)
+      recapTimer = setTimeout(function() {
+        shapes.transition().duration(800)
+          .attr("fill", function(d) {
+            var c = CONFIG.cobertura[d.properties.CD_MUN];
+            if (!c) return "#E8E8E8";
+            if (c.ddm || c.sp || c.sn) return "#A68BBE";
+            return "#E8E8E8";
+          });
+      }, 1500);
+      return;
+    }
     shapes.interrupt();
     shapes.transition().duration(600)
       .attr("fill", function(d) {
@@ -951,9 +974,6 @@
           case "futuro":
             if (c.fut && !c.ddm && !c.sp && !c.sn) return "#673C97";
             if (c.ddm || c.sp || c.sn) return "#A68BBE";
-            return "#E8E8E8";
-          case "tudo_apagado":
-            if (c.ddm || c.sp || c.sn || c.fut) return "#A68BBE";
             return "#E8E8E8";
           case "futuro_completo":
             if (c.fut && !c.ddm && !c.sp && !c.sn) return "#673C97";
