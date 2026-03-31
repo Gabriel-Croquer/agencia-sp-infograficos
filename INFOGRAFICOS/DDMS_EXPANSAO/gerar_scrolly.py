@@ -161,26 +161,26 @@ if os.path.exists(test_scrolly):
 capitulos = [
     {
         "titulo": "A rede de proteção em 2022",
-        "texto": "Em três anos, a atual gestão do Governo de São Paulo <strong>aumentou em 54%</strong> a rede de proteção às mulheres em delegacias. Em 2022, o estado contava com 205 espaços — 143 Delegacias da Mulher e 62 salas DDM Online — em 146 municípios.",
+        "texto": "Em três anos, a atual gestão do Governo de São Paulo <strong>aumentou em 54%</strong> a rede de proteção às mulheres em delegacias. Em 2022, o estado contava com 205 espaços — 143 Delegacias da Mulher e 62 salas DDM Online — em 138 municípios.",
         "mapState": {
             "shapes": "pre2023",
             "layers": [],
             "zoom": "full",
             "legenda": [
-                {"cor": "#C0C0C0", "texto": "Municípios com DDM ou Sala DDM Online (2022)"}
+                {"cor": "#A863D7", "texto": "Municípios com DDM ou Sala DDM Online (2022)"}
             ]
         }
     },
     {
         "titulo": "A expansão da rede",
-        "texto": "Hoje, são <strong>316 espaços</strong> em <strong>196 municípios</strong>, cobrindo todas as 16 regiões administrativas do estado. Os municípios em destaque ganharam cobertura pela primeira vez.",
+        "texto": "Hoje, são <strong>316 espaços</strong> em <strong>187 municípios</strong>, cobrindo todas as 16 regiões administrativas do estado. Os municípios em destaque ganharam cobertura pela primeira vez.",
         "mapState": {
             "shapes": "atual",
             "layers": [],
             "zoom": "full",
             "legenda": [
-                {"cor": "#C0C0C0", "texto": "Cobertura anterior a 2023"},
-                {"cor": "#0B9247", "texto": "Municípios que ganharam cobertura"}
+                {"cor": "#A863D7", "texto": "Cobertura anterior a 2023"},
+                {"cor": "#6925AC", "texto": "Municípios que ganharam cobertura"}
             ]
         }
     },
@@ -192,8 +192,8 @@ capitulos = [
             "layers": ["sala_pre", "sala_pos"],
             "zoom": "full",
             "legenda": [
-                {"cor": "#C0C0C0", "texto": "Salas DDM Online (antes de 2023)", "diamante": True},
-                {"cor": "#0B9247", "texto": "Salas inauguradas na gestão atual", "diamante": True}
+                {"cor": "#A863D7", "texto": "Salas DDM Online (antes de 2023)", "diamante": True},
+                {"cor": "#6925AC", "texto": "Salas inauguradas na gestão atual", "diamante": True}
             ]
         }
     },
@@ -206,22 +206,22 @@ capitulos = [
             "zoom": {"codigos": list(regioes_rmsp)},
             "ra": 10,
             "legenda": [
-                {"cor": "#C0C0C0", "texto": "Sala DDM Online (pré-2023)", "diamante": True},
-                {"cor": "#0B9247", "texto": "Sala inaugurada 2023+", "diamante": True}
+                {"cor": "#A863D7", "texto": "Sala DDM Online (pré-2023)", "diamante": True},
+                {"cor": "#6925AC", "texto": "Sala inaugurada 2023+", "diamante": True}
             ]
         }
     },
     {
         "titulo": "Região de Campinas",
-        "texto": "Outra região com crescimento destaque: Campinas, onde o número de espaços de atendimento <strong>mais que dobrou</strong>, de 14 para 35 salas.",
+        "texto": "Outra região com crescimento destaque: Campinas, onde o número de espaços de atendimento <strong>mais que dobrou</strong>, de 15 para 35 salas.",
         "mapState": {
             "shapes": "neutro",
             "layers": ["sala_pre", "sala_pos"],
             "zoom": {"codigos": list(regioes_campinas)},
             "ra": 4,
             "legenda": [
-                {"cor": "#C0C0C0", "texto": "Sala DDM Online (pré-2023)", "diamante": True},
-                {"cor": "#0B9247", "texto": "Sala inaugurada 2023+", "diamante": True}
+                {"cor": "#A863D7", "texto": "Sala DDM Online (pré-2023)", "diamante": True},
+                {"cor": "#6925AC", "texto": "Sala inaugurada 2023+", "diamante": True}
             ]
         }
     },
@@ -234,21 +234,21 @@ capitulos = [
             "zoom": {"codigos": list(regioes_pp | regioes_reg)},
             "ra": [9, 16],
             "legenda": [
-                {"cor": "#C0C0C0", "texto": "Sala DDM Online (pré-2023)", "diamante": True},
-                {"cor": "#0B9247", "texto": "Sala inaugurada 2023+", "diamante": True}
+                {"cor": "#A863D7", "texto": "Sala DDM Online (pré-2023)", "diamante": True},
+                {"cor": "#6925AC", "texto": "Sala inaugurada 2023+", "diamante": True}
             ]
         }
     },
     {
         "titulo": "O futuro da rede",
-        "texto": "Para os próximos meses, a previsão é inaugurar mais <strong>xx salas DDM Online</strong>. Com a expansão, delegacias de 48 novas cidades passarão a ter acesso à rede de proteção. Ao todo, serão <strong>xxx municípios</strong> com cobertura — quase xx% do total do estado.",
+        "texto": "Para os próximos meses, a previsão é inaugurar mais <strong>69 salas DDM</strong>. Com a expansão, delegacias de 48 novas cidades passarão a ter acesso à rede de proteção.",
         "mapState": {
             "shapes": "futuro_completo",
             "layers": [],
             "zoom": "full",
             "legenda": [
-                {"cor": "#C0C0C0", "texto": "Cobertura anterior a 2023"},
-                {"cor": "#0B9247", "texto": "Expansão da gestão atual"},
+                {"cor": "#A863D7", "texto": "Cobertura anterior a 2023"},
+                {"cor": "#6925AC", "texto": "Expansão da gestão atual"},
                 {"cor": "#034EA2", "texto": "Próximas 60 salas", "borda": True}
             ]
         }
@@ -319,7 +319,7 @@ html = f'''<!DOCTYPE html>
       margin-bottom: 8px;
       color: #1D1D1B;
     }}
-    .chart-title .destaque {{ color: #0B9247; }}
+    .chart-title .destaque {{ color: #6925AC; }}
 
     .chart-subtitle {{
       font-size: 14px;
@@ -400,7 +400,7 @@ html = f'''<!DOCTYPE html>
       font-weight: 700;
       margin-bottom: 12px;
       color: #1D1D1B;
-      border-left: 4px solid #0B9247;
+      border-left: 4px solid #6925AC;
       padding-left: 12px;
     }}
     .step p {{
@@ -409,7 +409,7 @@ html = f'''<!DOCTYPE html>
       color: #444;
     }}
     .step p strong {{
-      color: #0B9247;
+      color: #6925AC;
       font-weight: 700;
     }}
 
@@ -458,7 +458,7 @@ html = f'''<!DOCTYPE html>
       transition: all 0.3s ease;
     }}
     .step-dot.is-active {{
-      background: #0B9247;
+      background: #6925AC;
       transform: scale(1.5);
     }}
 
@@ -480,7 +480,7 @@ html = f'''<!DOCTYPE html>
       font-family: 'Montserrat', sans-serif;
       font-size: 11px;
       font-weight: 600;
-      color: #0B9247;
+      color: #6925AC;
       letter-spacing: 0.5px;
     }}
     .scroll-cue-arrows {{
@@ -493,8 +493,8 @@ html = f'''<!DOCTYPE html>
       display: block;
       width: 14px;
       height: 14px;
-      border-right: 2px solid #0B9247;
-      border-bottom: 2px solid #0B9247;
+      border-right: 2px solid #6925AC;
+      border-bottom: 2px solid #6925AC;
       transform: rotate(45deg);
     }}
     .scroll-cue-arrows span:nth-child(1) {{ animation: scrollFlow 1.8s infinite; }}
@@ -581,9 +581,9 @@ html = f'''<!DOCTYPE html>
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
       }}
-      .step h3 {{ font-size: 16px; color: #1D1D1B; border-left-color: #0B9247; }}
+      .step h3 {{ font-size: 16px; color: #1D1D1B; border-left-color: #6925AC; }}
       .step p {{ font-size: 14px; color: #444; }}
-      .step p strong {{ color: #0B9247; }}
+      .step p strong {{ color: #6925AC; }}
       .step:first-child {{ margin-top: 40vh; }}
       .step:last-child {{ margin-bottom: 80vh; }}
 
@@ -596,7 +596,7 @@ html = f'''<!DOCTYPE html>
   <div class="scrolly-container">
     <div class="scrolly-header">
       <div class="chart-title">Como a rede de proteção à mulher em delegacias <span class="destaque">aumentou 54%</span> em três anos</div>
-      <div class="chart-subtitle">Gestão atual instalou duas Delegacias da Mulher e 173 salas DDM Online em delegacias desde 2023. Estrutura cobre 196 municípios em todas as 16 regiões administrativas do estado</div>
+      <div class="chart-subtitle">Gestão atual instalou duas Delegacias da Mulher e 173 salas DDM Online em delegacias desde 2023. Estrutura cobre 187 municípios em todas as 16 regiões administrativas do estado</div>
     </div>
 
     <div class="scrolly" id="scrolly">
@@ -723,8 +723,8 @@ html = f'''<!DOCTYPE html>
   var layers = {{}};
   var layerConfig = {{
     ddm: {{ data: CONFIG.pontos.ddm, cor: "#888", r: 3.5 }},
-    sala_pre: {{ data: CONFIG.pontos.sala_pre, cor: "#C0C0C0", r: 3.5 }},
-    sala_pos: {{ data: CONFIG.pontos.sala_pos, cor: "#0B9247", r: 4 }},
+    sala_pre: {{ data: CONFIG.pontos.sala_pre, cor: "#A863D7", r: 3.5 }},
+    sala_pos: {{ data: CONFIG.pontos.sala_pos, cor: "#6925AC", r: 4 }},
     futuras: {{ data: CONFIG.pontos.futuras, cor: "#034EA2", r: 3.5, opacity: 0.6 }}
   }};
 
@@ -895,19 +895,19 @@ html = f'''<!DOCTYPE html>
         }}
         switch(mode) {{
           case "pre2023":
-            return (c.ddm || c.sp) ? "#C0C0C0" : "#E8E8E8";
+            return (c.ddm || c.sp) ? "#A863D7" : "#E8E8E8";
           case "atual":
-            if (c.sn && !c.ddm && !c.sp) return "#0B9247";
-            if (c.ddm || c.sp) return "#C0C0C0";
+            if (c.sn && !c.ddm && !c.sp) return "#6925AC";
+            if (c.ddm || c.sp) return "#A863D7";
             return "#E8E8E8";
           case "futuro":
             if (c.fut && !c.ddm && !c.sp && !c.sn) return "rgba(3,78,162,0.35)";
-            if (c.ddm || c.sp || c.sn) return "#C0C0C0";
+            if (c.ddm || c.sp || c.sn) return "#A863D7";
             return "#E8E8E8";
           case "futuro_completo":
             if (c.fut && !c.ddm && !c.sp && !c.sn) return "rgba(3,78,162,0.35)";
-            if (c.sn && !c.ddm && !c.sp) return "#0B9247";
-            if (c.ddm || c.sp) return "#C0C0C0";
+            if (c.sn && !c.ddm && !c.sp) return "#6925AC";
+            if (c.ddm || c.sp) return "#A863D7";
             return "#E8E8E8";
           case "neutro":
           default:
