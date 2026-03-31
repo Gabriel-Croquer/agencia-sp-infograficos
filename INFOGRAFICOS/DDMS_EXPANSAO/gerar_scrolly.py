@@ -20,32 +20,32 @@ with open(os.path.join(TEMPLATES, 'sp_municipios_2024.geojson'), encoding='utf-8
 
 # DDMs presenciais
 ddms = []
-with open(os.path.join(BASE, 'ddm-presenciais-geo-v2.csv'), encoding='utf-8-sig') as f:
+with open(os.path.join(BASE, 'ddm-presenciais-spatial.csv'), encoding='utf-8-sig') as f:
     for row in csv.DictReader(f):
         try:
             ddms.append({
                 'lat': float(row['latitude']),
                 'lng': float(row['longitude']),
                 'nome': row['unidade'],
-                'municipio': row['municipio'],
+                'municipio': row['municipio_spatial'],
                 'h24': row['funciona_24h'] == 'Sim',
-                'code': row['code_muni'].split('.')[0]
+                'code': row['ibge_spatial'].split('.')[0]
             })
         except (ValueError, KeyError):
             pass
 
 # Salas DDM Online (split por periodo)
 salas_pre, salas_pos = [], []
-with open(os.path.join(BASE, 'salas-ddm-online-geo.csv'), encoding='utf-8-sig') as f:
+with open(os.path.join(BASE, 'salas-ddm-online-spatial.csv'), encoding='utf-8-sig') as f:
     for row in csv.DictReader(f):
         try:
             entry = {
                 'lat': float(row['latitude']),
                 'lng': float(row['longitude']),
                 'nome': row['unidade'],
-                'municipio': row['municipio'],
+                'municipio': row['municipio_spatial'],
                 'ano': int(row['ano']),
-                'code': row['code_muni'].split('.')[0]
+                'code': row['ibge_spatial'].split('.')[0]
             }
             if entry['ano'] < 2023:
                 salas_pre.append(entry)
@@ -56,15 +56,15 @@ with open(os.path.join(BASE, 'salas-ddm-online-geo.csv'), encoding='utf-8-sig') 
 
 # Salas futuras
 futuras = []
-with open(os.path.join(BASE, 'salas-ddm-futuras.csv'), encoding='utf-8-sig') as f:
+with open(os.path.join(BASE, 'salas-ddm-futuras-spatial.csv'), encoding='utf-8-sig') as f:
     for row in csv.DictReader(f):
         try:
             futuras.append({
                 'lat': float(row['latitude']),
                 'lng': float(row['longitude']),
                 'nome': row['unidade'],
-                'municipio': row['municipio'],
-                'code': row['code_muni'].split('.')[0]
+                'municipio': row['municipio_spatial'],
+                'code': row['ibge_spatial'].split('.')[0]
             })
         except (ValueError, KeyError):
             pass
@@ -96,12 +96,12 @@ regioes_campinas = set()
 regioes_pp = set()
 regioes_reg = set()
 
-for src in [os.path.join(BASE, 'salas-ddm-online-geo.csv'), os.path.join(BASE, 'ddm-presenciais-geo-v2.csv')]:
+for src in [os.path.join(BASE, 'salas-ddm-online-spatial.csv'), os.path.join(BASE, 'ddm-presenciais-spatial.csv')]:
     with open(src, encoding='utf-8-sig') as f:
         for row in csv.DictReader(f):
             sec = row.get('seccional', '').strip().upper()
             dep = row.get('departamento', '').strip().upper()
-            code = row['code_muni'].split('.')[0]
+            code = row['ibge_spatial'].split('.')[0]
             if not code: continue
             if dep in ('DEMACRO', 'DECAP'):
                 regioes_rmsp.add(code)
@@ -114,11 +114,11 @@ for src in [os.path.join(BASE, 'salas-ddm-online-geo.csv'), os.path.join(BASE, '
 
 # Adicionar municipios vizinhos de Campinas para zoom mais amplo
 # (os que tem cobertura na regiao)
-for src in [os.path.join(BASE, 'salas-ddm-online-geo.csv')]:
+for src in [os.path.join(BASE, 'salas-ddm-online-spatial.csv')]:
     with open(src, encoding='utf-8-sig') as f:
         for row in csv.DictReader(f):
             sec = row.get('seccional', '').strip().upper()
-            code = row['code_muni'].split('.')[0]
+            code = row['ibge_spatial'].split('.')[0]
             if not code: continue
             if any(x in sec for x in ['PIRACICABA', 'JUNDIAI', 'AMERICANA', 'LIMEIRA', 'RIO CLARO', 'SOROCABA']):
                 regioes_campinas.add(code)

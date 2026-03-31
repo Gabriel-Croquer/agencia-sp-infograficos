@@ -1,0 +1,144 @@
+﻿departamento,seccional,unidade,funciona_24h,endereco,latitude,longitude,municipio_google,municipio_spatial,ibge_spatial
+DECAP,1ª,1ª DDM,Sim,"Casa da Mulher Brasileira - Rua Vieira Ravasco, 26 - Cambuci",-23.5576065,-46.6226679,São Paulo,São Paulo,3550308.0
+DECAP,2ª,2ª DDM,Sim,"Avenida Onze de Junho, 89 (fundos) - Vila Clementino",-23.6018262,-46.6377652,São Paulo,São Paulo,3550308.0
+DECAP,3ª,3ª DDM,Não,"Avenida Corifeu de Azevedo Marques, 4300 (2º andar) - Jaguaré",-23.5587799,-46.74665350000001,São Paulo,São Paulo,3550308.0
+DECAP,3ª,9ª DDM,Não,"Avenida Menotti Laudísio, 286 - Pirituba",-23.4826247,-46.7257487,São Paulo,São Paulo,3550308.0
+DECAP,4ª,4ª DDM,Sim,"Avenida Itaberaba, 731 - Nossa Senhora do Ó",-23.4946947,-46.6977047,São Paulo,São Paulo,3550308.0
+DECAP,5ª,5ª DDM,Sim,"Rua Dr. Corinto Baldoino Costa, 400 - Vila Zilda",-23.5364393,-46.5633628,São Paulo,São Paulo,3550308.0
+DECAP,6ª,6ª DDM,Sim,"Rua Padre José de Anchieta, 138 (fundos) - Santo Amaro",-23.6468954,-46.70744670000001,São Paulo,São Paulo,3550308.0
+DECAP,7ª,7ª DDM,Sim,"Rua Sábado D'Ângelo, 64 - Itaquera",-23.5343185,-46.45186289999999,São Paulo,São Paulo,3550308.0
+DECAP,8ª,8ª DDM,Sim,"Avenida Osvaldo Valle Cordeiro, 190 - Vale do Aricanduva",-23.5540299,-46.4922378,São Paulo,São Paulo,3550308.0
+DEMACRO,Carapicuíba,Barueri,Sim,"Avenida Pastor Sebastião Davino dos Reis , 756 -  Jardim Barueri",-23.4961651,-46.8696458,Barueri,Barueri,3505708.0
+DEMACRO,Carapicuíba,Carapicuíba,Não,"Avenida Rui Barbosa, 1582 - Vila Caldas",-23.5212567,-46.8437132,Carapicuíba,Carapicuíba,3510609.0
+DEMACRO,Carapicuíba,Itapevi,Não,"Rodovia Engenheiro Renê Benedito da Silva, 830 -  Santa Rita",-23.54494,-46.94772,Itapevi,Itapevi,3522505.0
+DEMACRO,Carapicuíba,Cotia,Não,"Rua Turmalina, 99 -  Jardim Nomura",-23.6053324,-46.9149922,Cotia,Cotia,3513009.0
+DEMACRO,Carapicuíba,Santana de Parnaíba,Não,"Rua Álvares de Azevedo, 21 - Jardim Anhembi",-23.4569829,-46.9148954,Santana de Parnaíba,Santana de Parnaíba,3547304.0
+DEMACRO,Diadema,Diadema,Não,"Rua Santa Rita de Cássia, 42 - Centro",-23.6878439,-46.620406,Diadema,Diadema,3513801.0
+DEMACRO,Franco da Rocha,Francisco Morato,Não,"Rua Gregório Gomes da Silva, 39 - Centro",-23.2861245,-46.7443401,Francisco Morato,Francisco Morato,3516309.0
+DEMACRO,Franco da Rocha,Franco da Rocha,Não,"Rua Gregório Gomes da Silva, 39 - Centro",-23.2861245,-46.7443401,Francisco Morato,Francisco Morato,3516309.0
+DEMACRO,Guarulhos,Guarulhos,Não,"Rua Professor Carvalho Pinto, nº 125 – Centro",-23.4283439,-46.5125795,Guarulhos,Guarulhos,3518800.0
+DEMACRO,Guarulhos,Arujá,Não,"Praça Bartolomeu Bueno, 07 - Centro",-23.3960961,-46.3202785,Arujá,Arujá,3503901.0
+DEMACRO,Mogi das Cruzes,Mogi das Cruzes,Não,"Avenida Antônio Nascimento Costa, 21 - Parque Monte Líbano",-23.5219526,-46.1804244,Mogi das Cruzes,Mogi das Cruzes,3530607.0
+DEMACRO,Mogi das Cruzes,Suzano,Não,"Rua Presidente Nereu Ramos, 302 -  Jardim Santa Helena",-23.5459098,-46.3158937,Suzano,Suzano,3552502.0
+DEMACRO,Mogi das Cruzes,Itaquaquecetuba,Não,"Avenida João Barbosa de Moraes, 448 - Vila Zeferina",-23.4837199,-46.35365950000001,Itaquaquecetuba,Itaquaquecetuba,3523107.0
+DEMACRO,Mogi das Cruzes,Ferraz de Vasconcelos,Não,"Rua David Rogatis, 49 (fundos) - Parque Dourado",-23.5514161,-46.3788892,Ferraz de Vasconcelos,Ferraz de Vasconcelos,3515707.0
+DEMACRO,Osasco,Osasco,Não,Rua Itabuna 93 - Jardim Agu,-23.5368763,-46.7750172,Osasco,Osasco,3534401.0
+DEMACRO,Santo André,Santo André,Não,"Rua Laura, 452 - Centro",-23.6622999,-46.5345981,Santo André,Santo André,3547809.0
+DEMACRO,Santo André,Mauá,Não,"Rua General Osório, 75 - Vila Bocaina",-23.6672109,-46.4569639,Mauá,Mauá,3529401.0
+DEMACRO,São Bernardo do Campo,São Bernardo do Campo,Não,"Rua Tasmãn, 540 - Bairro Jd. Do Mar - São Bernado do Campo",-23.6881931,-46.5567329,São Bernardo do Campo,São Bernardo do Campo,3548708.0
+DEMACRO,São Bernardo do Campo,São Caetano do Sul,Não,"Rua Silvia, 160 - Santa Maria",-23.6342865,-46.5530007,São Caetano do Sul,São Caetano do Sul,3548807.0
+DEMACRO,Taboão da Serra,Taboão da Serra,Não,"Rua Henrique de Moraes Camargo, 162 - Jardim Santa Cecília",-23.6204641,-46.7879886,Taboão da Serra,Taboão da Serra,3552809.0
+DEMACRO,Taboão da Serra,Embu das Artes,Não,"Rua Belo Horizonte, 289 - Centro",-23.6518303,-46.8552605,Embu das Artes,Embu das Artes,3515004.0
+DEINTER 1,Cruzeiro,Cruzeiro,Não,"Av. Nesralla Rubez, 993 - Centro",-22.5740714,-44.9585246,Cruzeiro,Cruzeiro,3513405.0
+DEINTER 1,Guaratinguetá,Guaratinguetá,Não,"Praça Joaquim Vilela de Oliveira Marcondes, 470 - São Gonçalo",-22.8173887,-45.1874507,Guaratinguetá,Guaratinguetá,3518404.0
+DEINTER 1,Guaratinguetá,Lorena,Não,"Rua Joaquim Cardoso Machado, 385 - Vila Geny",-22.7278612,-45.1078322,Lorena,Lorena,3527207.0
+DEINTER 1,Jacareí,Jacareí,Não,"Rua Dr. Job Ayres Dias, 201 - Centro",-23.2985385,-45.96198,Jacareí,Jacareí,3524402.0
+DEINTER 1,São José dos Campos,São José dos Campos,Sim,"Avenida Comendador Vicente de Paula Penido, 234 - Parque Residencial Aquarius",-23.2153745,-45.9027434,São José dos Campos,São José dos Campos,3549904.0
+DEINTER 1,São Sebastião,Caraguatatuba,Não,"Avenida Paraná, 460 - Jardim Primavera",-23.6273317,-45.4184714,Caraguatatuba,Caraguatatuba,3510500.0
+DEINTER 1,São Sebastião,São Sebastião,Não,"Rua Dr. Armando de Salles Oliveira, 340 – Vila Amélia",-23.8009398,-45.4049372,São Sebastião,São Sebastião,3550704.0
+DEINTER 1,São Sebastião,Ubatuba,Não,"Rua Minas Gerais, 12 – Centro",-23.436132,-45.0782574,Ubatuba,Ubatuba,3555406.0
+DEINTER 1,Taubaté,Taubaté,Não,"Alameda José Leôncio Ramos, 45 (fundos) - Jardim Eulália",-23.0355339,-45.5631579,Taubaté,Taubaté,3554102.0
+DEINTER 1,Taubaté,Pindamonhangaba,Não,"Rua Dr. Gustavo Godoy, 409 - Centro",-22.9266708,-45.4661476,Pindamonhangaba,Pindamonhangaba,3538006.0
+DEINTER 2,1ª Seccional Campinas,1ª DDM,Não,"Av Dr. Antônio Carlos Sales, 310 - Jardim Proença",-22.921765,-47.0433293,Campinas,Campinas,3509502.0
+DEINTER 2,1ª Seccional Campinas,Paulínia,Não,"Avenida Prefeito José Lozano Araújo, 1515 - Jardim Nossa Senhora Aparecida",-22.7824354,-47.1550993,Paulínia,Paulínia,3536505.0
+DEINTER 2,1ª Seccional Campinas,Valinhos,Não,"Avenida Onze de Agosto, 2499 - Vila Embaré",-22.9644458,-47.0091974,Valinhos,Valinhos,3556206.0
+DEINTER 2,1ª Seccional Campinas,Vinhedo,Não,"Avenida da Saudade, s/n - Jardim Alves Nogueira",-23.030328152262204,-46.98326047579447,Vinhedo,Vinhedo,3550308.0
+DEINTER 2,2ª Seccional Campinas,2ª DDM,Sim,"Rua Ferdinando Panatoni, 590 - Jardim Paulicéia",-22.9188209,-47.1062783,Campinas,Campinas,3509502.0
+DEINTER 2,2ª Seccional Campinas,Indaiatuba,Não,"Rua Ademar de Barros, 125 - Centro",-23.0900082,-47.2128838,Indaiatuba,Indaiatuba,3520509.0
+DEINTER 2,Jundiaí,Jundiaí,Não,"Avenida Nove de Julho, 3600 - Jardim Paulista",-23.1856528,-46.8892222,Jundiaí,Jundiaí,3525904.0
+DEINTER 2,Jundiaí,Itatiba,Não,"Rua Benedito Silveira Franco, 156 - Vila Lanfranchi",-23.0130694,-46.8449413,Itatiba,Itatiba,3523404.0
+DEINTER 2,Mogi Guaçu,Itapira,Não,"Rua Sd. Augusto, s/n - Santa Cruz",-22.4412081,-46.8305298,Itapira,Itapira,3522604.0
+DEINTER 2,Mogi Guaçu,Mogi Guaçu,Não,"Avenida Nove de Abril, 842 - Centro",-22.3637832,-46.94509739999999,Mogi Guaçu,Mogi Guaçu,3530706.0
+DEINTER 2,Mogi Guaçu,Mogi Mirim,Não,"Rua Padre José, 601 - Centro",-22.4379413,-46.95612999999999,Mogi Mirim,Mogi Mirim,3530805.0
+DEINTER 2,Jundiaí,Várzea Paulista,Não,"Rua José Rabelo Portela, 417 - Jar4dim Maria de Fátima",-23.2145025,-46.84545600000001,Várzea Paulista,Várzea Paulista,3556503.0
+DEINTER 2,Bragança Paulista,Bragança Paulista,Não,"Avenida Imigrantes, 2 - Taboão",-22.9695554,-46.5401244,Bragança Paulista,Bragança Paulista,3507605.0
+DEINTER 2,Bragança Paulista,Serra Negra,Não,"Rua José Maria Franco de Godoy, 51 - Vila Dirce",-22.5938258,-46.7033389,Serra Negra,Serra Negra,3551603.0
+DEINTER 3,Araraquara,Araraquara,Não,"Alameda Rogério Pinto Ferraz, 910 - Vila Harmonia",-21.7728322,-48.1756322,Araraquara,Araraquara,3503208.0
+DEINTER 3,Araraquara,Matão,Não,"Rua Afonso Maccagnan, 653, Centro",-21.6083106,-48.3674534,Matão,Matão,3529302.0
+DEINTER 3,Araraquara,Itápolis,Não,Avenida Duque de Caxias 1384 - Vila Santos,-21.5889444,-48.8171209,Itápolis,Itápolis,3522703.0
+DEINTER 3,Araraquara,Ibitinga,Não,"Rua Bom Jesus, 986 - Centro",-21.7522388,-48.82581039999999,Ibitinga,Ibitinga,3519600.0
+DEINTER 3,Araraquara,Taquaritinga,Não,"Praça Francisco Nuevo, s/n - Centro",-21.41280609309999,-48.50833455871452,Taquaritinga,Taquaritinga,3550308.0
+DEINTER 3,Barretos,Barretos,Não,"Rua 18, 137, Avs. 29 e 31 - Centro",-20.5540567,-48.5708494,Barretos,Barretos,3505500.0
+DEINTER 3,Barretos,Olímpia,Não,"Rua David de Oliveira, 353 - Centro",-20.7372581,-48.9074891,Olímpia,Olímpia,3533908.0
+DEINTER 3,Barretos,Guaíra,Não,"Rua Vinte e Seis, s/n - Centro",-20.3236829,-48.3189832,Guaíra,Guaíra,3517406.0
+DEINTER 3,Bebedouro,Bebedouro,Não,"Rua Vanor Junqueira Franco, 999 - Centro",-20.948176,-48.4861255,Bebedouro,Bebedouro,3506102.0
+DEINTER 3,Franca,Franca,Não,"Rua Voluntários da Franca, 2557 - São José",-20.5393976,-47.3920386,Franca,Franca,3516200.0
+DEINTER 3,Franca,Batatais,Não,"Rua Goiás, 190 - Riachuelo",-20.8976663,-47.59532859999999,Batatais,Batatais,3505906.0
+DEINTER 3,Ribeirão Preto,Ribeirão Preto,Sim,"Avenida Costabile Romano, 3230 - Ribeirânia",-21.2061121,-47.7700379,Ribeirão Preto,Ribeirão Preto,3543402.0
+DEINTER 3,São Carlos,São Carlos,Não,"Rua São Sebastião, 1453 - Parque Santa Mônica",-22.0129875,-47.8963671,São Carlos,São Carlos,3548906.0
+DEINTER 3,São Joaquim da Barra,São Joaquim da Barra,Não,"Rua Minas Gerais, 1192 - Centro",-20.5824038,-47.8613292,São Joaquim da Barra,São Joaquim da Barra,3549409.0
+DEINTER 3,Sertãozinho,Sertãozinho,Não,"Avenida Affonso Trigo, 1534 - Jardim 5 de Dezembro",-21.1319894,-47.9985318,Sertãozinho,Sertãozinho,3551702.0
+DEINTER 3,Sertãozinho,Jaboticabal,Não,"Avenida Marechal Deodoro, 453 - Centro",-21.2565854,-48.3212221,Jaboticabal,Jaboticabal,3524303.0
+DEINTER 3,Sertãozinho,Monte Alto,Não,"Rua Gustavo de Godoy, 426 - Centro",-21.2622447,-48.4994757,Monte Alto,Monte Alto,3531308.0
+DEINTER 4,Bauru,Bauru,Sim,"Praça Dom Pedro II, 2-70 -Centro",-22.3246455,-49.0758526,Bauru,Bauru,3506003.0
+DEINTER 4,Jaú,Jaú,Não,"Alameda América, 90 - Chácara Canhos",-22.3033798,-48.55832789999999,Jaú,Jaú,3525300.0
+DEINTER 4,Lins,Lins,Não,"Rua Dr. Érico de Abreu Sodré, 72 - Vila Alta",-21.6721881,-49.7547113,Lins,Lins,3527108.0
+DEINTER 4,Marília,Marília,Não,"Rua Dr. Joaquim de Abreu Sampaio Vidal, 48 (1º andar) - Alto Cafezal",-22.2088491,-49.9543147,Marília,Marília,3529005.0
+DEINTER 4,Marília,Garça,Não,"Rua Carlos Gomes, 213 - Centro",-22.2129366,-49.6524819,Garça,Garça,3516705.0
+DEINTER 4,Ourinhos,Ourinhos,Não,"Rua Aristides Lau Sampaio, 159 - Jardim Paulista",-22.9797052,-49.8739667,Ourinhos,Ourinhos,3534708.0
+DEINTER 4,Ourinhos,Santa Cruz do Rio Pardo,Não,"Travessa Pedro Henrique de Oliveira, 02 - Estação",-22.907965,-49.6193219,Santa Cruz do Rio Pardo,Santa Cruz do Rio Pardo,3546405.0
+DEINTER 4,Tupã,Tupã,Não,"Rua Mandaguaris, 876 - Centro",-21.9394095,-50.5160673,Tupã,Tupã,3555000.0
+DEINTER 4,Tupã,Bastos,Não,"Rua Dezoito de Junho, 100 - Centro",-21.9229293,-50.7301509,Bastos,Bastos,3505807.0
+DEINTER 5,Catanduva,Catanduva,Não,"Rua Belo Horizonte, 297 - Centro",-21.1344043,-48.9757243,Catanduva,Catanduva,3511102.0
+DEINTER 5,Fernandópolis,Fernandópolis,Não,"Rua Maria Batista, 189 - Jardim Santa Rita",-20.2737544,-50.2548193,Fernandópolis,Fernandópolis,3515509.0
+DEINTER 5,Jales,Jales,Não,"Avenida João Amadeu, 2245 - Centro",-20.2699201,-50.5509938,Jales,Jales,3524808.0
+DEINTER 5,Jales,Santa Fé do Sul,Não,"Rua Um, 960 - Centro",-20.2147467,-50.9266825,Santa Fé do Sul,Santa Fé do Sul,3546603.0
+DEINTER 5,Novo Horizonte,Novo Horizonte,Não,"Rua 28 De Outubro, 1361 - Vila Patti",-21.4696849,-49.22085690000001,Novo Horizonte,Novo Horizonte,3533502.0
+DEINTER 5,São José do Rio Preto,São José do Rio Preto,Sim,"Rua Floriano Peixoto, 2880 - Santos Dumont",-20.8180132,-49.3990989,São José do Rio Preto,São José do Rio Preto,3549805.0
+DEINTER 5,São José do Rio Preto,Monte Aprazível,Não,"Rua Dom Pedro I, 475 - Centro",-20.7736434,-49.7159421,Monte Aprazível,Monte Aprazível,3531407.0
+DEINTER 5,São José do Rio Preto,José Bonifácio,Não,"Rua Domingos Fernandes Alonso, 551 - Centro",-21.0537592,-49.6848074,José Bonifácio,José Bonifácio,3525706.0
+DEINTER 5,São José do Rio Preto,Mirassol,Não,"Rua Benjamin Constant, 2405 - Centro",-20.8152691,-49.5117228,Mirassol,Mirassol,3530300.0
+DEINTER 5,Votuporanga,Votuporanga,Não,"Rua Bahia, 3055 - Centro",-20.4258916,-49.9762827,Votuporanga,Votuporanga,3557105.0
+DEINTER 6,Itanhaém,Itanhaém,Não,"Rua Leopoldino de Araújo, 167 - Centro",-24.1829194,-46.7855565,Itanhaém,Itanhaém,3522109.0
+DEINTER 6,Itanhaém,Mongaguá,Não,"Avenida São Paulo, 851 - Centro",-24.0913148,-46.6135491,Mongaguá,Mongaguá,3531100.0
+DEINTER 6,Itanhaém,Peruíbe,Não,"Rua Ministro Genésio de Moura, 76 - Centro",-24.3226466,-46.9994169,Peruíbe,Peruíbe,3537602.0
+DEINTER 6,Registro,Registro,Não,"Avenida Clara Gianotti de Souza, 1051 (1º andar) - Centro",-24.5002479,-47.8519587,Registro,Registro,3542602.0
+DEINTER 6,Praia Grande,Praia Grande,Não,"Rua Cidade de Santos, 499 - Boqueirão",-24.0017636,-46.41769499999999,Praia Grande,Praia Grande,3541000.0
+DEINTER 6,Praia Grande,São Vicente,Não,"Rua Djalma Dutra, 132 - Centro",-23.9674338,-46.3877007,São Vicente,São Vicente,3551009.0
+DEINTER 6,Santos,Guarujá,Não,"Rua Washington, 227 - Centro",-23.9930963,-46.2556295,Guarujá,Guarujá,3518701.0
+DEINTER 6,Santos,Cubatão,Não,"Avenida Brasil, 384 - Jardim Casqueiro",-23.9281312,-46.4092792,Cubatão,Cubatão,3513504.0
+DEINTER 6,Santos,Santos,Sim,"Rua Dr. Assis Correa, 50 - Gonzaga",-23.9614057,-46.3311313,Santos,Santos,3548500.0
+DEINTER 6,Jacupiranga,Jacupiranga,Não,"Avenida Hilda Mohring de Macedo, 1329 - Vila Elias",-24.7016461,-48.0070345,Jacupiranga,Jacupiranga,3524600.0
+DEINTER 7,Avaré,Avaré,Não,"Avenida Salim Antonio Curiati, 1630 - Santa Elizabeth",-23.1081054,-48.9018944,Avaré,Avaré,3504503.0
+DEINTER 7,Botucatu,Botucatu,Não,"Rua Vinte e Três de Setembro, 208 - Vila Carmelo",-22.8686108,-48.451014,Botucatu,Botucatu,3507506.0
+DEINTER 7,Botucatu,São Manuel,Não,"Rua Sete de Setembro, 649 - Centro",-22.7332161,-48.5686021,São Manuel,São Manuel,3550100.0
+DEINTER 7,Itapetininga,Itapetininga,Não,"Rua Higino Rolim Rosa, 81 - Vila Rosa",-23.5921803,-48.0477602,Itapetininga,Itapetininga,3522307.0
+DEINTER 7,Itapetininga,Tatuí,Não,"Praça da Bandeira, 53 - Centro",-23.3488235,-47.8453501,Tatuí,Tatuí,3554003.0
+DEINTER 7,Itapeva,Itapeva,Não,"Rua Everaldo Nilton Chiavini, 173 - Bairro Central Park",-23.9878264,-48.8848512,Itapeva,Itapeva,3522406.0
+DEINTER 7,Itapeva,Capão Bonito,Não,"Rua Shizue Titae Yao, 214 - Vila Santa Rosa",-24.0088694,-48.3479991,Capão Bonito,Capão Bonito,3510203.0
+DEINTER 7,Sorocaba,Sorocaba,Sim,"Rua Caracas, 846 - Parque Campolim",-23.5232824,-47.4666495,Sorocaba,Sorocaba,3552205.0
+DEINTER 7,Sorocaba,Itu,Não,"Rua Goiás, 204 - Brasil",-23.2596057,-47.2942144,Itu,Itu,3523909.0
+DEINTER 7,Sorocaba,Salto,Não,"Rua Rodrigues Alves, 617 - Centro",-23.2021789,-47.2918173,Salto,Salto,3545209.0
+DEINTER 7,Sorocaba,São Roque,Não,"Rua Quirino Capuzzo, s/n - Vila Aguiar",-23.5321103,-47.1323636,São Roque,São Roque,3550605.0
+DEINTER 7,Sorocaba,Votorantim,Não,"Rua Milton Novaes, 226 - Jardim Icatu",-23.5404338,-47.4521232,Votorantim,Votorantim,3557006.0
+DEINTER 8,Adamantina,Adamantina,Não,"Alameda Santa Cruz, 1171 - Vila Joaquina",-21.6818606,-51.07948529999999,Adamantina,Adamantina,3500105.0
+DEINTER 8,Adamantina,Osvaldo Cruz,Não,"Avenida Hanz Klots, 1452 - Vila Cavaru",-21.7882266,-50.87147909999999,Osvaldo Cruz,Osvaldo Cruz,3534609.0
+DEINTER 8,Assis,Assis,Não,"Rua José Severino, 165 - Vila Fiuza",-22.6538648,-50.4053116,Assis,Assis,3504008.0
+DEINTER 8,Assis,Paraguaçu Paulista,Não,"Rua Caramuru, 329 - Centro",-22.4121138,-50.5782181,Paraguaçu Paulista,Paraguaçu Paulista,3535507.0
+DEINTER 8,Dracena,Dracena,Não,"Rua Martim Afonso, 1421 - São Francisco",-21.4899697,-51.543538,Dracena,Dracena,3514403.0
+DEINTER 8,Presidente Prudente,Presidente Prudente,Sim,"Rua José Dias Cintra, 149 - Vila Ocidental",-22.1217682,-51.3910809,Presidente Prudente,Presidente Prudente,3541406.0
+DEINTER 8,Presidente Prudente,Rancharia,Não,"Rua Adamo Passianoto, 180 - Jardim Primavera",-22.2241958,-50.8967503,Rancharia,Rancharia,3542206.0
+DEINTER 8,Presidente Prudente,Presidente Venceslau,Não,"Av. Dom Pedro II, 741 - Centro",-21.8754156,-51.8490119,Presidente Venceslau,Presidente Venceslau,3541505.0
+DEINTER 8,Presidente Prudente,Presidente Epitácio,Não,"Rua João Pepino, 269 - Centro",-21.7613643,-52.1039806,Presidente Epitácio,Presidente Epitácio,3541307.0
+DEINTER 9,Americana,Americana,Não,"Rua São Vito, 1675 – Santa Cruz",-22.7366865,-47.3027592,Americana,Americana,3501608.0
+DEINTER 9,Americana,Sumaré,Não,"Rua Dom Barreto, 1294 – Centro",-22.8189846,-47.2694402,Sumaré,Sumaré,3552403.0
+DEINTER 9,Americana,Santa Bárbara D'Oeste,Não,"Rua Duque de Caxias, 67 – Centro",-22.7494956,-47.4118805,Santa Bárbara d'Oeste,Santa Bárbara D'oeste,3545803.0
+DEINTER 9,Americana,Hortolândia,Não,"Rua Benedicta Pires de Assis, 88 –  Remanso Campineiro",-22.8684825,-47.2157863,Hortolândia,Hortolândia,3519071.0
+DEINTER 9,Casa Branca,Casa Branca,Não,"Rua Sete de Setembro, 76 - Centro",-21.7739228,-47.0820848,Casa Branca,Casa Branca,3510807.0
+DEINTER 9,Casa Branca,São José do Rio Pardo,Não,"Rua Júlio de Mesquita, 14 - Centro",-21.5966515,-46.8936668,São José do Rio Pardo,São José do Rio Pardo,3549706.0
+DEINTER 9,Limeira,Araras,Não,"Rua Tiradentes, 904 - Centro",-22.354615,-47.3891948,Araras,Araras,3503307.0
+DEINTER 9,Limeira,Leme,Não,"Rua Coronel João Franco Mourão, 188 - Centro",-22.1820945,-47.38821129999999,Leme,Leme,3526704.0
+DEINTER 9,Limeira,Limeira,Não,"Rua Presidente Humberto Alencar Castelo Branco, 389 - Jardim Mercedes",-22.5694205,-47.40296319999999,Limeira,Limeira,3526902.0
+DEINTER 9,Limeira,Pirassununga,Não,"Rua XV de Novembro, 2448 - Centro",-22.0075434,-47.4276871,Pirassununga,Pirassununga,3539301.0
+DEINTER 9,Piracicaba,Piracicaba,Sim,"Rua Alferes José Caetano, 1018 - Centro",-22.7250122,-47.6508209,Piracicaba,Piracicaba,3538709.0
+DEINTER 9,Piracicaba,Capivari,Não,"Rua General Osório, 582 - Centro",-22.9976685,-47.506878,Capivari,Capivari,3510401.0
+DEINTER 9,Rio Claro,Rio Claro,Não,"Avenida 23, 1.300 - Bairro do Estádio",-22.4182233,-47.5540898,Rio Claro,Rio Claro,3543907.0
+DEINTER 9,São João da Boa Vista,São João da Boa Vista,Não,"Rua Presidente Franklin Roosevelt, 80 - Perpétuo Socorro",-21.9774014,-46.7912656,São João da Boa Vista,São João da Boa Vista,3549102.0
+DEINTER 9,São João da Boa Vista,Vargem Grande do Sul,Não,"Rua Major Corrêa, 527 - Centro",-21.8299364,-46.895145,Vargem Grande do Sul,Vargem Grande do Sul,3556404.0
+DEINTER 9,São João da Boa Vista,Espírito Santo do Pinhal,Não,"Praça Bento Bueno, s/n - Centro",-22.1965279,-46.747043,Espírito Santo do Pinhal,Espírito Santo do Pinhal,3515186.0
+DEINTER 10,Araçatuba,Araçatuba,Sim,"Rua Cussy de Almeida Júnior, 1167 - Higienópolis",-21.2123845,-50.4431194,Araçatuba,Araçatuba,3502804.0
+DEINTER 10,Araçatuba ,Birigui,Não,"Rua Nicolau da Silva Nunes, 291 - Patrimônio Silvares",-21.2810493,-50.3373721,Birigui,Birigui,3506508.0
+DEINTER 10,Araçatuba,Penápolis,Não,"Avenida Manoel Bento da Cruz, 223 - Centro",-21.419887,-50.0746149,Penápolis,Penápolis,3537305.0
+DEINTER 10,Andradina,Andradina,Não,"Rua José Augusto de Carvalho, 1465 - Centro",-20.8945407,-51.37960899999999,Andradina,Andradina,3502101.0
+DEINTER 10,Andradina,Ilha Solteira,Não,"Alameda Mato Grosso, 234 - Sala B - Centro",-20.4263275,-51.34599189999999,Ilha Solteira,Ilha Solteira,3520442.0
+DEINTER 10,Andradina,Pereira Barreto,Não,"Rua Francisca Senhorinha Carneiro, 1456 - Vila Municipal",-20.6439762,-51.1049718,Pereira Barreto,Pereira Barreto,3537404.0
