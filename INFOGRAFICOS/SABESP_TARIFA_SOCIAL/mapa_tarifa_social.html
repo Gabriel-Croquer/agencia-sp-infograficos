@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifa Social Paulista - Mapa 645 Municípios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: auto;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #FFFFFF;
+      color: #1D1D1B;
+      display: flex;
+      justify-content: center;
+      padding: 20px 20px 10px;
+    }
+
+    .chart-container {
+      width: 100%;
+      max-width: 960px;
+    }
+
+    .chart-title {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 6px;
+      color: #1D1D1B;
+    }
+
+    .chart-title .destaque {
+      color: #555555;
+    }
+
+    .chart-subtitle {
+      font-size: 14px;
+      font-weight: 400;
+      color: #666;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .map-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 14px;
+      align-items: center;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: #555;
+    }
+
+    .legend-swatch {
+      width: 16px;
+      height: 16px;
+      border-radius: 2px;
+    }
+
+    .map-area {
+      position: relative;
+      width: 100%;
+    }
+
+    .map-area svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    path.municipio {
+      cursor: pointer;
+      transition: opacity 0.15s ease, stroke-width 0.15s ease;
+    }
+
+    path.municipio:hover {
+      opacity: 0.8;
+      stroke-width: 1.5;
+      stroke: #333;
+    }
+
+    .tooltip {
+      position: fixed;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 12px;
+      line-height: 1.5;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      max-width: 260px;
+      z-index: 100;
+    }
+
+    .tooltip .tt-title {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 4px;
+      color: #1D1D1B;
+    }
+
+    .tooltip .tt-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .tooltip .tt-label { color: #888; }
+    .tooltip .tt-value { font-weight: 600; color: #1D1D1B; }
+
+    .tooltip .tt-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    .chart-source {
+      font-size: 11px;
+      color: #999;
+      margin-top: 12px;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .logo-container img {
+      height: 40px;
+    }
+
+    .loading-msg {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .chart-title { font-size: 18px; }
+      .chart-subtitle { font-size: 12px; }
+      .map-legend { gap: 10px; }
+      .legend-item { font-size: 11px; }
+      body { padding: 14px 10px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="chart-container">
+    <h1 class="chart-title">
+      Conta de água: <span class="destaque">dobra número de beneficiários</span> da Tarifa Social Paulista em 359 municípios de SP
+    </h1>
+    <p class="chart-subtitle">
+      Crescimento ocorreu em 97% das cidades atendidas pela Sabesp, que opera em 371 dos 645 municípios do estado; total de beneficiados passou de 2,98 milhões para 6 milhões de pessoas
+    </p>
+
+    <div class="map-legend">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#555555; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
+        Dobrou nº de beneficiários
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#FFFFFF; border: 1.5px solid #888;  box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
+        Sabesp — não dobrou
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#E8E8E8; opacity:0.5;"></div>
+        Outros sistemas
+      </div>
+    </div>
+
+    <div class="map-area" id="mapArea">
+      <p class="loading-msg">Carregando mapa…</p>
+    </div>
+    <div class="tooltip" id="tooltip"></div>
+    <p class="chart-source">Fonte: Sabesp / Governo do Estado de São Paulo</p>
+    <div class="logo-container">
+      <img src="../../inputs/manual-iv/Agencia_logo.png" alt="Agência SP" onerror="this.style.display='none'">
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    var GEOJSON_PATH = "../../templates/sp_municipios_2024.geojson";
+    var CSV_PATH     = "mapa-645-municipios-tarifa-social.csv";
+
+    var COLORS = {
+      dobrou:    "#555555",
+      naoDouble: "#FFFFFF",
+      naoSabesp: "#E8E8E8",
+      stroke:    "#FFFFFF",
+      strokeSabesp: "#CCCCCC"
+    };
+
+    Promise.all([
+      d3.json(GEOJSON_PATH),
+      d3.csv(CSV_PATH)
+    ]).then(function(results) {
+      var geojson = results[0];
+      var csvData = results[1];
+      render(geojson, csvData);
+    }).catch(function(err) {
+      document.getElementById("mapArea").innerHTML =
+        '<p style="color:#FF161F;font-weight:600;padding:40px 0;text-align:center;">' +
+        'Erro ao carregar dados. Verifique se o arquivo está acessível.<br><small>' + err + '</small></p>';
+    });
+
+    function render(geojson, csvData) {
+      // Build lookup by cod_ibge
+      var lookup = {};
+      csvData.forEach(function(d) {
+        lookup[String(d.cod_ibge)] = {
+          nome:      d.municipio,
+          ra:        d.ra,
+          sabesp:    d.atendido_sabesp === "Sim",
+          dobrou:    d["DOBROU?"] === "Sim",
+          triplicou: d["TRIPLICOU?"] === "Sim",
+          antes:     +d.pessoas_antes || 0,
+          depois:    +d.pessoas_depois || 0,
+          variacao:  d.variacao_pct ? parseFloat(d.variacao_pct) : null,
+          mult:      d.multiplicador ? parseFloat(d.multiplicador) : null
+        };
+      });
+
+      var mapArea = document.getElementById("mapArea");
+      mapArea.innerHTML = "";
+
+      var width  = mapArea.clientWidth || 960;
+      var height = Math.round(width * 0.72);
+
+      var svg = d3.select("#mapArea")
+        .append("svg")
+        .attr("viewBox", "0 0 " + width + " " + height)
+        .attr("preserveAspectRatio", "xMidYMid meet");
+
+      // SVG filter for drop shadow (elevation effect)
+      var defs = svg.append("defs");
+
+      var filter = defs.append("filter")
+        .attr("id", "elevate")
+        .attr("x", "-10%").attr("y", "-10%")
+        .attr("width", "130%").attr("height", "140%");
+
+      filter.append("feDropShadow")
+        .attr("dx", 0)
+        .attr("dy", 2)
+        .attr("stdDeviation", 2.5)
+        .attr("flood-color", "rgba(0,0,0,0.35)");
+
+      // Projection
+      var projection = d3.geoMercator().fitSize([width, height], geojson);
+      var pathGen = d3.geoPath().projection(projection);
+
+      // Separate features into layers
+      var nonSabesp = [];
+      var sabespDobrou = [];
+      var sabespNao = [];
+
+      geojson.features.forEach(function(f) {
+        var code = String(f.properties.CD_MUN);
+        var info = lookup[code];
+        if (info && info.sabesp) {
+          if (info.dobrou) {
+            sabespDobrou.push(f);
+          } else {
+            sabespNao.push(f);
+          }
+        } else {
+          nonSabesp.push(f);
+        }
+      });
+
+      // Layer 1: Non-Sabesp (transparent, back)
+      svg.append("g").attr("class", "layer-nonsabesp")
+        .selectAll("path")
+        .data(nonSabesp)
+        .enter().append("path")
+        .attr("class", "municipio")
+        .attr("d", pathGen)
+        .attr("fill", COLORS.naoSabesp)
+        .attr("fill-opacity", 0.35)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 0.3)
+        .on("mouseover", showTooltip)
+        .on("mousemove", moveTooltip)
+        .on("mouseout", hideTooltip);
+
+      // Layer 2: Sabesp not doubled (raised, white)
+      svg.append("g").attr("class", "layer-sabesp-nao")
+        .attr("filter", "url(#elevate)")
+        .selectAll("path")
+        .data(sabespNao)
+        .enter().append("path")
+        .attr("class", "municipio")
+        .attr("d", pathGen)
+        .attr("fill", COLORS.naoDouble)
+        .attr("stroke", "#888")
+        .attr("stroke-width", 0.6)
+        .on("mouseover", showTooltip)
+        .on("mousemove", moveTooltip)
+        .on("mouseout", hideTooltip);
+
+      // Layer 3: Sabesp doubled (raised, grey, on top)
+      svg.append("g").attr("class", "layer-sabesp-dobrou")
+        .attr("filter", "url(#elevate)")
+        .selectAll("path")
+        .data(sabespDobrou)
+        .enter().append("path")
+        .attr("class", "municipio")
+        .attr("d", pathGen)
+        .attr("fill", COLORS.dobrou)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 0.4)
+        .on("mouseover", showTooltip)
+        .on("mousemove", moveTooltip)
+        .on("mouseout", hideTooltip);
+
+      // Tooltip
+      var tooltip = d3.select("#tooltip");
+
+      function showTooltip(event, d) {
+        var code = String(d.properties.CD_MUN);
+        var info = lookup[code];
+        var nome = (info && info.nome) || d.properties.NM_MUN || code;
+
+        var html = '<div class="tt-title">' + nome + '</div>';
+
+        if (info && info.sabesp) {
+          html += '<div class="tt-row"><span class="tt-label">Antes</span><span class="tt-value">' +
+                  formatNum(info.antes) + ' pessoas</span></div>';
+          html += '<div class="tt-row"><span class="tt-label">Depois</span><span class="tt-value">' +
+                  formatNum(info.depois) + ' pessoas</span></div>';
+          if (info.variacao !== null) {
+            html += '<div class="tt-row"><span class="tt-label">Variação</span><span class="tt-value">+' +
+                    info.variacao.toFixed(1).replace(".", ",") + '%</span></div>';
+          }
+          if (info.mult !== null) {
+            html += '<div class="tt-row"><span class="tt-label">Multiplicador</span><span class="tt-value">' +
+                    info.mult.toFixed(1).replace(".", ",") + 'x</span></div>';
+          }
+          if (info.dobrou) {
+            html += '<div class="tt-badge" style="background:#555;color:#fff;">Dobrou ✓</div>';
+          }
+          if (info.triplicou) {
+            html += ' <div class="tt-badge" style="background:#0B9247;color:#fff;">Triplicou ✓</div>';
+          }
+        } else {
+          html += '<div style="color:#999;font-size:11px;margin-top:2px;">Não atendido pela Sabesp</div>';
+        }
+
+        tooltip.html(html).style("opacity", 1);
+      }
+
+      function moveTooltip(event) {
+        var x = event.clientX;
+        var y = event.clientY;
+        var ttWidth  = tooltip.node().offsetWidth;
+        var ttHeight = tooltip.node().offsetHeight;
+        var winW = window.innerWidth;
+        var winH = window.innerHeight;
+
+        var left = x + 14;
+        var top  = y - 10;
+
+        if (left + ttWidth > winW - 10) left = x - ttWidth - 14;
+        if (top + ttHeight > winH - 10) top  = y - ttHeight - 10;
+        if (top < 10) top = 10;
+
+        tooltip.style("left", left + "px").style("top", top + "px");
+      }
+
+      function hideTooltip() {
+        tooltip.style("opacity", 0);
+      }
+
+      function formatNum(n) {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      }
+
+      // Notify iframe parent for auto-resize
+      notifyHeight();
+    }
+
+    function notifyHeight() {
+      var h = document.documentElement.scrollHeight;
+      window.parent.postMessage({ sentinel: 'agencia-sp', type: 'resize', height: h }, '*');
+    }
+    window.addEventListener('load', notifyHeight);
+    window.addEventListener('resize', function() { setTimeout(notifyHeight, 100); });
+    setTimeout(notifyHeight, 2500);
+  })();
+  </script>
+</body>
+</html>

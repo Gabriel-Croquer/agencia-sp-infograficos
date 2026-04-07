@@ -1,0 +1,646 @@
+﻿cod_ibge,municipio,ra,atendido_sabesp,economias_antes,economias_depois,pessoas_antes,pessoas_depois,variacao_pct,multiplicador,DOBROU?,TRIPLICOU?
+3500105,Adamantina,RA Presidente Prudente,Sim,80,1210,240,3630,1412.5,15.12,Sim,Sim
+3500204,Adolfo,RA São José do Rio Preto,Sim,60,290,180,870,383.3,4.83,Sim,Sim
+3500303,Aguaí,RA Campinas,Sim,780,2620,2340,7860,235.9,3.36,Sim,Sim
+3500402,Águas da Prata,RA Campinas,Sim,80,320,240,960,300.0,4.0,Sim,Sim
+3500501,Águas de Lindóia,RA Campinas,Não,0,0,0,0,,,,
+3500550,Águas de Santa Bárbara,RA Sorocaba,Sim,160,470,480,1410,193.8,2.94,Sim,Não
+3500600,Águas de São Pedro,RA Campinas,Sim,10,80,30,240,700.0,8.0,Sim,Sim
+3500709,Agudos,RA Bauru,Sim,280,1630,840,4890,482.1,5.82,Sim,Sim
+3500758,Alambari,RA Sorocaba,Sim,30,350,90,1050,1066.7,11.67,Sim,Sim
+3500808,Alfredo Marcondes,RA Presidente Prudente,Sim,20,330,60,990,1550.0,16.5,Sim,Sim
+3500907,Altair,RA Barretos,Sim,40,180,120,540,350.0,4.5,Sim,Sim
+3501004,Altinópolis,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3501103,Alto Alegre,RA Araçatuba,Sim,90,290,270,870,222.2,3.22,Sim,Sim
+3501152,Alumínio,RA Sorocaba,Sim,130,430,390,1290,230.8,3.31,Sim,Sim
+3501202,Álvares Florence,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3501301,Álvares Machado,RA Presidente Prudente,Sim,410,1790,1230,5370,336.6,4.37,Sim,Sim
+3501400,Álvaro de Carvalho,RA Marília,Sim,80,300,240,900,275.0,3.75,Sim,Sim
+3501509,Alvinlândia,RA Marília,Sim,50,220,150,660,340.0,4.4,Sim,Sim
+3501608,Americana,RA Campinas,Não,0,0,0,0,,,,
+3501707,Américo Brasiliense,RA Central,Não,0,0,0,0,,,,
+3501806,Américo de Campos,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3501905,Amparo,RA Campinas,Não,0,0,0,0,,,,
+3502002,Analândia,RA Campinas,Não,0,0,0,0,,,,
+3502101,Andradina,RA Araçatuba,Não,0,0,0,0,,,,
+3502200,Angatuba,RA Itapeva,Sim,210,1510,630,4530,619.0,7.19,Sim,Sim
+3502309,Anhembi,RA Sorocaba,Sim,130,530,390,1590,307.7,4.08,Sim,Sim
+3502408,Anhumas,RA Presidente Prudente,Sim,0,260,0,780,,,Sim,Sim
+3502507,Aparecida,RA São José dos Campos,Não,0,0,0,0,,,,
+3502606,Aparecida d'Oeste,RA São José do Rio Preto,Sim,140,380,420,1140,171.4,2.71,Sim,Não
+3502705,Apiaí,RA Itapeva,Sim,590,1850,1770,5550,213.6,3.14,Sim,Sim
+3502754,Araçariguama,RA Sorocaba,Sim,170,950,510,2850,458.8,5.59,Sim,Sim
+3502804,Araçatuba,RA Araçatuba,Não,0,0,0,0,,,,
+3502903,Araçoiaba da Serra,RA Sorocaba,Não,0,0,0,0,,,,
+3503000,Aramina,RA Franca,Não,0,0,0,0,,,,
+3503109,Arandu,RA Itapeva,Sim,120,510,360,1530,325.0,4.25,Sim,Sim
+3503158,Arapeí,RA São José dos Campos,Sim,80,250,240,750,212.5,3.12,Sim,Sim
+3503208,Araraquara,RA Central,Não,0,0,0,0,,,,
+3503307,Araras,RA Campinas,Não,0,0,0,0,,,,
+3503356,Arco-Íris,RA Marília,Sim,30,120,90,360,300.0,4.0,Sim,Sim
+3503406,Arealva,RA Bauru,Sim,90,580,270,1740,544.4,6.44,Sim,Sim
+3503505,Areias,RA São José dos Campos,Não,0,0,0,0,,,,
+3503604,Areiópolis,RA Sorocaba,Sim,140,560,420,1680,300.0,4.0,Sim,Sim
+3503703,Ariranha,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3503802,Artur Nogueira,RA Campinas,Não,0,0,0,0,,,,
+3503901,Arujá,RM  São Paulo,Sim,1930,6020,5790,18060,211.9,3.12,Sim,Sim
+3503950,Aspásia,RA São José do Rio Preto,Sim,20,140,60,420,600.0,7.0,Sim,Sim
+3504008,Assis,RA Marília,Sim,630,4660,1890,13980,639.7,7.4,Sim,Sim
+3504107,Atibaia,RA Campinas,Não,0,0,0,0,,,,
+3504206,Auriflama,RA Araçatuba,Sim,340,950,1020,2850,179.4,2.79,Sim,Não
+3504305,Avaí,RA Bauru,Sim,50,280,150,840,460.0,5.6,Sim,Sim
+3504404,Avanhandava,RA Araçatuba,Não,0,0,0,0,,,,
+3504503,Avaré,RA Sorocaba,Sim,830,4540,2490,13620,447.0,5.47,Sim,Sim
+3504602,Bady Bassitt,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3504701,Balbinos,RA Bauru,Sim,40,120,120,360,200.0,3.0,Sim,Sim
+3504800,Bálsamo,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3504909,Bananal,RA São José dos Campos,Sim,260,940,780,2820,261.5,3.62,Sim,Sim
+3505005,Barão de Antonina,RA Itapeva,Sim,30,290,90,870,866.7,9.67,Sim,Sim
+3505104,Barbosa,RA Araçatuba,Não,0,0,0,0,,,,
+3505203,Bariri,RA Bauru,Não,0,0,0,0,,,,
+3505302,Barra Bonita,RA Bauru,Não,0,0,0,0,,,,
+3505351,Barra do Chapéu,RA Itapeva,Sim,110,450,330,1350,309.1,4.09,Sim,Sim
+3505401,Barra do Turvo,RA Registro,Sim,90,430,270,1290,377.8,4.78,Sim,Sim
+3505500,Barretos,RA Barretos,Não,0,0,0,0,,,,
+3505609,Barrinha,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3505708,Barueri,RM  São Paulo,Sim,8370,21680,25110,65040,159.0,2.59,Sim,Não
+3505807,Bastos,RA Marília,Sim,70,800,210,2400,1042.9,11.43,Sim,Sim
+3505906,Batatais,RA Franca,Não,0,0,0,0,,,,
+3506003,Bauru,RA Bauru,Não,0,0,0,0,,,,
+3506102,Bebedouro,RA Barretos,Não,0,0,0,0,,,,
+3506201,Bento de Abreu,RA Araçatuba,Sim,50,140,150,420,180.0,2.8,Sim,Não
+3506300,Bernardino de Campos,RA Marília,Sim,210,810,630,2430,285.7,3.86,Sim,Sim
+3506359,Bertioga,RA Santos,Sim,1910,4510,5730,13530,136.1,2.36,Sim,Não
+3506409,Bilac,RA Araçatuba,Não,0,0,0,0,,,,
+3506508,Birigui,RA Araçatuba,Não,0,0,0,0,,,,
+3506607,Biritiba Mirim,RM  São Paulo,Sim,990,2220,2970,6660,124.2,2.24,Sim,Não
+3506706,Boa Esperança do Sul,RA Central,Não,0,0,0,0,,,,
+3506805,Bocaina,RA Bauru,Sim,130,640,390,1920,392.3,4.92,Sim,Sim
+3506904,Bofete,RA Sorocaba,Sim,140,540,420,1620,285.7,3.86,Sim,Sim
+3507001,Boituva,RA Sorocaba,Sim,970,2870,2910,8610,195.9,2.96,Sim,Não
+3507100,Bom Jesus dos Perdões,RA Campinas,Não,0,0,0,0,,,,
+3507159,Bom Sucesso de Itararé,RA Itapeva,Sim,90,330,270,990,266.7,3.67,Sim,Sim
+3507209,Borá,RA Marília,Sim,20,70,60,210,250.0,3.5,Sim,Sim
+3507308,Boracéia,RA Bauru,Sim,210,390,630,1170,85.7,1.86,Não,Não
+3507407,Borborema,RA Central,Não,0,0,0,0,,,,
+3507456,Borebi,RA Bauru,Não,0,0,0,0,,,,
+3507506,Botucatu,RA Sorocaba,Sim,2910,8310,8730,24930,185.6,2.86,Sim,Não
+3507605,Bragança Paulista,RA Campinas,Sim,3940,8660,11820,25980,119.8,2.2,Sim,Não
+3507704,Braúna,RA Araçatuba,Não,0,0,0,0,,,,
+3507753,Brejo Alegre,RA Araçatuba,Sim,120,250,360,750,108.3,2.08,Sim,Não
+3507803,Brodowski,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3507902,Brotas,RA Campinas,Não,0,0,0,0,,,,
+3508009,Buri,RA Itapeva,Sim,900,2610,2700,7830,190.0,2.9,Sim,Não
+3508108,Buritama,RA Araçatuba,Não,0,0,0,0,,,,
+3508207,Buritizal,RA Franca,Sim,140,440,420,1320,214.3,3.14,Sim,Sim
+3508306,Cabrália Paulista,RA Bauru,Não,0,0,0,0,,,,
+3508405,Cabreúva,RA Campinas,Sim,250,1310,750,3930,424.0,5.24,Sim,Sim
+3508504,Caçapava,RA São José dos Campos,Sim,1400,5030,4200,15090,259.3,3.59,Sim,Sim
+3508603,Cachoeira Paulista,RA São José dos Campos,Sim,950,2270,2850,6810,138.9,2.39,Sim,Não
+3508702,Caconde,RA Campinas,Não,0,0,0,0,,,,
+3508801,Cafelândia,RA Bauru,Não,0,0,0,0,,,,
+3508900,Caiabu,RA Presidente Prudente,Sim,0,170,0,510,,,Sim,Sim
+3509007,Caieiras,RM  São Paulo,Sim,2700,6150,8100,18450,127.8,2.28,Sim,Não
+3509106,Caiuá,RA Presidente Prudente,Não,0,0,0,0,,,,
+3509205,Cajamar,RM  São Paulo,Sim,2570,5310,7710,15930,106.6,2.07,Sim,Não
+3509254,Cajati,RA Registro,Sim,630,2050,1890,6150,225.4,3.25,Sim,Sim
+3509304,Cajobi,RA Barretos,Não,0,0,0,0,,,,
+3509403,Cajuru,RA Ribeirão Preto,Sim,340,1330,1020,3990,291.2,3.91,Sim,Sim
+3509452,Campina do Monte Alegre,RA Itapeva,Sim,100,580,300,1740,480.0,5.8,Sim,Sim
+3509502,Campinas,RA Campinas,Não,0,0,0,0,,,,
+3509601,Campo Limpo Paulista,RA Campinas,Sim,640,2770,1920,8310,332.8,4.33,Sim,Sim
+3509700,Campos do Jordão,RA São José dos Campos,Sim,160,1250,480,3750,681.2,7.81,Sim,Sim
+3509809,Campos Novos Paulista,RA Marília,Não,0,0,0,0,,,,
+3509908,Cananéia,RA Registro,Sim,100,1060,300,3180,960.0,10.6,Sim,Sim
+3509957,Canas,RA São José dos Campos,Sim,160,550,480,1650,243.8,3.44,Sim,Sim
+3510005,Cândido Mota,RA Marília,Não,0,0,0,0,,,,
+3510104,Cândido Rodrigues,RA Central,Sim,20,170,60,510,750.0,8.5,Sim,Sim
+3510153,Canitar,RA Marília,Não,0,0,0,0,,,,
+3510203,Capão Bonito,RA Itapeva,Sim,1120,3830,3360,11490,242.0,3.42,Sim,Sim
+3510302,Capela do Alto,RA Sorocaba,Sim,380,1540,1140,4620,305.3,4.05,Sim,Sim
+3510401,Capivari,RA Campinas,Não,0,0,0,0,,,,
+3510500,Caraguatatuba,RA São José dos Campos,Sim,1610,7690,4830,23070,377.6,4.78,Sim,Sim
+3510609,Carapicuíba,RM  São Paulo,Sim,8320,26290,24960,78870,216.0,3.16,Sim,Sim
+3510708,Cardoso,RA São José do Rio Preto,Sim,190,800,570,2400,321.1,4.21,Sim,Sim
+3510807,Casa Branca,RA Campinas,Não,0,0,0,0,,,,
+3510906,Cássia dos Coqueiros,RA Ribeirão Preto,Sim,20,130,60,390,550.0,6.5,Sim,Sim
+3511003,Castilho,RA Araçatuba,Não,0,0,0,0,,,,
+3511102,Catanduva,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3511201,Catiguá,RA São José do Rio Preto,Sim,110,380,330,1140,245.5,3.45,Sim,Sim
+3511300,Cedral,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3511409,Cerqueira César,RA Sorocaba,Não,0,0,0,0,,,,
+3511508,Cerquilho,RA Sorocaba,Não,0,0,0,0,,,,
+3511607,Cesário Lange,RA Sorocaba,Sim,90,670,270,2010,644.4,7.44,Sim,Sim
+3511706,Charqueada,RA Campinas,Sim,250,920,750,2760,268.0,3.68,Sim,Sim
+3511904,Clementina,RA Araçatuba,Não,0,0,0,0,,,,
+3512001,Colina,RA Barretos,Não,0,0,0,0,,,,
+3512100,Colômbia,RA Barretos,Sim,190,490,570,1470,157.9,2.58,Sim,Não
+3512209,Conchal,RA Campinas,Não,0,0,0,0,,,,
+3512308,Conchas,RA Sorocaba,Sim,140,980,420,2940,600.0,7.0,Sim,Sim
+3512407,Cordeirópolis,RA Campinas,Não,0,0,0,0,,,,
+3512506,Coroados,RA Araçatuba,Sim,80,500,240,1500,525.0,6.25,Sim,Sim
+3512605,Coronel Macedo,RA Itapeva,Sim,110,520,330,1560,372.7,4.73,Sim,Sim
+3512704,Corumbataí,RA Campinas,Não,0,0,0,0,,,,
+3512803,Cosmópolis,RA Campinas,Não,0,0,0,0,,,,
+3512902,Cosmorama,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3513009,Cotia,RM  São Paulo,Sim,5660,13000,16980,39000,129.7,2.3,Sim,Não
+3513108,Cravinhos,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3513207,Cristais Paulista,RA Franca,Não,0,0,0,0,,,,
+3513306,Cruzália,RA Marília,Sim,40,170,120,510,325.0,4.25,Sim,Sim
+3513405,Cruzeiro,RA São José dos Campos,Não,0,0,0,0,,,,
+3513504,Cubatão,RA Santos,Sim,6220,9730,18660,29190,56.4,1.56,Não,Não
+3513603,Cunha,RA São José dos Campos,Não,0,0,0,0,,,,
+3513702,Descalvado,RA Central,Não,0,0,0,0,,,,
+3513801,Diadema,RM  São Paulo,Sim,7690,22950,23070,68850,198.4,2.98,Sim,Não
+3513850,Dirce Reis,RA São José do Rio Preto,Sim,20,160,60,480,700.0,8.0,Sim,Sim
+3513900,Divinolândia,RA Campinas,Sim,100,480,300,1440,380.0,4.8,Sim,Sim
+3514007,Dobrada,RA Central,Não,0,0,0,0,,,,
+3514106,Dois Córregos,RA Bauru,Não,0,0,0,0,,,,
+3514205,Dolcinópolis,RA São José do Rio Preto,Sim,70,260,210,780,271.4,3.71,Sim,Sim
+3514304,Dourado,RA Central,Sim,180,460,540,1380,155.6,2.56,Sim,Não
+3514403,Dracena,RA Presidente Prudente,Não,0,0,0,0,,,,
+3514502,Duartina,RA Bauru,Sim,70,790,210,2370,1028.6,11.29,Sim,Sim
+3514601,Dumont,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3514700,Echaporã,RA Marília,Sim,140,610,420,1830,335.7,4.36,Sim,Sim
+3514809,Eldorado,RA Registro,Sim,150,700,450,2100,366.7,4.67,Sim,Sim
+3514908,Elias Fausto,RA Campinas,Sim,350,970,1050,2910,177.1,2.77,Sim,Não
+3514924,Elisiário,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3514957,Embaúba,RA Barretos,Não,0,0,0,0,,,,
+3515004,Embu das Artes,RM  São Paulo,Sim,15220,28550,45660,85650,87.6,1.88,Não,Não
+3515103,Embu-Guaçu,RM  São Paulo,Sim,1700,4440,5100,13320,161.2,2.61,Sim,Não
+3515129,Emilianópolis,RA Presidente Prudente,Sim,30,180,90,540,500.0,6.0,Sim,Sim
+3515152,Engenheiro Coelho,RA Campinas,Não,0,0,0,0,,,,
+3515186,Espírito Santo do Pinhal,RA Campinas,Sim,240,970,720,2910,304.2,4.04,Sim,Sim
+3515194,Espírito Santo do Turvo,RA Marília,Sim,30,210,90,630,600.0,7.0,Sim,Sim
+3515202,Estrela d'Oeste,RA São José do Rio Preto,Sim,40,380,120,1140,850.0,9.5,Sim,Sim
+3515301,Estrela do Norte,RA Presidente Prudente,Sim,30,150,90,450,400.0,5.0,Sim,Sim
+3515350,Euclides da Cunha Paulista,RA Presidente Prudente,Sim,110,630,330,1890,472.7,5.73,Sim,Sim
+3515400,Fartura,RA Itapeva,Sim,210,1240,630,3720,490.5,5.9,Sim,Sim
+3515509,Fernandópolis,RA São José do Rio Preto,Sim,430,4040,1290,12120,839.5,9.4,Sim,Sim
+3515608,Fernando Prestes,RA Central,Sim,40,320,120,960,700.0,8.0,Sim,Sim
+3515657,Fernão,RA Marília,Sim,20,90,60,270,350.0,4.5,Sim,Sim
+3515707,Ferraz de Vasconcelos,RM  São Paulo,Sim,7830,16980,23490,50940,116.9,2.17,Sim,Não
+3515806,Flora Rica,RA Presidente Prudente,Sim,20,90,60,270,350.0,4.5,Sim,Sim
+3515905,Floreal,RA São José do Rio Preto,Sim,40,180,120,540,350.0,4.5,Sim,Sim
+3516002,Flórida Paulista,RA Presidente Prudente,Sim,190,770,570,2310,305.3,4.05,Sim,Sim
+3516101,Florínea,RA Marília,Sim,90,290,270,870,222.2,3.22,Sim,Sim
+3516200,Franca,RA Franca,Sim,4670,16160,14010,48480,246.0,3.46,Sim,Sim
+3516309,Francisco Morato,RM  São Paulo,Sim,7870,15120,23610,45360,92.1,1.92,Não,Não
+3516408,Franco da Rocha,RM  São Paulo,Sim,7390,13100,22170,39300,77.3,1.77,Não,Não
+3516507,Gabriel Monteiro,RA Araçatuba,Sim,10,130,30,390,1200.0,13.0,Sim,Sim
+3516606,Gália,RA Marília,Sim,60,340,180,1020,466.7,5.67,Sim,Sim
+3516705,Garça,RA Marília,Não,0,0,0,0,,,,
+3516804,Gastão Vidigal,RA Araçatuba,Sim,140,320,420,960,128.6,2.29,Sim,Não
+3516853,Gavião Peixoto,RA Central,Não,0,0,0,0,,,,
+3516903,General Salgado,RA Araçatuba,Sim,80,670,240,2010,737.5,8.38,Sim,Sim
+3517000,Getulina,RA Bauru,Não,0,0,0,0,,,,
+3517109,Glicério,RA Araçatuba,Sim,90,420,270,1260,366.7,4.67,Sim,Sim
+3517208,Guaiçara,RA Bauru,Não,0,0,0,0,,,,
+3517307,Guaimbê,RA Bauru,Não,0,0,0,0,,,,
+3517406,Guaíra,RA Barretos,Não,0,0,0,0,,,,
+3517505,Guapiaçu,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3517604,Guapiara,RA Itapeva,Sim,210,1160,630,3480,452.4,5.52,Sim,Sim
+3517703,Guará,RA Franca,Não,0,0,0,0,,,,
+3517802,Guaraçaí,RA Araçatuba,Não,0,0,0,0,,,,
+3517901,Guaraci,RA Barretos,Não,0,0,0,0,,,,
+3518008,Guarani d'Oeste,RA São José do Rio Preto,Sim,30,180,90,540,500.0,6.0,Sim,Sim
+3518107,Guarantã,RA Bauru,Não,0,0,0,0,,,,
+3518206,Guararapes,RA Araçatuba,Não,0,0,0,0,,,,
+3518305,Guararema,RM  São Paulo,Sim,690,1910,2070,5730,176.8,2.77,Sim,Não
+3518404,Guaratinguetá,RA São José dos Campos,Não,0,0,0,0,,,,
+3518503,Guareí,RA Sorocaba,Sim,140,690,420,2070,392.9,4.93,Sim,Sim
+3518602,Guariba,RA Ribeirão Preto,Sim,570,1900,1710,5700,233.3,3.33,Sim,Sim
+3518701,Guarujá,RA Santos,Sim,2190,20050,6570,60150,815.5,9.16,Sim,Sim
+3518800,Guarulhos,RM  São Paulo,Sim,30780,87080,92340,261240,182.9,2.83,Sim,Não
+3518859,Guatapará,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3518909,Guzolândia,RA Araçatuba,Sim,50,420,150,1260,740.0,8.4,Sim,Sim
+3519006,Herculândia,RA Marília,Não,0,0,0,0,,,,
+3519055,Holambra,RA Campinas,Não,0,0,0,0,,,,
+3519071,Hortolândia,RA Campinas,Sim,4520,12450,13560,37350,175.4,2.75,Sim,Não
+3519105,Iacanga,RA Bauru,Não,0,0,0,0,,,,
+3519204,Iacri,RA Marília,Sim,100,480,300,1440,380.0,4.8,Sim,Sim
+3519253,Iaras,RA Sorocaba,Sim,60,290,180,870,383.3,4.83,Sim,Sim
+3519303,Ibaté,RA Central,Não,0,0,0,0,,,,
+3519402,Ibirá,RA São José do Rio Preto,Sim,500,930,1500,2790,86.0,1.86,Não,Não
+3519501,Ibirarema,RA Marília,Não,0,0,0,0,,,,
+3519600,Ibitinga,RA Central,Não,0,0,0,0,,,,
+3519709,Ibiúna,RA Sorocaba,Sim,710,2750,2130,8250,287.3,3.87,Sim,Sim
+3519808,Icém,RA São José do Rio Preto,Sim,190,580,570,1740,205.3,3.05,Sim,Sim
+3519907,Iepê,RA Presidente Prudente,Não,0,0,0,0,,,,
+3520004,Igaraçu do Tietê,RA Bauru,Não,0,0,0,0,,,,
+3520103,Igarapava,RA Franca,Não,0,0,0,0,,,,
+3520202,Igaratá,RA São José dos Campos,Sim,100,550,300,1650,450.0,5.5,Sim,Sim
+3520301,Iguape,RA Registro,Sim,450,2290,1350,6870,408.9,5.09,Sim,Sim
+3520400,Ilhabela,RA São José dos Campos,Sim,170,1230,510,3690,623.5,7.24,Sim,Sim
+3520426,Ilha Comprida,RA Registro,Sim,270,1730,810,5190,540.7,6.41,Sim,Sim
+3520442,Ilha Solteira,RA Araçatuba,Não,0,0,0,0,,,,
+3520509,Indaiatuba,RA Campinas,Não,0,0,0,0,,,,
+3520608,Indiana,RA Presidente Prudente,Não,0,0,0,0,,,,
+3520707,Indiaporã,RA São José do Rio Preto,Sim,100,390,300,1170,290.0,3.9,Sim,Sim
+3520806,Inúbia Paulista,RA Presidente Prudente,Sim,40,150,120,450,275.0,3.75,Sim,Sim
+3520905,Ipaussu,RA Marília,Não,0,0,0,0,,,,
+3521002,Iperó,RA Sorocaba,Sim,340,1740,1020,5220,411.8,5.12,Sim,Sim
+3521101,Ipeúna,RA Campinas,Não,0,0,0,0,,,,
+3521150,Ipiguá,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3521200,Iporanga,RA Itapeva,Sim,70,270,210,810,285.7,3.86,Sim,Sim
+3521309,Ipuã,RA Franca,Não,0,0,0,0,,,,
+3521408,Iracemápolis,RA Campinas,Não,0,0,0,0,,,,
+3521507,Irapuã,RA São José do Rio Preto,Sim,90,500,270,1500,455.6,5.56,Sim,Sim
+3521606,Irapuru,RA Presidente Prudente,Não,0,0,0,0,,,,
+3521705,Itaberá,RA Itapeva,Sim,420,1230,1260,3690,192.9,2.93,Sim,Não
+3521804,Itaí,RA Itapeva,Sim,140,1540,420,4620,1000.0,11.0,Sim,Sim
+3521903,Itajobi,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3522000,Itaju,RA Bauru,Não,0,0,0,0,,,,
+3522109,Itanhaém,RA Santos,Sim,4130,13080,12390,39240,216.7,3.17,Sim,Sim
+3522158,Itaoca,RA Itapeva,Sim,80,340,240,1020,325.0,4.25,Sim,Sim
+3522208,Itapecerica da Serra,RM  São Paulo,Sim,6810,13650,20430,40950,100.4,2.0,Sim,Não
+3522307,Itapetininga,RA Sorocaba,Sim,1850,9040,5550,27120,388.6,4.89,Sim,Sim
+3522406,Itapeva,RA Itapeva,Sim,970,6320,2910,18960,551.5,6.52,Sim,Sim
+3522505,Itapevi,RM  São Paulo,Sim,11910,21130,35730,63390,77.4,1.77,Não,Não
+3522604,Itapira,RA Campinas,Não,0,0,0,0,,,,
+3522653,Itapirapuã Paulista,RA Itapeva,Sim,130,410,390,1230,215.4,3.15,Sim,Sim
+3522703,Itápolis,RA Central,Não,0,0,0,0,,,,
+3522802,Itaporanga,RA Itapeva,Sim,240,1270,720,3810,429.2,5.29,Sim,Sim
+3522901,Itapuí,RA Bauru,Não,0,0,0,0,,,,
+3523008,Itapura,RA Araçatuba,Não,0,0,0,0,,,,
+3523107,Itaquaquecetuba,RM  São Paulo,Sim,15010,37950,45030,113850,152.8,2.53,Sim,Não
+3523206,Itararé,RA Itapeva,Sim,860,4060,2580,12180,372.1,4.72,Sim,Sim
+3523305,Itariri,RA Registro,Sim,110,720,330,2160,554.5,6.55,Sim,Sim
+3523404,Itatiba,RA Campinas,Sim,1730,4030,5190,12090,132.9,2.33,Sim,Não
+3523503,Itatinga,RA Sorocaba,Sim,350,1200,1050,3600,242.9,3.43,Sim,Sim
+3523602,Itirapina,RA Campinas,Não,0,0,0,0,,,,
+3523701,Itirapuã,RA Franca,Sim,270,600,810,1800,122.2,2.22,Sim,Não
+3523800,Itobi,RA Campinas,Sim,100,430,300,1290,330.0,4.3,Sim,Sim
+3523909,Itu,RA Sorocaba,Não,0,0,0,0,,,,
+3524006,Itupeva,RA Campinas,Sim,180,1280,540,3840,611.1,7.11,Sim,Sim
+3524105,Ituverava,RA Franca,Não,0,0,0,0,,,,
+3524204,Jaborandi,RA Barretos,Sim,90,420,270,1260,366.7,4.67,Sim,Sim
+3524303,Jaboticabal,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3524402,Jacareí,RA São José dos Campos,Não,0,0,0,0,,,,
+3524501,Jaci,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3524600,Jacupiranga,RA Registro,Sim,170,900,510,2700,429.4,5.29,Sim,Sim
+3524709,Jaguariúna,RA Campinas,Não,0,0,0,0,,,,
+3524808,Jales,RA São José do Rio Preto,Sim,810,2760,2430,8280,240.7,3.41,Sim,Sim
+3524907,Jambeiro,RA São José dos Campos,Sim,60,300,180,900,400.0,5.0,Sim,Sim
+3525003,Jandira,RM  São Paulo,Sim,1030,5900,3090,17700,472.8,5.73,Sim,Sim
+3525102,Jardinópolis,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3525201,Jarinu,RA Campinas,Sim,230,950,690,2850,313.0,4.13,Sim,Sim
+3525300,Jaú,RA Bauru,Não,0,0,0,0,,,,
+3525409,Jeriquara,RA Franca,Sim,90,340,270,1020,277.8,3.78,Sim,Sim
+3525508,Joanópolis,RA Campinas,Sim,120,690,360,2070,475.0,5.75,Sim,Sim
+3525607,João Ramalho,RA Marília,Não,0,0,0,0,,,,
+3525706,José Bonifácio,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3525805,Júlio Mesquita,RA Marília,Não,0,0,0,0,,,,
+3525854,Jumirim,RA Sorocaba,Não,0,0,0,0,,,,
+3525904,Jundiaí,RA Campinas,Não,0,0,0,0,,,,
+3526001,Junqueirópolis,RA Presidente Prudente,Não,0,0,0,0,,,,
+3526100,Juquiá,RA Registro,Sim,120,1020,360,3060,750.0,8.5,Sim,Sim
+3526209,Juquitiba,RM  São Paulo,Sim,170,1520,510,4560,794.1,8.94,Sim,Sim
+3526308,Lagoinha,RA São José dos Campos,Sim,150,400,450,1200,166.7,2.67,Sim,Não
+3526407,Laranjal Paulista,RA Sorocaba,Sim,370,1330,1110,3990,259.5,3.59,Sim,Sim
+3526506,Lavínia,RA Araçatuba,Não,0,0,0,0,,,,
+3526605,Lavrinhas,RA São José dos Campos,Sim,320,680,960,2040,112.5,2.12,Sim,Não
+3526704,Leme,RA Campinas,Não,0,0,0,0,,,,
+3526803,Lençóis Paulista,RA Bauru,Não,0,0,0,0,,,,
+3526902,Limeira,RA Campinas,Não,0,0,0,0,,,,
+3527009,Lindóia,RA Campinas,Não,0,0,0,0,,,,
+3527108,Lins,RA Bauru,Sim,790,3360,2370,10080,325.3,4.25,Sim,Sim
+3527207,Lorena,RA São José dos Campos,Sim,970,5430,2910,16290,459.8,5.6,Sim,Sim
+3527256,Lourdes,RA Araçatuba,Sim,60,230,180,690,283.3,3.83,Sim,Sim
+3527306,Louveira,RA Campinas,Não,0,0,0,0,,,,
+3527405,Lucélia,RA Presidente Prudente,Sim,310,1220,930,3660,293.5,3.94,Sim,Sim
+3527504,Lucianópolis,RA Bauru,Sim,20,100,60,300,400.0,5.0,Sim,Sim
+3527603,Luís Antônio,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3527702,Luiziânia,RA Araçatuba,Sim,70,450,210,1350,542.9,6.43,Sim,Sim
+3527801,Lupércio,RA Marília,Sim,10,290,30,870,2800.0,29.0,Sim,Sim
+3527900,Lutécia,RA Marília,Sim,40,190,120,570,375.0,4.75,Sim,Sim
+3528007,Macatuba,RA Bauru,Não,0,0,0,0,,,,
+3528106,Macaubal,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3528205,Macedônia,RA São José do Rio Preto,Sim,10,170,30,510,1600.0,17.0,Sim,Sim
+3528304,Magda,RA São José do Rio Preto,Sim,50,210,150,630,320.0,4.2,Sim,Sim
+3528403,Mairinque,RA Sorocaba,Não,0,0,0,0,,,,
+3528502,Mairiporã,RM  São Paulo,Sim,1780,4080,5340,12240,129.2,2.29,Sim,Não
+3528601,Manduri,RA Sorocaba,Não,0,0,0,0,,,,
+3528700,Marabá Paulista,RA Presidente Prudente,Sim,60,210,180,630,250.0,3.5,Sim,Sim
+3528809,Maracaí,RA Marília,Sim,140,770,420,2310,450.0,5.5,Sim,Sim
+3528858,Marapoama,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3528908,Mariápolis,RA Presidente Prudente,Sim,70,280,210,840,300.0,4.0,Sim,Sim
+3529005,Marília,RA Marília,Não,0,0,0,0,,,,
+3529104,Marinópolis,RA São José do Rio Preto,Sim,20,150,60,450,650.0,7.5,Sim,Sim
+3529203,Martinópolis,RA Presidente Prudente,Não,0,0,0,0,,,,
+3529302,Matão,RA Central,Não,0,0,0,0,,,,
+3529401,Mauá,RM  São Paulo,Sim,780,3370,2340,10110,332.1,4.32,Sim,Sim
+3529500,Mendonça,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3529609,Meridiano,RA São José do Rio Preto,Sim,10,270,30,810,2600.0,27.0,Sim,Sim
+3529658,Mesópolis,RA São José do Rio Preto,Sim,20,130,60,390,550.0,6.5,Sim,Sim
+3529708,Miguelópolis,RA Franca,Não,0,0,0,0,,,,
+3529807,Mineiros do Tietê,RA Bauru,Não,0,0,0,0,,,,
+3529906,Miracatu,RA Registro,Sim,190,1250,570,3750,557.9,6.58,Sim,Sim
+3530003,Mira Estrela,RA São José do Rio Preto,Sim,0,190,0,570,,,Sim,Sim
+3530102,Mirandópolis,RA Araçatuba,Não,0,0,0,0,,,,
+3530201,Mirante do Paranapanema,RA Presidente Prudente,Sim,240,980,720,2940,308.3,4.08,Sim,Sim
+3530300,Mirassol,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3530409,Mirassolândia,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3530508,Mococa,RA Campinas,Sim,640,2690,1920,8070,320.3,4.2,Sim,Sim
+3530607,Mogi das Cruzes,RM  São Paulo,Não,0,0,0,0,,,,
+3530706,Mogi Guaçu,RA Campinas,Não,0,0,0,0,,,,
+3530805,Mogi Mirim,RA Campinas,Não,0,0,0,0,,,,
+3530904,Mombuca,RA Campinas,Sim,130,320,390,960,146.2,2.46,Sim,Não
+3531001,Monções,RA São José do Rio Preto,Sim,40,140,120,420,250.0,3.5,Sim,Sim
+3531100,Mongaguá,RA Santos,Sim,1040,6280,3120,18840,503.8,6.04,Sim,Sim
+3531209,Monte Alegre do Sul,RA Campinas,Não,0,0,0,0,,,,
+3531308,Monte Alto,RA Ribeirão Preto,Sim,250,1760,750,5280,604.0,7.04,Sim,Sim
+3531407,Monte Aprazível,RA São José do Rio Preto,Sim,590,1650,1770,4950,179.7,2.8,Sim,Não
+3531506,Monte Azul Paulista,RA Barretos,Não,0,0,0,0,,,,
+3531605,Monte Castelo,RA Presidente Prudente,Não,0,0,0,0,,,,
+3531704,Monteiro Lobato,RA São José dos Campos,Sim,40,220,120,660,450.0,5.5,Sim,Sim
+3531803,Monte Mor,RA Campinas,Sim,1780,4940,5340,14820,177.5,2.78,Sim,Não
+3531902,Morro Agudo,RA Franca,Não,0,0,0,0,,,,
+3532009,Morungaba,RA Campinas,Sim,140,530,420,1590,278.6,3.79,Sim,Sim
+3532058,Motuca,RA Central,Não,0,0,0,0,,,,
+3532108,Murutinga do Sul,RA Araçatuba,Não,0,0,0,0,,,,
+3532157,Nantes,RA Presidente Prudente,Não,0,0,0,0,,,,
+3532207,Narandiba,RA Presidente Prudente,Sim,40,380,120,1140,850.0,9.5,Sim,Sim
+3532306,Natividade da Serra,RA São José dos Campos,Não,0,0,0,0,,,,
+3532405,Nazaré Paulista,RA Campinas,Sim,150,670,450,2010,346.7,4.47,Sim,Sim
+3532504,Neves Paulista,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3532603,Nhandeara,RA São José do Rio Preto,Sim,210,620,630,1860,195.2,2.95,Sim,Não
+3532702,Nipoã,RA São José do Rio Preto,Sim,80,490,240,1470,512.5,6.12,Sim,Sim
+3532801,Nova Aliança,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3532827,Nova Campina,RA Itapeva,Sim,260,1000,780,3000,284.6,3.85,Sim,Sim
+3532843,Nova Canaã Paulista,RA São José do Rio Preto,Sim,0,110,0,330,,,Sim,Sim
+3532868,Nova Castilho,RA Araçatuba,Não,0,0,0,0,,,,
+3532900,Nova Europa,RA Central,Não,0,0,0,0,,,,
+3533007,Nova Granada,RA São José do Rio Preto,Sim,170,1130,510,3390,564.7,6.65,Sim,Sim
+3533106,Nova Guataporanga,RA Presidente Prudente,Não,0,0,0,0,,,,
+3533205,Nova Independência,RA Araçatuba,Não,0,0,0,0,,,,
+3533254,Novais,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3533304,Nova Luzitânia,RA Araçatuba,Sim,70,310,210,930,342.9,4.43,Sim,Sim
+3533403,Nova Odessa,RA Campinas,Não,0,0,0,0,,,,
+3533502,Novo Horizonte,RA São José do Rio Preto,Sim,340,2360,1020,7080,594.1,6.94,Sim,Sim
+3533601,Nuporanga,RA Franca,Não,0,0,0,0,,,,
+3533700,Ocauçu,RA Marília,Não,0,0,0,0,,,,
+3533809,Óleo,RA Marília,Sim,30,190,90,570,533.3,6.33,Sim,Sim
+3533908,Olímpia,RA Barretos,Não,0,0,0,0,,,,
+3534005,Onda Verde,RA São José do Rio Preto,Sim,30,280,90,840,833.3,9.33,Sim,Sim
+3534104,Oriente,RA Marília,Sim,60,250,180,750,316.7,4.17,Sim,Sim
+3534203,Orindiúva,RA São José do Rio Preto,Sim,10,210,30,630,2000.0,21.0,Sim,Sim
+3534302,Orlândia,RA Franca,Não,0,0,0,0,,,,
+3534401,Osasco,RM  São Paulo,Sim,25060,50530,75180,151590,101.6,2.02,Sim,Não
+3534500,Oscar Bressane,RA Marília,Sim,30,160,90,480,433.3,5.33,Sim,Sim
+3534609,Osvaldo Cruz,RA Presidente Prudente,Sim,400,1680,1200,5040,320.0,4.2,Sim,Sim
+3534708,Ourinhos,RA Marília,Não,0,0,0,0,,,,
+3534757,Ouroeste,RA São José do Rio Preto,Sim,40,620,120,1860,1450.0,15.5,Sim,Sim
+3534807,Ouro Verde,RA Presidente Prudente,Não,0,0,0,0,,,,
+3534906,Pacaembu,RA Presidente Prudente,Não,0,0,0,0,,,,
+3535002,Palestina,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3535101,Palmares Paulista,RA São José do Rio Preto,Sim,70,430,210,1290,514.3,6.14,Sim,Sim
+3535200,Palmeira d'Oeste,RA São José do Rio Preto,Sim,100,580,300,1740,480.0,5.8,Sim,Sim
+3535309,Palmital,RA Marília,Não,0,0,0,0,,,,
+3535408,Panorama,RA Presidente Prudente,Não,0,0,0,0,,,,
+3535507,Paraguaçu Paulista,RA Marília,Sim,800,2770,2400,8310,246.2,3.46,Sim,Sim
+3535606,Paraibuna,RA São José dos Campos,Não,0,0,0,0,,,,
+3535705,Paraíso,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3535804,Paranapanema,RA Itapeva,Sim,200,1050,600,3150,425.0,5.25,Sim,Sim
+3535903,Paranapuã,RA São José do Rio Preto,Sim,80,450,240,1350,462.5,5.62,Sim,Sim
+3536000,Parapuã,RA Marília,Sim,270,900,810,2700,233.3,3.33,Sim,Sim
+3536109,Pardinho,RA Sorocaba,Sim,60,340,180,1020,466.7,5.67,Sim,Sim
+3536208,Pariquera-Açu,RA Registro,Sim,120,920,360,2760,666.7,7.67,Sim,Sim
+3536257,Parisi,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3536307,Patrocínio Paulista,RA Franca,Não,0,0,0,0,,,,
+3536406,Paulicéia,RA Presidente Prudente,Não,0,0,0,0,,,,
+3536505,Paulínia,RA Campinas,Sim,890,3510,2670,10530,294.4,3.94,Sim,Sim
+3536570,Paulistânia,RA Bauru,Sim,40,110,120,330,175.0,2.75,Sim,Não
+3536604,Paulo de Faria,RA São José do Rio Preto,Sim,20,580,60,1740,2800.0,29.0,Sim,Sim
+3536703,Pederneiras,RA Bauru,Sim,480,2210,1440,6630,360.4,4.6,Sim,Sim
+3536802,Pedra Bela,RA Campinas,Sim,20,110,60,330,450.0,5.5,Sim,Sim
+3536901,Pedranópolis,RA São José do Rio Preto,Sim,20,160,60,480,700.0,8.0,Sim,Sim
+3537008,Pedregulho,RA Franca,Sim,450,1080,1350,3240,140.0,2.4,Sim,Não
+3537107,Pedreira,RA Campinas,Não,0,0,0,0,,,,
+3537156,Pedrinhas Paulista,RA Marília,Sim,30,160,90,480,433.3,5.33,Sim,Sim
+3537206,Pedro de Toledo,RA Registro,Sim,170,800,510,2400,370.6,4.71,Sim,Sim
+3537305,Penápolis,RA Araçatuba,Não,0,0,0,0,,,,
+3537404,Pereira Barreto,RA Araçatuba,Não,0,0,0,0,,,,
+3537503,Pereiras,RA Sorocaba,Sim,50,450,150,1350,800.0,9.0,Sim,Sim
+3537602,Peruíbe,RA Santos,Sim,1740,7200,5220,21600,313.8,4.14,Sim,Sim
+3537701,Piacatu,RA Araçatuba,Sim,30,330,90,990,1000.0,11.0,Sim,Sim
+3537800,Piedade,RA Sorocaba,Sim,600,2350,1800,7050,291.7,3.92,Sim,Sim
+3537909,Pilar do Sul,RA Sorocaba,Sim,170,1370,510,4110,705.9,8.06,Sim,Sim
+3538006,Pindamonhangaba,RA São José dos Campos,Sim,3120,10490,9360,31470,236.2,3.36,Sim,Sim
+3538105,Pindorama,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3538204,Pinhalzinho,RA Campinas,Sim,110,580,330,1740,427.3,5.27,Sim,Sim
+3538303,Piquerobi,RA Presidente Prudente,Sim,70,310,210,930,342.9,4.43,Sim,Sim
+3538501,Piquete,RA São José dos Campos,Não,0,0,0,0,,,,
+3538600,Piracaia,RA Campinas,Sim,190,1020,570,3060,436.8,5.37,Sim,Sim
+3538709,Piracicaba,RA Campinas,Não,0,0,0,0,,,,
+3538808,Piraju,RA Itapeva,Sim,420,1880,1260,5640,347.6,4.48,Sim,Sim
+3538907,Pirajuí,RA Bauru,Não,0,0,0,0,,,,
+3539004,Pirangi,RA Barretos,Não,0,0,0,0,,,,
+3539103,Pirapora do Bom Jesus,RM  São Paulo,Sim,400,1290,1200,3870,222.5,3.23,Sim,Sim
+3539202,Pirapozinho,RA Presidente Prudente,Sim,150,1250,450,3750,733.3,8.33,Sim,Sim
+3539301,Pirassununga,RA Campinas,Não,0,0,0,0,,,,
+3539400,Piratininga,RA Bauru,Sim,50,620,150,1860,1140.0,12.4,Sim,Sim
+3539509,Pitangueiras,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3539608,Planalto,RA São José do Rio Preto,Sim,100,360,300,1080,260.0,3.6,Sim,Sim
+3539707,Platina,RA Marília,Sim,100,350,300,1050,250.0,3.5,Sim,Sim
+3539806,Poá,RM  São Paulo,Sim,3850,10240,11550,30720,166.0,2.66,Sim,Não
+3539905,Poloni,RA São José do Rio Preto,Sim,50,360,150,1080,620.0,7.2,Sim,Sim
+3540002,Pompéia,RA Marília,Não,0,0,0,0,,,,
+3540101,Pongaí,RA Bauru,Sim,50,240,150,720,380.0,4.8,Sim,Sim
+3540200,Pontal,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3540259,Pontalinda,RA São José do Rio Preto,Sim,60,320,180,960,433.3,5.33,Sim,Sim
+3540309,Pontes Gestal,RA São José do Rio Preto,Sim,0,170,0,510,,,Sim,Sim
+3540408,Populina,RA São José do Rio Preto,Sim,70,360,210,1080,414.3,5.14,Sim,Sim
+3540507,Porangaba,RA Sorocaba,Sim,110,650,330,1950,490.9,5.91,Sim,Sim
+3540606,Porto Feliz,RA Sorocaba,Não,0,0,0,0,,,,
+3540705,Porto Ferreira,RA Central,Não,0,0,0,0,,,,
+3540754,Potim,RA São José dos Campos,Não,0,0,0,0,,,,
+3540804,Potirendaba,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3540853,Pracinha,RA Presidente Prudente,Sim,90,210,270,630,133.3,2.33,Sim,Não
+3540903,Pradópolis,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3541000,Praia Grande,RA Santos,Sim,2070,13380,6210,40140,546.4,6.46,Sim,Sim
+3541059,Pratânia,RA Sorocaba,Sim,160,490,480,1470,206.2,3.06,Sim,Sim
+3541109,Presidente Alves,RA Bauru,Sim,70,270,210,810,285.7,3.86,Sim,Sim
+3541208,Presidente Bernardes,RA Presidente Prudente,Sim,100,680,300,2040,580.0,6.8,Sim,Sim
+3541307,Presidente Epitácio,RA Presidente Prudente,Sim,170,2760,510,8280,1523.5,16.24,Sim,Sim
+3541406,Presidente Prudente,RA Presidente Prudente,Sim,2140,10890,6420,32670,408.9,5.09,Sim,Sim
+3541505,Presidente Venceslau,RA Presidente Prudente,Não,0,0,0,0,,,,
+3541604,Promissão,RA Bauru,Não,0,0,0,0,,,,
+3541653,Quadra,RA Sorocaba,Sim,30,140,90,420,366.7,4.67,Sim,Sim
+3541703,Quatá,RA Marília,Sim,270,1110,810,3330,311.1,4.11,Sim,Sim
+3541802,Queiroz,RA Marília,Sim,40,250,120,750,525.0,6.25,Sim,Sim
+3541901,Queluz,RA São José dos Campos,Sim,290,850,870,2550,193.1,2.93,Sim,Não
+3542008,Quintana,RA Marília,Não,0,0,0,0,,,,
+3542107,Rafard,RA Campinas,Não,0,0,0,0,,,,
+3542206,Rancharia,RA Presidente Prudente,Não,0,0,0,0,,,,
+3542305,Redenção da Serra,RA São José dos Campos,Sim,60,200,180,600,233.3,3.33,Sim,Sim
+3542404,Regente Feijó,RA Presidente Prudente,Sim,80,910,240,2730,1037.5,11.38,Sim,Sim
+3542503,Reginópolis,RA Bauru,Não,0,0,0,0,,,,
+3542602,Registro,RA Registro,Sim,630,4170,1890,12510,561.9,6.62,Sim,Sim
+3542701,Restinga,RA Franca,Sim,100,390,300,1170,290.0,3.9,Sim,Sim
+3542800,Ribeira,RA Itapeva,Sim,120,300,360,900,150.0,2.5,Sim,Não
+3542909,Ribeirão Bonito,RA Central,Não,0,0,0,0,,,,
+3543006,Ribeirão Branco,RA Itapeva,Sim,420,1850,1260,5550,340.5,4.4,Sim,Sim
+3543105,Ribeirão Corrente,RA Franca,Sim,70,340,210,1020,385.7,4.86,Sim,Sim
+3543204,Ribeirão do Sul,RA Marília,Sim,60,300,180,900,400.0,5.0,Sim,Sim
+3543238,Ribeirão dos Índios,RA Presidente Prudente,Sim,70,190,210,570,171.4,2.71,Sim,Não
+3543253,Ribeirão Grande,RA Itapeva,Sim,150,690,450,2070,360.0,4.6,Sim,Sim
+3543303,Ribeirão Pires,RM  São Paulo,Sim,930,3770,2790,11310,305.4,4.05,Sim,Sim
+3543402,Ribeirão Preto,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3543501,Riversul,RA Itapeva,Sim,170,770,510,2310,352.9,4.53,Sim,Sim
+3543600,Rifaina,RA Franca,Sim,30,230,90,690,666.7,7.67,Sim,Sim
+3543709,Rincão,RA Central,Não,0,0,0,0,,,,
+3543808,Rinópolis,RA Marília,Não,0,0,0,0,,,,
+3543907,Rio Claro,RA Campinas,Não,0,0,0,0,,,,
+3544004,Rio das Pedras,RA Campinas,Não,0,0,0,0,,,,
+3544103,Rio Grande da Serra,RM  São Paulo,Sim,730,2990,2190,8970,309.6,4.1,Sim,Sim
+3544202,Riolândia,RA São José do Rio Preto,Sim,50,740,150,2220,1380.0,14.8,Sim,Sim
+3544251,Rosana,RA Presidente Prudente,Sim,170,1160,510,3480,582.4,6.82,Sim,Sim
+3544301,Roseira,RA São José dos Campos,Sim,290,780,870,2340,169.0,2.69,Sim,Não
+3544400,Rubiácea,RA Araçatuba,Sim,70,240,210,720,242.9,3.43,Sim,Sim
+3544509,Rubinéia,RA São José do Rio Preto,Sim,10,290,30,870,2800.0,29.0,Sim,Sim
+3544608,Sabino,RA Bauru,Não,0,0,0,0,,,,
+3544707,Sagres,RA Presidente Prudente,Sim,60,190,180,570,216.7,3.17,Sim,Sim
+3544806,Sales,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3544905,Sales Oliveira,RA Franca,Não,0,0,0,0,,,,
+3545001,Salesópolis,RM  São Paulo,Sim,430,970,1290,2910,125.6,2.26,Sim,Não
+3545100,Salmourão,RA Presidente Prudente,Sim,140,410,420,1230,192.9,2.93,Sim,Não
+3545159,Saltinho,RA Campinas,Sim,30,150,90,450,400.0,5.0,Sim,Sim
+3545209,Salto,RA Sorocaba,Não,0,0,0,0,,,,
+3545308,Salto de Pirapora,RA Sorocaba,Sim,400,2540,1200,7620,535.0,6.35,Sim,Sim
+3545407,Salto Grande,RA Marília,Não,0,0,0,0,,,,
+3545506,Sandovalina,RA Presidente Prudente,Sim,50,280,150,840,460.0,5.6,Sim,Sim
+3545605,Santa Adélia,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3545704,Santa Albertina,RA São José do Rio Preto,Sim,130,350,390,1050,169.2,2.69,Sim,Não
+3545803,Santa Bárbara d'Oeste,RA Campinas,Não,0,0,0,0,,,,
+3546009,Santa Branca,RA São José dos Campos,Sim,180,660,540,1980,266.7,3.67,Sim,Sim
+3546108,Santa Clara d'Oeste,RA São José do Rio Preto,Sim,60,230,180,690,283.3,3.83,Sim,Sim
+3546207,Santa Cruz da Conceição,RA Campinas,Não,0,0,0,0,,,,
+3546256,Santa Cruz da Esperança,RA Ribeirão Preto,Sim,10,100,30,300,900.0,10.0,Sim,Sim
+3546306,Santa Cruz das Palmeiras,RA Campinas,Não,0,0,0,0,,,,
+3546405,Santa Cruz do Rio Pardo,RA Marília,Sim,490,2040,1470,6120,316.3,4.16,Sim,Sim
+3546504,Santa Ernestina,RA Central,Sim,40,320,120,960,700.0,8.0,Sim,Sim
+3546603,Santa Fé do Sul,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3546702,Santa Gertrudes,RA Campinas,Não,0,0,0,0,,,,
+3546801,Santa Isabel,RM  São Paulo,Sim,620,2420,1860,7260,290.3,3.9,Sim,Sim
+3546900,Santa Lúcia,RA Central,Não,0,0,0,0,,,,
+3547007,Santa Maria da Serra,RA Campinas,Sim,60,380,180,1140,533.3,6.33,Sim,Sim
+3547106,Santa Mercedes,RA Presidente Prudente,Sim,60,260,180,780,333.3,4.33,Sim,Sim
+3547205,Santana da Ponte Pensa,RA São José do Rio Preto,Sim,10,70,30,210,600.0,7.0,Sim,Sim
+3547304,Santana de Parnaíba,RM  São Paulo,Sim,2050,6790,6150,20370,231.2,3.31,Sim,Sim
+3547403,Santa Rita d'Oeste,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3547502,Santa Rita do Passa Quatro,RA Central,Não,0,0,0,0,,,,
+3547601,Santa Rosa de Viterbo,RA Ribeirão Preto,Sim,230,1370,690,4110,495.7,5.96,Sim,Sim
+3547650,Santa Salete,RA São José do Rio Preto,Sim,10,90,30,270,800.0,9.0,Sim,Sim
+3547700,Santo Anastácio,RA Presidente Prudente,Sim,270,1370,810,4110,407.4,5.07,Sim,Sim
+3547809,Santo André,RM  São Paulo,Sim,39700,54740,119100,164220,37.9,1.38,Não,Não
+3547908,Santo Antônio da Alegria,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3548005,Santo Antônio de Posse,RA Campinas,Não,0,0,0,0,,,,
+3548054,Santo Antônio do Aracanguá,RA Araçatuba,Não,0,0,0,0,,,,
+3548104,Santo Antônio do Jardim,RA Campinas,Sim,50,170,150,510,240.0,3.4,Sim,Sim
+3548203,Santo Antônio do Pinhal,RA São José dos Campos,Sim,40,320,120,960,700.0,8.0,Sim,Sim
+3548302,Santo Expedito,RA Presidente Prudente,Sim,0,220,0,660,,,Sim,Sim
+3548401,Santópolis do Aguapeí,RA Araçatuba,Sim,100,340,300,1020,240.0,3.4,Sim,Sim
+3548500,Santos,RA Santos,Sim,3370,7640,10110,22920,126.7,2.27,Sim,Não
+3548609,São Bento do Sapucaí,RA São José dos Campos,Sim,160,550,480,1650,243.8,3.44,Sim,Sim
+3548708,São Bernardo do Campo,RM  São Paulo,Sim,26660,45040,79980,135120,68.9,1.69,Não,Não
+3548807,São Caetano do Sul,RM  São Paulo,Não,0,0,0,0,,,,
+3548906,São Carlos,RA Central,Não,0,0,0,0,,,,
+3549003,São Francisco,RA São José do Rio Preto,Sim,80,220,240,660,175.0,2.75,Sim,Não
+3549102,São João da Boa Vista,RA Campinas,Sim,400,2940,1200,8820,635.0,7.35,Sim,Sim
+3549201,São João das Duas Pontes,RA São José do Rio Preto,Sim,10,150,30,450,1400.0,15.0,Sim,Sim
+3549250,São João de Iracema,RA Araçatuba,Não,0,0,0,0,,,,
+3549300,São João do Pau d'Alho,RA Presidente Prudente,Não,0,0,0,0,,,,
+3549409,São Joaquim da Barra,RA Franca,Não,0,0,0,0,,,,
+3549508,São José da Bela Vista,RA Franca,Não,0,0,0,0,,,,
+3549607,São José do Barreiro,RA São José dos Campos,Não,0,0,0,0,,,,
+3549706,São José do Rio Pardo,RA Campinas,Não,0,0,0,0,,,,
+3549805,São José do Rio Preto,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3549904,São José dos Campos,RA São José dos Campos,Sim,12670,32250,38010,96750,154.5,2.55,Sim,Não
+3549953,São Lourenço da Serra,RM  São Paulo,Sim,190,830,570,2490,336.8,4.37,Sim,Sim
+3550001,São Luiz do Paraitinga,RA São José dos Campos,Sim,370,680,1110,2040,83.8,1.84,Não,Não
+3550100,São Manuel,RA Sorocaba,Sim,240,1860,720,5580,675.0,7.75,Sim,Sim
+3550209,São Miguel Arcanjo,RA Sorocaba,Sim,280,1600,840,4800,471.4,5.71,Sim,Sim
+3550308,São Paulo,RM  São Paulo,Sim,586140,881270,1758420,2643810,50.4,1.5,Não,Não
+3550407,São Pedro,RA Campinas,Não,0,0,0,0,,,,
+3550506,São Pedro do Turvo,RA Marília,Não,0,0,0,0,,,,
+3550605,São Roque,RA Sorocaba,Sim,480,2100,1440,6300,337.5,4.38,Sim,Sim
+3550704,São Sebastião,RA São José dos Campos,Sim,1290,3370,3870,10110,161.2,2.61,Sim,Não
+3550803,São Sebastião da Grama,RA Campinas,Não,0,0,0,0,,,,
+3550902,São Simão,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3551009,São Vicente,RA Santos,Sim,7450,15520,22350,46560,108.3,2.08,Sim,Não
+3551108,Sarapuí,RA Sorocaba,Sim,60,610,180,1830,916.7,10.17,Sim,Sim
+3551207,Sarutaiá,RA Itapeva,Sim,100,360,300,1080,260.0,3.6,Sim,Sim
+3551306,Sebastianópolis do Sul,RA São José do Rio Preto,Sim,90,250,270,750,177.8,2.78,Sim,Não
+3551405,Serra Azul,RA Ribeirão Preto,Sim,340,910,1020,2730,167.6,2.68,Sim,Não
+3551504,Serrana,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3551603,Serra Negra,RA Campinas,Sim,230,850,690,2550,269.6,3.7,Sim,Sim
+3551702,Sertãozinho,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3551801,Sete Barras,RA Registro,Sim,120,830,360,2490,591.7,6.92,Sim,Sim
+3551900,Severínia,RA Barretos,Não,0,0,0,0,,,,
+3552007,Silveiras,RA São José dos Campos,Sim,80,410,240,1230,412.5,5.12,Sim,Sim
+3552106,Socorro,RA Campinas,Sim,600,1240,1800,3720,106.7,2.07,Sim,Não
+3552205,Sorocaba,RA Sorocaba,Não,0,0,0,0,,,,
+3552304,Sud Mennucci,RA Araçatuba,Sim,100,480,300,1440,380.0,4.8,Sim,Sim
+3552403,Sumaré,RA Campinas,Não,0,0,0,0,,,,
+3552502,Suzano,RM  São Paulo,Sim,10830,26030,32490,78090,140.4,2.4,Sim,Não
+3552551,Suzanápolis,RA Araçatuba,Não,0,0,0,0,,,,
+3552601,Tabapuã,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3552700,Tabatinga,RA Central,Não,0,0,0,0,,,,
+3552809,Taboão da Serra,RM  São Paulo,Sim,12740,22710,38220,68130,78.3,1.78,Não,Não
+3552908,Taciba,RA Presidente Prudente,Sim,0,430,0,1290,,,Sim,Sim
+3553005,Taguaí,RA Itapeva,Sim,230,980,690,2940,326.1,4.26,Sim,Sim
+3553104,Taiaçu,RA Barretos,Não,0,0,0,0,,,,
+3553203,Taiúva,RA Barretos,Não,0,0,0,0,,,,
+3553302,Tambaú,RA Campinas,Não,0,0,0,0,,,,
+3553401,Tanabi,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3553500,Tapiraí,RA Sorocaba,Sim,60,450,180,1350,650.0,7.5,Sim,Sim
+3553609,Tapiratiba,RA Campinas,Sim,130,630,390,1890,384.6,4.85,Sim,Sim
+3553658,Taquaral,RA Ribeirão Preto,Não,0,0,0,0,,,,
+3553708,Taquaritinga,RA Central,Não,0,0,0,0,,,,
+3553807,Taquarituba,RA Itapeva,Sim,360,1670,1080,5010,363.9,4.64,Sim,Sim
+3553856,Taquarivaí,RA Itapeva,Sim,210,700,630,2100,233.3,3.33,Sim,Sim
+3553906,Tarabai,RA Presidente Prudente,Sim,30,500,90,1500,1566.7,16.67,Sim,Sim
+3553955,Tarumã,RA Marília,Sim,190,890,570,2670,368.4,4.68,Sim,Sim
+3554003,Tatuí,RA Sorocaba,Sim,1070,5820,3210,17460,443.9,5.44,Sim,Sim
+3554102,Taubaté,RA São José dos Campos,Sim,3450,13750,10350,41250,298.6,3.99,Sim,Sim
+3554201,Tejupá,RA Itapeva,Sim,60,330,180,990,450.0,5.5,Sim,Sim
+3554300,Teodoro Sampaio,RA Presidente Prudente,Sim,350,1740,1050,5220,397.1,4.97,Sim,Sim
+3554409,Terra Roxa,RA Barretos,Sim,140,310,420,930,121.4,2.21,Sim,Não
+3554508,Tietê,RA Sorocaba,Não,0,0,0,0,,,,
+3554607,Timburi,RA Marília,Sim,30,200,90,600,566.7,6.67,Sim,Sim
+3554656,Torre de Pedra,RA Sorocaba,Sim,70,290,210,870,314.3,4.14,Sim,Sim
+3554706,Torrinha,RA Campinas,Sim,70,420,210,1260,500.0,6.0,Sim,Sim
+3554755,Trabiju,RA Central,Não,0,0,0,0,,,,
+3554805,Tremembé,RA São José dos Campos,Sim,510,2170,1530,6510,325.5,4.25,Sim,Sim
+3554904,Três Fronteiras,RA São José do Rio Preto,Sim,100,460,300,1380,360.0,4.6,Sim,Sim
+3554953,Tuiuti,RA Campinas,Não,0,0,0,0,,,,
+3555000,Tupã,RA Marília,Sim,540,3580,1620,10740,563.0,6.63,Sim,Sim
+3555109,Tupi Paulista,RA Presidente Prudente,Não,0,0,0,0,,,,
+3555208,Turiúba,RA Araçatuba,Sim,30,150,90,450,400.0,5.0,Sim,Sim
+3555307,Turmalina,RA São José do Rio Preto,Sim,10,120,30,360,1100.0,12.0,Sim,Sim
+3555356,Ubarana,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3555406,Ubatuba,RA São José dos Campos,Sim,1180,4510,3540,13530,282.2,3.82,Sim,Sim
+3555505,Ubirajara,RA Bauru,Sim,70,280,210,840,300.0,4.0,Sim,Sim
+3555604,Uchoa,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3555703,União Paulista,RA São José do Rio Preto,Sim,10,90,30,270,800.0,9.0,Sim,Sim
+3555802,Urânia,RA São José do Rio Preto,Sim,40,500,120,1500,1150.0,12.5,Sim,Sim
+3555901,Uru,RA Bauru,Sim,20,80,60,240,300.0,4.0,Sim,Sim
+3556008,Urupês,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3556107,Valentim Gentil,RA São José do Rio Preto,Sim,60,790,180,2370,1216.7,13.17,Sim,Sim
+3556206,Valinhos,RA Campinas,Não,0,0,0,0,,,,
+3556305,Valparaíso,RA Araçatuba,Não,0,0,0,0,,,,
+3556354,Vargem,RA Campinas,Sim,40,250,120,750,525.0,6.25,Sim,Sim
+3556404,Vargem Grande do Sul,RA Campinas,Não,0,0,0,0,,,,
+3556453,Vargem Grande Paulista,RM  São Paulo,Sim,490,1770,1470,5310,261.2,3.61,Sim,Sim
+3556503,Várzea Paulista,RA Campinas,Sim,480,2710,1440,8130,464.6,5.65,Sim,Sim
+3556602,Vera Cruz,RA Marília,Não,0,0,0,0,,,,
+3556701,Vinhedo,RA Campinas,Não,0,0,0,0,,,,
+3556800,Viradouro,RA Barretos,Não,0,0,0,0,,,,
+3556909,Vista Alegre do Alto,RA Barretos,Não,0,0,0,0,,,,
+3556958,Vitória Brasil,RA São José do Rio Preto,Sim,0,120,0,360,,,Sim,Sim
+3557006,Votorantim,RA Sorocaba,Não,0,0,0,0,,,,
+3557105,Votuporanga,RA São José do Rio Preto,Não,0,0,0,0,,,,
+3557154,Zacarias,RA São José do Rio Preto,Sim,40,210,120,630,425.0,5.25,Sim,Sim
+3557204,Chavantes,RA Marília,Não,0,0,0,0,,,,
+3557303,Estiva Gerbi,RA Campinas,Não,0,0,0,0,,,,
