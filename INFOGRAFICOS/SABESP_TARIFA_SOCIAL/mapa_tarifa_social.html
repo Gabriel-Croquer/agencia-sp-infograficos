@@ -39,7 +39,7 @@
     }
 
     .chart-title .destaque {
-      color: #555555;
+      color: #0B9247;
     }
 
     .chart-subtitle {
@@ -177,15 +177,15 @@
 
     <div class="map-legend">
       <div class="legend-item">
-        <div class="legend-swatch" style="background:#555555; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
+        <div class="legend-swatch" style="background:#0B9247; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
         Dobrou nº de beneficiários
       </div>
       <div class="legend-item">
-        <div class="legend-swatch" style="background:#FFFFFF; border: 1.5px solid #888;  box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
+        <div class="legend-swatch" style="background:#888888; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
         Sabesp — não dobrou
       </div>
       <div class="legend-item">
-        <div class="legend-swatch" style="background:#E8E8E8; opacity:0.5;"></div>
+        <div class="legend-swatch" style="background:#E0E0E0; opacity:0.5;"></div>
         Outros sistemas
       </div>
     </div>
@@ -206,11 +206,11 @@
     var CSV_PATH     = "mapa-645-municipios-tarifa-social.csv";
 
     var COLORS = {
-      dobrou:    "#555555",
-      naoDouble: "#FFFFFF",
-      naoSabesp: "#E8E8E8",
+      dobrou:    "#0B9247",
+      naoDouble: "#888888",
+      naoSabesp: "#E0E0E0",
       stroke:    "#FFFFFF",
-      strokeSabesp: "#CCCCCC"
+      strokeSabesp: "#666666"
     };
 
     Promise.all([
@@ -315,8 +315,8 @@
         .attr("class", "municipio")
         .attr("d", pathGen)
         .attr("fill", COLORS.naoDouble)
-        .attr("stroke", "#888")
-        .attr("stroke-width", 0.6)
+        .attr("stroke", "#555")
+        .attr("stroke-width", 0.5)
         .on("mouseover", showTooltip)
         .on("mousemove", moveTooltip)
         .on("mouseout", hideTooltip);
@@ -360,7 +360,7 @@
                     info.mult.toFixed(1).replace(".", ",") + 'x</span></div>';
           }
           if (info.dobrou) {
-            html += '<div class="tt-badge" style="background:#555;color:#fff;">Dobrou ✓</div>';
+            html += '<div class="tt-badge" style="background:#0B9247;color:#fff;">Dobrou ✓</div>';
           }
           if (info.triplicou) {
             html += ' <div class="tt-badge" style="background:#0B9247;color:#fff;">Triplicou ✓</div>';
