@@ -169,20 +169,24 @@
 <body>
   <div class="chart-container">
     <h1 class="chart-title">
-      Conta de água: <span class="destaque">dobra número de beneficiários</span> da Tarifa Social Paulista em 359 municípios de SP
+      Conta de água: número de beneficiários da Tarifa Social Paulista <span class="destaque">triplica</span> em 299 municípios de SP
     </h1>
     <p class="chart-subtitle">
-      Crescimento ocorreu em 97% das cidades atendidas pela Sabesp, que opera em 371 dos 645 municípios do estado; total de beneficiados passou de 2,98 milhões para 6 milhões de pessoas
+      Após a desestatização da Sabesp, o número de pessoas com desconto na conta de água triplicou em 80% das cidades atendidas; em 359 (97%), pelo menos dobrou. Total passou de 2,98 milhões para 6 milhões
     </p>
 
     <div class="map-legend">
       <div class="legend-item">
         <div class="legend-swatch" style="background:#0B9247; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
-        Dobrou nº de beneficiários
+        Triplicou ou mais
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background:#7BC67E; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
+        Dobrou ou mais
       </div>
       <div class="legend-item">
         <div class="legend-swatch" style="background:#888888; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>
-        Sabesp — não dobrou
+        Cresceu — não dobrou
       </div>
       <div class="legend-item">
         <div class="legend-swatch" style="background:#E0E0E0; opacity:0.5;"></div>
@@ -206,11 +210,10 @@
     var CSV_PATH     = "mapa-645-municipios-tarifa-social.csv";
 
     var COLORS = {
-      dobrou:    "#0B9247",
-      naoDouble: "#888888",
-      naoSabesp: "#E0E0E0",
-      stroke:    "#FFFFFF",
-      strokeSabesp: "#666666"
+      triplicou: "#0B9247",
+      dobrou:    "#7BC67E",
+      cresceu:   "#888888",
+      naoSabesp: "#E0E0E0"
     };
 
     Promise.all([
@@ -272,19 +275,22 @@
       var projection = d3.geoMercator().fitSize([width, height], geojson);
       var pathGen = d3.geoPath().projection(projection);
 
-      // Separate features into layers
+      // Separate features into 4 layers
       var nonSabesp = [];
-      var sabespDobrou = [];
-      var sabespNao = [];
+      var sabespCresceu = [];   // grew but didn't double (12)
+      var sabespDobrou = [];    // doubled but didn't triple (60)
+      var sabespTriplicou = []; // tripled or more (299)
 
       geojson.features.forEach(function(f) {
         var code = String(f.properties.CD_MUN);
         var info = lookup[code];
         if (info && info.sabesp) {
-          if (info.dobrou) {
+          if (info.triplicou) {
+            sabespTriplicou.push(f);
+          } else if (info.dobrou) {
             sabespDobrou.push(f);
           } else {
-            sabespNao.push(f);
+            sabespCresceu.push(f);
           }
         } else {
           nonSabesp.push(f);
@@ -306,22 +312,22 @@
         .on("mousemove", moveTooltip)
         .on("mouseout", hideTooltip);
 
-      // Layer 2: Sabesp not doubled (raised, white)
-      svg.append("g").attr("class", "layer-sabesp-nao")
+      // Layer 2: Sabesp grew but didn't double (raised, grey)
+      svg.append("g").attr("class", "layer-sabesp-cresceu")
         .attr("filter", "url(#elevate)")
         .selectAll("path")
-        .data(sabespNao)
+        .data(sabespCresceu)
         .enter().append("path")
         .attr("class", "municipio")
         .attr("d", pathGen)
-        .attr("fill", COLORS.naoDouble)
+        .attr("fill", COLORS.cresceu)
         .attr("stroke", "#555")
         .attr("stroke-width", 0.5)
         .on("mouseover", showTooltip)
         .on("mousemove", moveTooltip)
         .on("mouseout", hideTooltip);
 
-      // Layer 3: Sabesp doubled (raised, grey, on top)
+      // Layer 3: Sabesp doubled but didn't triple (raised, light green)
       svg.append("g").attr("class", "layer-sabesp-dobrou")
         .attr("filter", "url(#elevate)")
         .selectAll("path")
@@ -330,6 +336,21 @@
         .attr("class", "municipio")
         .attr("d", pathGen)
         .attr("fill", COLORS.dobrou)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 0.4)
+        .on("mouseover", showTooltip)
+        .on("mousemove", moveTooltip)
+        .on("mouseout", hideTooltip);
+
+      // Layer 4: Sabesp tripled or more (raised, strong green, on top)
+      svg.append("g").attr("class", "layer-sabesp-triplicou")
+        .attr("filter", "url(#elevate)")
+        .selectAll("path")
+        .data(sabespTriplicou)
+        .enter().append("path")
+        .attr("class", "municipio")
+        .attr("d", pathGen)
+        .attr("fill", COLORS.triplicou)
         .attr("stroke", "#fff")
         .attr("stroke-width", 0.4)
         .on("mouseover", showTooltip)
@@ -359,11 +380,10 @@
             html += '<div class="tt-row"><span class="tt-label">Multiplicador</span><span class="tt-value">' +
                     info.mult.toFixed(1).replace(".", ",") + 'x</span></div>';
           }
-          if (info.dobrou) {
-            html += '<div class="tt-badge" style="background:#0B9247;color:#fff;">Dobrou ✓</div>';
-          }
           if (info.triplicou) {
-            html += ' <div class="tt-badge" style="background:#0B9247;color:#fff;">Triplicou ✓</div>';
+            html += '<div class="tt-badge" style="background:#0B9247;color:#fff;">Triplicou ou mais</div>';
+          } else if (info.dobrou) {
+            html += '<div class="tt-badge" style="background:#7BC67E;color:#fff;">Dobrou ou mais</div>';
           }
         } else {
           html += '<div style="color:#999;font-size:11px;margin-top:2px;">Não atendido pela Sabesp</div>';
