@@ -104,10 +104,10 @@ html = '''<!DOCTYPE html>
 
 <div class="infographic">
   <div class="main-title">
-    Homicidios dolosos em SP atingem <span class="destaque">menor patamar</span> da serie historica no 1&ordm; bimestre
+    Homicídios dolosos em SP atingem <span class="destaque">menor patamar</span> da série histórica no 1&ordm; bimestre
   </div>
   <div class="main-subtitle">
-    Estado registrou 369 ocorrencias em janeiro e fevereiro de 2026, queda de 11% em relacao ao mesmo periodo de 2025
+    Estado registrou 369 ocorrências em janeiro e fevereiro de 2026, queda de 11% em relação ao mesmo período de 2025
   </div>
 
   <div class="legend">
@@ -117,13 +117,13 @@ html = '''<!DOCTYPE html>
     </div>
     <div class="legend-item">
       <div class="legend-swatch" style="background:#0B9247;"></div>
-      <span>2026 (minimo historico)</span>
+      <span>2026 (mínimo histórico)</span>
     </div>
   </div>
 
   <div class="chart-area" id="chartArea"></div>
 
-  <div class="chart-source">Fonte: SSP-SP &mdash; Secretaria da Seguranca Publica do Estado de Sao Paulo</div>
+  <div class="chart-source">Fonte: SSP-SP &mdash; Secretaria da Segurança Pública do Estado de São Paulo</div>
 
   <div class="logo-container">
     <img src="''' + logo_src + '''" alt="Agencia SP">
@@ -221,7 +221,7 @@ function formatNum(n) {
   svg.addEventListener("mousemove", function(e) {
     var t = e.target;
     if (t.classList.contains("bar-rect")) {
-      tooltipEl.innerHTML = t.dataset.year + ": <strong>" + formatNum(parseInt(t.dataset.value)) + "</strong> ocorrencias";
+      tooltipEl.innerHTML = t.dataset.year + ": <strong>" + formatNum(parseInt(t.dataset.value)) + "</strong> ocorrências";
       tooltipEl.classList.add("visible");
       tooltipEl.style.left = (e.clientX + 12) + "px";
       tooltipEl.style.top = (e.clientY - 36) + "px";

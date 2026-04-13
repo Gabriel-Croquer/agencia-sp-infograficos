@@ -18,7 +18,7 @@ html = '''<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Latrocinios em SP - 1o bimestre 2026</title>
+  <title>Latrocínios em SP - 1o bimestre 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -101,10 +101,10 @@ html = '''<!DOCTYPE html>
 
 <div class="infographic">
   <div class="main-title">
-    Latrocinios <span class="destaque">caem 57%</span> em SP no 1&ordm; bimestre de 2026
+    Latrocínios <span class="destaque">caem 57%</span> em SP no 1&ordm; bimestre de 2026
   </div>
   <div class="main-subtitle">
-    Estado registrou 12 ocorrencias em janeiro e fevereiro, menor patamar da serie historica iniciada em 2001
+    Estado registrou 12 ocorrências em janeiro e fevereiro, menor patamar da série histórica iniciada em 2001
   </div>
 
   <div class="legend">
@@ -114,13 +114,13 @@ html = '''<!DOCTYPE html>
     </div>
     <div class="legend-item">
       <div class="legend-swatch" style="background:#0B9247;"></div>
-      <span>2026 (minimo historico)</span>
+      <span>2026 (mínimo histórico)</span>
     </div>
   </div>
 
   <div class="chart-area" id="chartArea"></div>
 
-  <div class="chart-source">Fonte: SSP-SP &mdash; Secretaria da Seguranca Publica do Estado de Sao Paulo</div>
+  <div class="chart-source">Fonte: SSP-SP &mdash; Secretaria da Segurança Pública do Estado de São Paulo</div>
 
   <div class="logo-container">
     <img src="''' + logo_src + '''" alt="Agencia SP">
@@ -214,7 +214,7 @@ function formatNum(n) {
   svg.addEventListener("mousemove", function(e) {
     var t = e.target;
     if (t.classList.contains("bar-rect")) {
-      tooltipEl.innerHTML = t.dataset.year + ": <strong>" + formatNum(parseInt(t.dataset.value)) + "</strong> ocorrencias";
+      tooltipEl.innerHTML = t.dataset.year + ": <strong>" + formatNum(parseInt(t.dataset.value)) + "</strong> ocorrências";
       tooltipEl.classList.add("visible");
       tooltipEl.style.left = (e.clientX + 12) + "px";
       tooltipEl.style.top = (e.clientY - 36) + "px";
