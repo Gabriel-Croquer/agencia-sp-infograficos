@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Queda inedita de roubos em SP - 1o bimestre 2026</title>
+  <title>Roubos de veículos, carga e a bancos nos menores níveis - 1º bimestre 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
 
     .charts-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 28px 32px;
       margin-bottom: 16px;
     }
@@ -121,10 +121,10 @@
 
 <div class="infographic">
   <div class="main-title">
-    SP tem <span class="destaque">queda inédita</span> de todas as modalidades de roubo no 1º bimestre
+    Roubos de veículos, carga e a bancos nos <span class="destaque">menores níveis</span> desde 2001
   </div>
   <div class="main-subtitle">
-    Ocorrências acumuladas em janeiro e fevereiro de cada ano, estado de São Paulo (2001–2026)
+    No 1º bimestre de 2026, veículos caem 40%, carga recua 33% e roubos a banco ficam zerados
   </div>
 
   <div class="legend">
@@ -150,7 +150,7 @@
 <div class="tooltip" id="tooltip"></div>
 
 <script>
-var chartsData = [{"title": "Roubos em geral", "id": "geral", "data": [51352, 52010, 51293, 47521, 46905, 45468, 44764, 44787, 54470, 47349, 48017, 50691, 53388, 70634, 63690, 63860, 63249, 54297, 47891, 54609, 43482, 43426, 45317, 38625, 34742, 26462], "pct": "-24%"}, {"title": "Roubo de veículo", "id": "veiculo", "data": [16656, 15250, 13315, 12258, 13011, 11882, 10992, 9190, 12307, 10899, 11814, 13546, 14591, 18207, 13989, 12577, 11678, 9021, 7510, 6904, 5259, 5596, 6117, 4576, 4562, 2743], "pct": "-40%"}, {"title": "Roubo de carga", "id": "carga", "data": [498, 607, 585, 918, 1029, 938, 973, 975, 1173, 1048, 1284, 1190, 1156, 1504, 1494, 1341, 1709, 1487, 1197, 1114, 1093, 1065, 973, 835, 669, 450], "pct": "-33%"}, {"title": "Roubo a banco", "id": "banco", "data": [42, 25, 24, 40, 43, 70, 56, 42, 36, 43, 41, 35, 31, 40, 34, 19, 24, 8, 3, 6, 4, 2, 0, 1, 0, 0], "pct": "0"}];
+var chartsData = [{"title": "Roubo de veículo", "id": "veiculo", "data": [16656, 15250, 13315, 12258, 13011, 11882, 10992, 9190, 12307, 10899, 11814, 13546, 14591, 18207, 13989, 12577, 11678, 9021, 7510, 6904, 5259, 5596, 6117, 4576, 4562, 2743], "pct": "-40%"}, {"title": "Roubo de carga", "id": "carga", "data": [498, 607, 585, 918, 1029, 938, 973, 975, 1173, 1048, 1284, 1190, 1156, 1504, 1494, 1341, 1709, 1487, 1197, 1114, 1093, 1065, 973, 835, 669, 450], "pct": "-33%"}, {"title": "Roubo a banco", "id": "banco", "data": [42, 25, 24, 40, 43, 70, 56, 42, 36, 43, 41, 35, 31, 40, 34, 19, 24, 8, 3, 6, 4, 2, 0, 1, 0, 0], "pct": "0"}];
 var years = [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
 
 
