@@ -83,8 +83,7 @@
 
     .chart-cell svg { width: 100%; height: auto; display: block; }
 
-    .bar-rect { cursor: pointer; transition: opacity 0.2s ease; }
-    .bar-rect:hover { opacity: 0.75; }
+    .bar-rect { cursor: default; }
 
     .tooltip {
       position: fixed;
@@ -147,7 +146,6 @@
   </div>
 </div>
 
-<div class="tooltip" id="tooltip"></div>
 
 <script>
 var chartsData = [
@@ -158,7 +156,6 @@ var years = [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,20
 
 var GREEN = "#0B9247";
 var GRAY = "#C0C0C0";
-var tooltipEl = document.getElementById("tooltip");
 
 function formatNum(n) {
   return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -260,21 +257,6 @@ function buildChart(cfg) {
       svg.appendChild(xLabel);
     }
   }
-
-  svg.addEventListener("mousemove", function(e) {
-    var target = e.target;
-    if (target.classList.contains("bar-rect")) {
-      var yr = target.dataset.year;
-      var val = parseInt(target.dataset.value);
-      tooltipEl.innerHTML = target.dataset.title + " " + yr + ": <strong>" + formatNum(val) + "</strong> ocorrências";
-      tooltipEl.classList.add("visible");
-      tooltipEl.style.left = (e.clientX + 12) + "px";
-      tooltipEl.style.top = (e.clientY - 36) + "px";
-    }
-  });
-  svg.addEventListener("mouseleave", function() {
-    tooltipEl.classList.remove("visible");
-  });
 
   cell.appendChild(svg);
   document.getElementById("chartsGrid").appendChild(cell);
