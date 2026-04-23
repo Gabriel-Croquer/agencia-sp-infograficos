@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Regularização de terras dispara em SP a partir de 2023</title>
+  <title>Títulos rurais disparam em SP a partir de 2023</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -106,10 +106,10 @@
 
 <div class="infographic">
   <div class="main-title">
-    Regulariza&ccedil;&atilde;o de terras <span class="destaque">dispara em SP</span> a partir de 2023
+    T&iacute;tulos rurais <span class="destaque">disparam em SP</span> a partir de 2023
   </div>
   <div class="main-subtitle">
-    Gest&atilde;o atual titulou mais hectares em 2025 (95,1 mil) do que em todo o per&iacute;odo de 2011 a 2022 somado (16,3 mil)
+    S&oacute; em 2023, o Itesp entregou 1.973 t&iacute;tulos rurais&nbsp;&mdash;&nbsp;quase seis vezes o total somado de 2011 a 2022 (331 documentos)
   </div>
 
   <div class="legend">
@@ -129,7 +129,7 @@
 
   <div class="chart-container">
     <div class="chart-header">
-      <span class="chart-badge">Hectares regularizados por ano</span>
+      <span class="chart-badge">Títulos rurais entregues por ano</span>
     </div>
     <svg id="chart" viewBox="0 0 900 360" preserveAspectRatio="xMidYMid meet"></svg>
   </div>
@@ -147,8 +147,8 @@
 
 <script>
 var years = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
-var data  = [412.7951, 889.2266, 421.9973, 108.477, 2355.253, 5684.947, 1708.342, 559.4231, 1479.639, 143.0386, 428.509, 2152.702, 58354.43, 80913.71, 95140.9, 3316.971];
-var Y_MAX = 100000;
+var data  = [27, 42, 32, 1, 16, 15, 105, 4, 15, 9, 32, 33, 1973, 1534, 1612, 256];
+var Y_MAX = 2000;
 var HIGHLIGHT_LABEL_YEARS = [2023, 2024, 2025];
 
 var GREEN = "#0B9247";
@@ -165,19 +165,18 @@ function formatBR(n, decimals) {
 
 function formatTooltip(n) {
   
-  if (n >= 1000) return formatBR(n/1000, 1) + " mil ha";
-  return formatBR(n, 0) + " ha";
+  var n0 = Math.round(n);
+  return formatBR(n0, 0) + (n0 === 1 ? " título" : " títulos");
 
 }
 
 function formatYTick(v) {
-  return v === 0 ? "0" : (v/1000).toFixed(0) + " mil ha";
+  return v === 0 ? "0" : formatBR(v, 0);
 }
 
 function formatValueLabel(n) {
   
-  if (n >= 1000) return formatBR(n/1000, n >= 10000 ? 0 : 1) + " mil";
-  return formatBR(n, 0);
+  return formatBR(Math.round(n), 0);
 
 }
 
